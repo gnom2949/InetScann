@@ -1,0 +1,24 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ./public:/var/www/html
+    depends_on:
+      - db
+    network_mode: "host"
+
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_ROOT_PASSWORD: qwertzRTPass05432
+      MARIADB_DATABASE: inetscann
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data: 

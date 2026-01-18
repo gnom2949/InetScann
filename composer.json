@@ -1,0 +1,10 @@
+{
+    "require": {
+        "willdurand/nmap": "@stable"
+    },
+    "config": {
+        "audit": {
+            "block-insecure": false
+        }
+    }
+}
