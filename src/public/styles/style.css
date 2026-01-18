@@ -1,0 +1,66 @@
+:root {
+    --gnome-blue1: #99c1f1;
+    --gnome-blue2: #62a0ea;
+    --gnome-blue3: #3584e4; 
+    --gnome-blue4: #1c71d8;
+    --gnome-blue5: #1a5fb4;
+    --gnome-green1: #8ff0a4;
+    --gnome-green2: #57e389;
+    --gnome-green3: #33d17a;
+    --gnome-green4: #2ec27e;
+    --gnome-green5: #26a269;
+    --gnome-ylw1: #f9f06b;
+    --gnome-ylw2: #f8e45c;
+    --gnome-ylw3: #f6d32d;
+    --gnome-ylw4: #f5c211;
+    --gnome-ylw5: #e5a50a;
+    --gnome-red1: #f66151;
+    --gnome-red2: #ed333b;
+    --gnome-red3: #e01b24;
+    --gnome-red4: #c01c28;
+    --gnome-red5: #a51d2d;
+    --gnome-pur1: #dc8add;
+    --gnome-pur2: #c061cb;
+    --gnome-pur3: #9141ac;
+    --gnome-pur4: #813d9c;
+    --gnome-pur5: #613583;
+    --gnome-br1: #cdab8f;
+    --gnome-br2: #b5835a;
+    --gnome-br3: #986a44;
+    --gnome-br4: #865e3c;
+    --gnome-br5: #63452c;
+    --gnome-light1: #ffffff;
+    --gnome-light2: #f6f5f4;
+    --gnome-light3: #deddda;
+    --gnome-light4: #c0bfbc;
+    --gnome-light5: #9a9996;
+    --gnome-dark1: #77767b;
+    --gnome-dark2: #5e5c64;
+    --gnome-dark3: #3d3846;
+    --gnome-dark4: #241f31;
+    --gnome-dark5: #000000;
+
+    /* Светлая тема в стиле GNOME HIG */
+    --gnome-lbg
+}
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--gnome-dark2);
+    background-color: var(--gnome-light1);
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.menu-btn {
+    background: var(--gnome-light3);
+    color: var(--gnome-dark2);
+}
