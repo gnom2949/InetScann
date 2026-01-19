@@ -1,2 +1,7 @@
-vendor
-composer.lock
+src/public/styles/mainPBuf
+src/public/styles/SecAuPBuf
+src/public/styles/ProfilesPBuf
+src/public/styles/NoProfilesPBuf
+src/public/styles/UserProfilePBuf
+src/public/styles/ProfileAddPBuf
+src/public/styles/SecAuSecGradePBuf
