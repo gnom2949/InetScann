@@ -1,6 +1,7 @@
 {
     "require": {
-        "willdurand/nmap": "@stable"
+        "willdurand/nmap": "@stable",
+        "predis/predis": "^3.3"
     },
     "config": {
         "audit": {
