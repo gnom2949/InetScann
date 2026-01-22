@@ -1,24 +1,37 @@
-# docker-compose.yml
-version: '3.8'
+version: "3.9"
 
 services:
-  web:
-    build: .
-    ports:
-      - "8000:80"
-    volumes:
-      - ./public:/var/www/html
-    depends_on:
-      - db
-    network_mode: "host"
+	app:
+		build: .
+		container_name: InetScannDocImg
+		ports:
+			- "8092:80"
+		volumes:
+			- ./src:/var/www/html
+		depends_on:
+			- mariadb
+			- redis
 
-  db:
-    image: mariadb:11
-    environment:
-      MARIADB_ROOT_PASSWORD: qwertzRTPass05432
-      MARIADB_DATABASE: inetscann
-    volumes:
-      - db_data:/var/lib/mysql
+	mariadb:
+		image: mariadb:11
+		container_name: mariadb
+		restart: always
+		env:
+			MYSQL_ROOT_PASSWORD: dog-hot-copper-linux619
+			MYSQL_DATABASE: InetScann
+			MYSQL_USER: ISnn/user
+			MYSQL_PASSWORD: ISnn/user/pass/dog-hot-copper-linux619
+		ports:
+			- "3314:3314"
+		volumes:
+			- mariadb_data:/var/lib/mysql
+
+	redis:
+		image: redis:8.4
+		container_name: redis
+		ports:
+			- "6379:6379"
+		command: ["redis-server", "--appendonly", "yes"]
 
 volumes:
-  db_data: 
+	mariadb_data:
