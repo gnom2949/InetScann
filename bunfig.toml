@@ -1,0 +1,6 @@
+[entrypoints]
+app = "src/public/ts/app.ts"
+
+[build]
+outdir = "dist"
+target = "browser"

@@ -1,0 +1,9 @@
+{
+  "name": "inetscann-frontend",
+  "module": "src/ts/main.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun build src/ts/main.ts --outdir public/js --watch",
+    "build": "bun build src/ts/main.ts --outdir public/js --minify"
+  }
+}

@@ -1,4 +1,4 @@
-/* === Палетта цветов GNOME === */
+/* === GNOME HIG COLOR PALETTE === */
 :root {
   --gnome-blue1: #99c1f1;
   --gnome-blue2: #62a0ea;
@@ -40,451 +40,190 @@
   --gnome-dark3: #3d3846;
   --gnome-dark4: #241f31;
   --gnome-dark5: #000000;
+
+  /* Темы */
+  --bg: var(--gnome-dark3);
+  --fg: var(--gnome-light2);
+  --header-bg: var(--gnome-blue3);
+  --header-fg: var(--gnome-light1);
+  --card-bg: rgba(94, 92, 100, 0.5);
+  --input-bg: var(--gnome-light2);
+  --input-fg: var(--gnome-dark2);
+  --button-bg: var(--gnome-blue3);
+  --button-fg: var(--gnome-light1);
+  --border: var(--gnome-light4);
+  --success: var(--gnome-green3);
+  --warning: var(--gnome-ylw3);
+  --error: var(--gnome-red3);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: var(--gnome-light1);
+    --fg: var(--gnome-dark2);
+    --card-bg: rgba(94, 92, 100, 0.1);
+    --input-bg: var(--gnome-light2);
+    --input-fg: var(--gnome-dark2);
+  }
 }
 
 /* === Базовые стили === */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: var(--gnome-dark3);
-  color: var(--gnome-light1);
-  min-height: 1150px;
-  position: relative;
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
+/* === Хедер === */
+.header {
+  background: var(--header-bg);
+  color: var(--header-fg);
+  padding: 0 20px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.header h1 {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* === Контент === */
 .page {
   display: none;
-  position: relative;
-  width: 1440px;
-  max-width: 100%;
-  margin: 0 auto;
 }
+.page.active { display: block; }
 
-.page.active {
-  display: block;
-}
-
-/* === Общие компоненты === */
-
-/* хедер */
-.header {
-  position: absolute;
-  width: 100%;
-  height: 60px;
-  top: 0;
-  left: 0;
-  background: var(--gnome-blue3);
-  z-index: 10;
-}
-
-.header-title {
-  position: absolute;
-  width: 251px;
-  height: 49px;
-  left: 5px;
-  top: 0;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 48px;
-  line-height: 58px;
-  color: var(--gnome-light1);
-}
-
-/* футер */
-.footer {
-  position: absolute;
-  width: 100%;
-  height: 49px;
-  bottom: 0;
-  left: 0;
-  background: var(--gnome-dark5);
-}
-
-/* Значок Copyright */
-.copyright {
-  position: absolute;
-  width: 61px;
-  height: 10px;
-  left: 2px;
-  bottom: 14px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 12px;
-  line-height: 15px;
-  color: var(--gnome-light1);
-}
-/* Текст */
-.team {
-  position: absolute;
-  width: 241px;
-  height: 11px;
-  left: 81px;
-  bottom: 13px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 12px;
-  line-height: 15px;
-  color: var(--gnome-light1);
-}
-
-/* Текст лицензии */
-.license {
-  position: absolute;
-  width: 227px;
-  height: 13px;
-  left: 2px;
-  bottom: 48px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 12px;
-  line-height: 15px;
-  color: var(--gnome-light1);
-}
-
-/* Область контента */
-.content-area {
-  position: absolute;
-  width: 1392px;
-  height: 905px;
-  left: 24px;
-  top: 142px;
-  background: rgba(94, 92, 100, 0.5);
+.container {
+  background: var(--card-bg);
   border-radius: 33px;
   padding: 40px;
-  box-sizing: border-box;
+  margin-top: 20px;
 }
 
-/* Имя страницы */
+/* === Заголовки === */
 .page-title {
-  position: absolute;
-  left: 500px;
-  top: 72px;
-  font-family: 'Inter';
-  font-weight: 900;
   font-size: 48px;
-  line-height: 58px;
+  font-weight: 900;
+  margin-bottom: 30px;
   color: var(--gnome-dark5);
 }
 
-/* === Основная страница === */
-.main-grid {
+/* === Кнопки === */
+.main-menu {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  position: absolute;
-  top: 156px;
-  left: 32px;
-  width: 1392px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 20px;
 }
 
-/* Основная карточка */
-.main-card {
-  background: var(--gnome-light3);
-  border-radius: 34px;
-  height: 256px;
+.menu-button {
+  background: var(--gnome-light2);
+  color: var(--gnome-dark2);
+  border: 2px solid var(--gnome-light4);
+  border-radius: 12px;
+  padding: 24px;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  gap: 8px;
+  transition: transform 0.1s, box-shadow 0.1s;
   position: relative;
 }
 
-/* Имя основной карточки */
-.main-card-title {
-  position: absolute;
-  bottom: 20px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 48px;
-  line-height: 58px;
-  color: var(--gnome-dark5);
-  text-align: center;
+.menu-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* === Страница аудита безопасности === */
-.security-grade-display {
-  position: absolute;
-  left: 81px;
-  top: 319px;
-  width: 256px;
-  height: 256px;
+.menu-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Кружок оценки */
-.grade-circle {
-  position: absolute;
-  width: 256px;
-  height: 256px;
-  border-radius: 50%;
-  background: var(--gnome-red3);
-}
-
-/* Оценка */
-.grade-number {
-  position: absolute;
-  left: 35.16%;
-  right: 32.81%;
-  top: 18.36%;
-  bottom: 33.59%;
-  font-family: 'CaskaydiaCove NF';
-  font-weight: 700;
-  font-size: 128px;
-  line-height: 149px;
-  color: var(--gnome-red3);
-}
-
-/* Информация о устройстве */
-.device-info {
-  position: absolute;
-  left: 54px;
-  top: 694px;
-}
-
-/* Имя устройства */
-.device-name {
-  position: absolute;
-  left: 8px;
-  top: 74px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 48px;
-  line-height: 58px;
-  color: var(--gnome-dark5);
-}
-
-/* ip устройства */
-.device-ipv4 {
-  position: absolute;
-  left: 12px;
-  top: 136px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 48px;
-  line-height: 58px;
-  color: var(--gnome-light1);
-}
-
-/* Имя страницы уязвимостей */
-.vulnerabilities-title {
-  position: absolute;
-  left: 522px;
-  top: 158px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 48px;
-  line-height: 58px;
-  color: var(--gnome-light1);
-}
-
-/* ячейка уязвимости( то есть элемент куда выводится информация о уязвимостях) */
-.vulnerability-item {
-  position: absolute;
-  left: 470px;
-  top: 258px;
-  width: 899px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 32px;
-  line-height: 39px;
-  color: var(--gnome-light1);
-}
-
-/* === Страница сохраненных профилей сканирования === */
-.profile-item {
-  position: absolute;
-  width: 1356px;
-  height: 78px;
-  background: var(--gnome-light5);
-  border-radius: 37px;
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Имя профиля */
-.profile-name {
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 32px;
-  line-height: 39px;
-  color: var(--gnome-light1);
-}
-
-/* iD и БД профиля */
-.profile-id,
-.profile-db {
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 32px;
-  line-height: 39px;
-  color: var(--gnome-light1);
-}
-
-/* Cтатус: Активен */
-.profile-status.active {
-  color: var(--gnome-green3);
-}
-
-/* Cтатус: Не активен */
-.profile-status.inactive {
-  color: var(--gnome-red3);
-}
-
-/* Кнопка показа профиля */
-.profile-view-btn {
-  position: absolute;
-  right: 20px;
-  width: 192px;
-  height: 64px;
-  background: var(--gnome-blue3);
-  border-radius: 82px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 40px;
-  line-height: 48px;
-  color: var(--gnome-light1);
-  border: none;
-  cursor: pointer;
-}
-
-/* === Страница создания профиля === */
-.profile-creation-form {
-  position: absolute;
-  width: 1135px;
-  height: 782px;
-  left: 162px;
-  top: 200px;
-  background: var(--gnome-light1);
-  border-radius: 33px;
-  padding: 30px;
-}
-
-/* Название формы */
-.form-title {
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 44px;
-  color: var(--gnome-blue3);
-  margin-bottom: 20px;
-}
-
-/* Группа ввода */
-.input-group {
-  position: relative;
-  width: 1118px;
-  height: 120px;
-  background: var(--gnome-dark1);
-  border-radius: 3px;
-  padding: 20px;
-}
-
-/* Поле ввода (куда мы вводим название профиля) */
-.input-field {
-  width: 1042px;
-  height: 59px;
-  background: #D9D9D9;
-  border-radius: 84px;
-  border: none;
-  padding: 0 30px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 32px;
-  line-height: 39px;
-  color: var(--gnome-dark5);
-}
-
-/* Кнопка 'Go!' */
-.go-btn {
-  position: absolute;
-  right: 10px;
-  top: 5px;
-  width: 81px;
-  height: 50px;
-  background: var(--gnome-blue3);
-  border-radius: 84px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 30px;
-  line-height: 36px;
-  color: var(--gnome-light1);
-  border: none;
-  cursor: pointer;
-}
-
-/* Список устройств */
-.device-list {
-  position: absolute;
-  width: 1099px;
-  height: 473px;
-  left: 180px;
-  top: 495px;
-  background: var(--gnome-dark1);
-  border-radius: 33px;
-  padding: 20px;
-}
-
-/* Имя списка устройств */
-.device-list-title {
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 40px;
-  line-height: 48px;
-  color: var(--gnome-blue3);
-  margin-bottom: 20px;
-}
-
-/* Опция устройства */
-.device-option {
-  width: 1078px;
-  height: 68px;
-  background: var(--gnome-light5);
-  border-radius: 25px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-/* Название опции устройства */
-.device-option-name {
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 32px;
-  line-height: 39px;
-  color: var(--gnome-light1);
-}
-
-/* === Страница без профилей === */
-.no-profiles-btn {
-  position: absolute;
-  left: 530px;
-  top: 475px;
-  width: 356px;
-  height: 128px;
-  background: var(--gnome-blue3);
-  border-radius: 74px;
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 36px;
-  line-height: 44px;
-  color: var(--gnome-light1);
-  border: none;
-  cursor: pointer;
-}
-
-/* === Иконки === */
-.icon {
+.menu-button .icon-wrapper {
   width: 48px;
   height: 48px;
-  color: var(--gnome-dark5);
+  background: var(--gnome-light4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.menu-button svg {
+  width: 24px;
+  height: 24px;
+  color: var(--gnome-blue3);
+}
+
+/* === Назад === */
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 0;
+  font-size: 24px;
+}
+
+/* === Консоль === */
+.console-output {
+  background: #1e1e1e;
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  font-family: 'CaskaydiaCove NF', monospace;
+  max-height: 400px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.input-field {
+  flex: 1;
+  padding: 16px;
+  border-radius: 84px;
+  background: var(--input-bg);
+  color: var(--input-fg);
+  font-size: 32px;
+  border: none;
+}
+.input-label {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+/* === Футер === */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--gnome-dark5);
+  color: var(--gnome-light1);
+  font-size: 12px;
+  font-weight: 900;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
 }

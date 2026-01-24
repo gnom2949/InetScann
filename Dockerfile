@@ -11,6 +11,8 @@ RUN apt-get update && apt-get install -y \
 	libonig-dev \
 	mariadb-client \
 	phpmyadmin \
+	jq \
+	redis-tools \
 	&& docker-php-ext-install pdo pdo_mysql
 
 # Установка Redis и зависимостей к нему
@@ -28,6 +30,5 @@ RUN a2enmod rewrite
 
 # Копирование проекта в /var/www/html то есть рабочую директорию для apache
 COPY ./src /var/www/html
-
 # Права
 RUN chown -R www-data:www-data /var/www/html

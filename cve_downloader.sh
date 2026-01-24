@@ -18,7 +18,7 @@ echo "$DATA" | jq -c '.[]' | while read -r item; do
 	MODIFIED=$(echo "$item" | jq -r '.Modified')
 
 	# Добавляем Hash
-	redis-cli HMSET "cve:$CVE_ID" \
+	redis-cli HSET "cve:$CVE_ID" \
 		id "$CVE_ID" \
 		summary "$SUMMARY" \
 		cvss "$CVSS" \
