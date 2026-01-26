@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  background: var(--color-bg-main);
+  font-family: var(--font-main);
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  height: 60px;
+  background: var(--color-bg-header);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.header-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-heavy);
+}
+
+/* Footer */
+.footer {
+  height: 49px;
+  background: var(--color-bg-footer);
+  color: white;
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+/* Панель */
+.panel {
+  background: var(--color-bg-panel);
+  border-radius: var(--radius-panel);
+  margin: 32px;
+  padding: 32px;
+}
+
+/* Заголовок "Choose an option" */
+.panel-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-heavy);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Сетка карточек */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/* Карточка */
+.card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  height: 256px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-heavy);
+  color: black;
+}
+

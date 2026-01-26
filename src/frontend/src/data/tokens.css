@@ -1,0 +1,26 @@
+:root {
+  /* Цвета */
+  --color-bg-main: #3D3846;
+  --color-bg-header: #3584E4;
+  --color-bg-footer: #000000;
+  --color-bg-panel: rgba(94, 92, 100, 0.5);
+  --color-bg-card: #DEDDDA;
+
+  /* Текст */
+  --font-main: 'Inter', sans-serif;
+  --font-weight-heavy: 900;
+
+  --text-xl: 48px;
+  --text-lg: 40px;
+  --text-md: 32px;
+  --text-sm: 12px;
+
+  /* Радиусы */
+  --radius-card: 34px;
+  --radius-panel: 33px;
+
+  /* Размеры */
+  --layout-max-width: 1440px;
+  --layout-padding: 32px;
+}
+

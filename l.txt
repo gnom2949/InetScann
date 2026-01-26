@@ -1,0 +1,8934 @@
+Main page
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 712px;
+top: 567px;
+
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 InetScann */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 715px;
+left: 32px;
+top: 156px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Rectangle 3 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 172px;
+top: 270px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 465px;
+top: 273px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 758px;
+top: 270px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 10 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 1071px;
+top: 270px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 11 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 1074px;
+top: 560px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 274px;
+height: 256px;
+left: 465px;
+top: 560px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 779px;
+top: 560px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 172px;
+top: 560px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 369px;
+top: 279px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.2%;
+right: 6.3%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 369px;
+top: 577px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 6.25%;
+bottom: 6.25%;
+
+background: #222222;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 1273px;
+top: 574px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 6.25%;
+bottom: 6.25%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 6.25%;
+bottom: 6.25%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 24.12%;
+right: 55.47%;
+top: 30.47%;
+bottom: 36.76%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 50%;
+right: 31.25%;
+top: 56.25%;
+bottom: 37.5%;
+
+background: #222222;
+
+
+/* Choose an option */
+
+position: absolute;
+width: 450px;
+height: 70px;
+left: 515px;
+top: 171px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Scan Network */
+
+position: absolute;
+width: 208px;
+height: 142px;
+left: 192px;
+top: 355px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Ping Device */
+
+position: absolute;
+width: 200px;
+height: 121px;
+left: 493px;
+top: 355px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Security Audit */
+
+position: absolute;
+width: 243px;
+height: 112px;
+left: 773px;
+top: 360px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Export Report */
+
+position: absolute;
+width: 210px;
+height: 109px;
+left: 1074px;
+top: 350px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Saved Scan Profiles */
+
+position: absolute;
+width: 203px;
+height: 172px;
+left: 197px;
+top: 624px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* View MAC Addresses */
+
+position: absolute;
+width: 292px;
+height: 192px;
+left: 469px;
+top: 584px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* View Saved Devices */
+
+position: absolute;
+width: 218px;
+height: 178px;
+left: 796px;
+top: 598px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Enter User Command */
+
+position: absolute;
+width: 251px;
+height: 158px;
+left: 1082px;
+top: 602px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 1273px;
+top: 273px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 6.25%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 970px;
+top: 574px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0%;
+right: 0.2%;
+top: 6.25%;
+bottom: 0%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 62.5%;
+top: 25%;
+bottom: 27.71%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 68.75%;
+top: 6.25%;
+bottom: 81.25%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 42.97%;
+right: 6.25%;
+top: 12.18%;
+bottom: 43.75%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 18.55%;
+right: 0.2%;
+top: 62.5%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* computer-symbolic 1 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 664px;
+top: 279px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* horizontal-arrows-symbolic 1 */
+
+position: absolute;
+left: 20.83%;
+right: 20.83%;
+top: 10.42%;
+bottom: 31.25%;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0.51%;
+right: 0.52%;
+top: 6.25%;
+bottom: 6.25%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 31.26%;
+right: 0.52%;
+top: 6.25%;
+bottom: 43.75%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 0.51%;
+right: 31.26%;
+top: 43.75%;
+bottom: 6.25%;
+
+background: #222222;
+
+
+/* edit-find-symbolic 1 */
+
+position: absolute;
+width: 56px;
+height: 56px;
+left: 671px;
+top: 566px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 6.25%;
+top: 0%;
+bottom: 6.3%;
+
+background: #222222;
+
+
+/* x-office-document-symbolic 1 */
+
+position: absolute;
+left: 16.07%;
+right: 33.93%;
+top: 14.29%;
+bottom: 35.71%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.3%;
+right: 12.7%;
+top: 6.27%;
+bottom: -0.02%;
+
+background: #222222;
+
+
+/* key4-symbolic 1 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 946px;
+top: 285px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 25%;
+right: 62.5%;
+top: 62.5%;
+bottom: 25%;
+
+background: #222222;
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 96px;
+height: 96px;
+left: 32px;
+top: 892px;
+
+background: #3584E4;
+
+
+/* settings-symbolic 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 48px;
+top: 908px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.37%;
+right: 6.37%;
+top: 6.37%;
+bottom: 6.37%;
+
+background: #FFFFFF;
+
+
+
+settings page
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 712px;
+top: 567px;
+
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 InetScann */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 715px;
+left: 32px;
+top: 156px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Rectangle 3 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 172px;
+top: 270px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 465px;
+top: 273px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 758px;
+top: 270px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 10 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 1071px;
+top: 270px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 11 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 1074px;
+top: 560px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 274px;
+height: 256px;
+left: 465px;
+top: 560px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 779px;
+top: 560px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 172px;
+top: 560px;
+
+background: #DEDDDA;
+border-radius: 34px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 369px;
+top: 279px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.2%;
+right: 6.3%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 369px;
+top: 577px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 6.25%;
+bottom: 6.25%;
+
+background: #222222;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 1273px;
+top: 574px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 6.25%;
+bottom: 6.25%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 6.25%;
+bottom: 6.25%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 24.12%;
+right: 55.47%;
+top: 30.47%;
+bottom: 36.76%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 50%;
+right: 31.25%;
+top: 56.25%;
+bottom: 37.5%;
+
+background: #222222;
+
+
+/* Choose an option */
+
+position: absolute;
+width: 450px;
+height: 70px;
+left: 515px;
+top: 171px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Scan Network */
+
+position: absolute;
+width: 208px;
+height: 142px;
+left: 192px;
+top: 355px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Ping Device */
+
+position: absolute;
+width: 200px;
+height: 121px;
+left: 493px;
+top: 355px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Security Audit */
+
+position: absolute;
+width: 243px;
+height: 112px;
+left: 773px;
+top: 360px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Export Report */
+
+position: absolute;
+width: 210px;
+height: 109px;
+left: 1074px;
+top: 350px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Saved Scan Profiles */
+
+position: absolute;
+width: 203px;
+height: 172px;
+left: 197px;
+top: 624px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* View MAC Addresses */
+
+position: absolute;
+width: 292px;
+height: 192px;
+left: 469px;
+top: 584px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* View Saved Devices */
+
+position: absolute;
+width: 218px;
+height: 178px;
+left: 796px;
+top: 598px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Enter User Command */
+
+position: absolute;
+width: 251px;
+height: 158px;
+left: 1082px;
+top: 602px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 1273px;
+top: 273px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 6.25%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 970px;
+top: 574px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0%;
+right: 0.2%;
+top: 6.25%;
+bottom: 0%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 62.5%;
+top: 25%;
+bottom: 27.71%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 68.75%;
+top: 6.25%;
+bottom: 81.25%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 42.97%;
+right: 6.25%;
+top: 12.18%;
+bottom: 43.75%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 18.55%;
+right: 0.2%;
+top: 62.5%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* computer-symbolic 1 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 664px;
+top: 279px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* horizontal-arrows-symbolic 1 */
+
+position: absolute;
+left: 20.83%;
+right: 20.83%;
+top: 10.42%;
+bottom: 31.25%;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0.51%;
+right: 0.52%;
+top: 6.25%;
+bottom: 6.25%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 31.26%;
+right: 0.52%;
+top: 6.25%;
+bottom: 43.75%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 0.51%;
+right: 31.26%;
+top: 43.75%;
+bottom: 6.25%;
+
+background: #222222;
+
+
+/* edit-find-symbolic 1 */
+
+position: absolute;
+width: 56px;
+height: 56px;
+left: 671px;
+top: 566px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 6.25%;
+top: 0%;
+bottom: 6.3%;
+
+background: #222222;
+
+
+/* x-office-document-symbolic 1 */
+
+position: absolute;
+left: 16.07%;
+right: 33.93%;
+top: 14.29%;
+bottom: 35.71%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.3%;
+right: 12.7%;
+top: 6.27%;
+bottom: -0.02%;
+
+background: #222222;
+
+
+/* key4-symbolic 1 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 946px;
+top: 285px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 25%;
+right: 62.5%;
+top: 62.5%;
+bottom: 25%;
+
+background: #222222;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+width: 1440px;
+height: 1150px;
+left: 0px;
+top: 0px;
+
+background: #282626;
+opacity: 0.96;
+
+
+/* Group 1 */
+
+position: absolute;
+width: 1063px;
+height: 817px;
+left: 176px;
+top: 156px;
+
+
+
+/* Rectangle 12 */
+
+position: absolute;
+width: 1063px;
+height: 817px;
+left: 176px;
+top: 156px;
+
+background: #DEDDDA;
+border-radius: 37px;
+
+
+/* InetScann Settings */
+
+position: absolute;
+width: 396px;
+height: 47px;
+left: 487px;
+top: 173px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 48px;
+
+color: #000000;
+
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 186px;
+top: 915px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 1.24%;
+bottom: 1.24%;
+
+background: #000000;
+
+
+/* Theme */
+
+position: absolute;
+width: 125px;
+height: 46px;
+left: 189px;
+top: 260px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #000000;
+
+
+
+/* Switch
+
+Switches are the preferred way to adjust settings. They&#39;re used to control binary options – think On/Off or True/False.
+*/
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 2px 8px;
+
+position: absolute;
+width: 52px;
+height: 32px;
+left: 317px;
+top: 266px;
+
+/* M3/sys/light/surface-container-highest */
+background: #E6E0E9;
+/* M3/sys/light/outline */
+border: 2px solid #79747E;
+border-radius: 100px;
+
+
+/* Handle */
+
+width: 36px;
+height: 28px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Target */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 4px;
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: -16px;
+top: calc(50% - 48px/2);
+
+
+
+/* State-layer */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 12px;
+gap: 8px;
+
+width: 40px;
+height: 40px;
+
+border-radius: 100px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Handle shape */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 7px;
+
+width: 16px;
+height: 16px;
+
+/* M3/sys/light/outline */
+background: #79747E;
+border-radius: 24px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+width: 2px;
+height: 2px;
+
+border-radius: 100px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* something illegal */
+
+position: absolute;
+width: 119px;
+height: 14px;
+left: 1060px;
+top: 952px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 100;
+font-size: 10px;
+line-height: 12px;
+
+color: #000000;
+
+
+
+SSP-> Saved Scan Profiles
+
+SSP:No Profiles
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 905px;
+left: 33px;
+top: 147px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* Saved Scan Profiles */
+
+position: absolute;
+width: 479px;
+height: 58px;
+left: 464px;
+top: 72px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 7px;
+top: 93px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+/* Group 2 */
+
+position: absolute;
+width: 356px;
+height: 128px;
+left: 530px;
+top: 475px;
+
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 356px;
+height: 128px;
+left: 530px;
+top: 475px;
+
+background: #3584E4;
+border-radius: 74px;
+
+
+/* Create New Profile */
+
+position: absolute;
+width: 335px;
+height: 60px;
+left: 542px;
+top: 516px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 44px;
+
+color: #FFFFFF;
+
+
+
+SSP:Profile Add
+
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 905px;
+left: 33px;
+top: 147px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* Saved Scan Profiles */
+
+position: absolute;
+width: 479px;
+height: 58px;
+left: 464px;
+top: 72px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 7px;
+top: 93px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 1135px;
+height: 782px;
+left: 162px;
+top: 200px;
+
+background: #FFFFFF;
+border-radius: 33px;
+
+
+/* Profile Creation */
+
+position: absolute;
+width: 298px;
+height: 45px;
+left: 555px;
+top: 227px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 44px;
+
+color: #3584E4;
+
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 1118px;
+height: 120px;
+left: 170px;
+top: 295px;
+
+background: #77767B;
+border-radius: 3px;
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 1042px;
+height: 59px;
+left: 230px;
+top: 330px;
+
+background: #D9D9D9;
+border-radius: 84px;
+
+
+/* Rounded rectangle */
+
+position: absolute;
+width: 81px;
+height: 50px;
+left: 1184px;
+top: 335px;
+
+background: #3584E4;
+border-radius: 84px;
+
+
+/* Go! */
+
+position: absolute;
+width: 59px;
+height: 36px;
+left: 1193px;
+top: 342px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 30px;
+line-height: 36px;
+
+color: #FFFFFF;
+
+
+
+/* person-symbolic 1 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 173px;
+top: 334px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 6.25%;
+bottom: 6.25%;
+
+background: #222222;
+
+
+/* Enter Profile name */
+
+position: absolute;
+width: 369px;
+height: 37px;
+left: 263px;
+top: 341px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #000000;
+
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 1099px;
+height: 473px;
+left: 180px;
+top: 495px;
+
+background: #77767B;
+border-radius: 33px;
+
+
+/* Choose Scanned Device */
+
+position: absolute;
+width: 515px;
+height: 52px;
+left: 460px;
+top: 429px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 48px;
+
+color: #3584E4;
+
+
+
+/* Group 4 */
+
+position: absolute;
+width: 1078px;
+height: 68px;
+left: 188px;
+top: 507px;
+
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 1078px;
+height: 68px;
+left: 188px;
+top: 507px;
+
+background: #9A9996;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 204px;
+top: 516px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector 2 */
+
+position: absolute;
+width: 0.95px;
+height: 0.11px;
+left: 197.64px;
+top: 542.34px;
+
+border: 10px solid #E01B24;
+
+
+/* Dave’s iPhone */
+
+position: absolute;
+width: 245px;
+height: 36px;
+left: 254px;
+top: 523px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+SSP:Profiles
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* BottomBar */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 905px;
+left: 33px;
+top: 147px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Saved Scan Profiles */
+
+position: absolute;
+width: 479px;
+height: 58px;
+left: 464px;
+top: 72px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 7px;
+top: 93px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+/* Profile */
+
+position: absolute;
+width: 1356px;
+height: 78px;
+left: 54px;
+top: 168px;
+
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 1356px;
+height: 78px;
+left: 54px;
+top: 168px;
+
+background: #9A9996;
+border-radius: 37px;
+
+
+/* user-info-symbolic 1 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 77px;
+top: 183px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 37.5%;
+top: 0%;
+bottom: 18.75%;
+
+background: #000000;
+
+
+/* Vector */
+
+position: absolute;
+left: 50%;
+right: 0%;
+top: 50%;
+bottom: 0%;
+
+background: #000000;
+
+
+/* Dave’s Profile. */
+
+position: absolute;
+width: 238px;
+height: 37px;
+left: 150px;
+top: 193px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* PiD: */
+
+position: absolute;
+width: 69px;
+height: 37px;
+left: 426px;
+top: 194px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* 3 */
+
+position: absolute;
+width: 56px;
+height: 37px;
+left: 495px;
+top: 193px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* DB: */
+
+position: absolute;
+width: 57px;
+height: 37px;
+left: 587px;
+top: 193px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Active */
+
+position: absolute;
+width: 114px;
+height: 37px;
+left: 657px;
+top: 193px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #33D17A;
+
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 192px;
+height: 64px;
+left: 1209px;
+top: 176px;
+
+background: #3584E4;
+border-radius: 82px;
+
+
+/* View */
+
+position: absolute;
+width: 129px;
+height: 33px;
+left: 1244px;
+top: 184px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 48px;
+
+color: #FFFFFF;
+
+
+
+/* Profile */
+
+position: absolute;
+width: 1356px;
+height: 78px;
+left: 54px;
+top: 268px;
+
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 1356px;
+height: 78px;
+left: 54px;
+top: 268px;
+
+background: #9A9996;
+border-radius: 37px;
+
+
+/* user-info-symbolic 1 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 77px;
+top: 283px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 37.5%;
+top: 0%;
+bottom: 18.75%;
+
+background: #000000;
+
+
+/* Vector */
+
+position: absolute;
+left: 50%;
+right: 0%;
+top: 50%;
+bottom: 0%;
+
+background: #000000;
+
+
+/* Jack’s Profile. */
+
+position: absolute;
+width: 238px;
+height: 37px;
+left: 150px;
+top: 293px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* PiD: */
+
+position: absolute;
+width: 69px;
+height: 37px;
+left: 426px;
+top: 294px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* 3 */
+
+position: absolute;
+width: 56px;
+height: 37px;
+left: 495px;
+top: 293px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* DB: */
+
+position: absolute;
+width: 57px;
+height: 37px;
+left: 587px;
+top: 293px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Inactive */
+
+position: absolute;
+width: 147px;
+height: 37px;
+left: 657px;
+top: 293px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #E01B24;
+
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 192px;
+height: 64px;
+left: 1209px;
+top: 276px;
+
+background: #3584E4;
+border-radius: 82px;
+
+
+/* View */
+
+position: absolute;
+width: 129px;
+height: 33px;
+left: 1244px;
+top: 284px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 48px;
+
+color: #FFFFFF;
+
+
+
+/* Footer */
+
+position: absolute;
+width: 1440px;
+height: 79.88px;
+left: 0px;
+top: -7.94px;
+
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+SSP:User Profile
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* BottomBar */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 905px;
+left: 33px;
+top: 147px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Saved Scan Profiles */
+
+position: absolute;
+width: 479px;
+height: 58px;
+left: 464px;
+top: 72px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 7px;
+top: 93px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+/* Footer */
+
+position: absolute;
+width: 1440px;
+height: 79.88px;
+left: 0px;
+top: -7.94px;
+
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* Group 2 */
+
+position: absolute;
+width: 128px;
+height: 128px;
+left: 78px;
+top: 228px;
+
+
+
+/* Ellipse 2 */
+
+position: absolute;
+width: 128px;
+height: 128px;
+left: 78px;
+top: 228px;
+
+background: #D9D9D9;
+
+
+/* person-symbolic 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 110px;
+top: 292px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 7.64%;
+right: 87.92%;
+top: 22.52%;
+bottom: 71.91%;
+
+background: #222222;
+
+
+/* plus-circle-filled-symbolic 1 */
+
+position: absolute;
+width: 32px;
+height: 32px;
+left: 171px;
+top: 328px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 6.25%;
+top: 6.45%;
+bottom: 6.05%;
+
+background: #FFFFFF;
+
+
+/* Password: */
+
+position: absolute;
+width: 189px;
+height: 38px;
+left: 69px;
+top: 415px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Group 3 */
+
+position: absolute;
+width: 299px;
+height: 47px;
+left: 240px;
+top: 411px;
+
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 299px;
+height: 47px;
+left: 240px;
+top: 411px;
+
+background: #D9D9D9;
+border-radius: 40px;
+
+
+/* password-entry-symbolic 1 */
+
+position: absolute;
+width: 32px;
+height: 32px;
+left: 258px;
+top: 419px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0.57%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #222222;
+
+
+/* check-plain-symbolic 2 */
+
+position: absolute;
+width: 32px;
+height: 32px;
+left: 500px;
+top: 419px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.49%;
+top: 18.73%;
+bottom: 18.75%;
+
+background: #222222;
+
+
+/* Name */
+
+position: absolute;
+width: 160px;
+height: 38px;
+left: 69px;
+top: 492px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* DataBase: */
+
+position: absolute;
+width: 171px;
+height: 39px;
+left: 69px;
+top: 557px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Group 4 */
+
+position: absolute;
+width: 299px;
+height: 47px;
+left: 240px;
+top: 483px;
+
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 299px;
+height: 47px;
+left: 240px;
+top: 483px;
+
+background: #D9D9D9;
+border-radius: 40px;
+
+
+/* Dave’s Profile */
+
+position: absolute;
+width: 255px;
+height: 25px;
+left: 258px;
+top: 489px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+
+color: #000000;
+
+
+
+/* check-plain-symbolic 1 */
+
+position: absolute;
+width: 32px;
+height: 32px;
+left: 500px;
+top: 491px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.49%;
+top: 18.73%;
+bottom: 18.75%;
+
+background: #222222;
+
+
+/* Dave’s Profile */
+
+position: absolute;
+width: 290px;
+height: 46px;
+left: 63px;
+top: 159px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 48px;
+
+color: #FFFFFF;
+
+
+
+/* MariaDB, */
+
+position: absolute;
+width: 151px;
+height: 38px;
+left: 245px;
+top: 558px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Status: */
+
+position: absolute;
+width: 121px;
+height: 36px;
+left: 407px;
+top: 560px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Active */
+
+position: absolute;
+width: 114px;
+height: 37px;
+left: 536px;
+top: 562px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #33D17A;
+
+
+
+/* DB Table: */
+
+position: absolute;
+width: 153px;
+height: 27px;
+left: 69px;
+top: 620px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* InetScann/Users/Daves_Profile */
+
+position: absolute;
+width: 409px;
+height: 29px;
+left: 241px;
+top: 628px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Dave */
+
+position: absolute;
+width: 160px;
+height: 60px;
+left: 247px;
+top: 262px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Manage Devices Group */
+
+position: absolute;
+width: 658px;
+height: 872px;
+left: 729px;
+top: 162px;
+
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 658px;
+height: 812px;
+left: 729px;
+top: 222px;
+
+background: #222222;
+opacity: 0.9;
+border-radius: 48px;
+
+
+/* Group 5 */
+
+position: absolute;
+width: 628px;
+height: 68px;
+left: 742px;
+top: 254px;
+
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 628px;
+height: 68px;
+left: 742px;
+top: 254px;
+
+background: #9A9996;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 759px;
+top: 263px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector 2 */
+
+position: absolute;
+width: 0.55px;
+height: 0.11px;
+left: 751.61px;
+top: 289.34px;
+
+border: 10px solid #E01B24;
+
+
+/* Dave’s iPhone */
+
+position: absolute;
+width: 351.65px;
+height: 36px;
+left: 813.45px;
+top: 270px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Manage devices */
+
+position: absolute;
+width: 332px;
+height: 42px;
+left: 902px;
+top: 162px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 48px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 95px;
+height: 58px;
+left: 762px;
+top: 956px;
+
+background: #3584E4;
+border-radius: 48px;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 140px;
+height: 58px;
+left: 1036px;
+top: 956px;
+
+background: #E66100;
+border-radius: 48px;
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 174px;
+height: 58px;
+left: 1190px;
+top: 956px;
+
+background: #33D17A;
+border-radius: 48px;
+
+
+/* Rounded rectangle */
+
+position: absolute;
+width: 149px;
+height: 58px;
+left: 872px;
+top: 956px;
+
+background: #C01C28;
+border-radius: 48px;
+
+
+/* Add */
+
+position: absolute;
+width: 73px;
+height: 38px;
+left: 773px;
+top: 966px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Remove */
+
+position: absolute;
+width: 134px;
+height: 28px;
+left: 883px;
+top: 966px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Rename */
+
+position: absolute;
+width: 134px;
+height: 28px;
+left: 1216px;
+top: 969px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* About */
+
+position: absolute;
+width: 134px;
+height: 28px;
+left: 1053px;
+top: 966px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+Security Audit
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 905px;
+left: 33px;
+top: 147px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* Security Audit */
+
+position: absolute;
+width: 355px;
+height: 58px;
+left: 500px;
+top: 72px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Choose Device */
+
+position: absolute;
+width: 389px;
+height: 44px;
+left: 500px;
+top: 160px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 1365px;
+height: 801px;
+left: 46px;
+top: 227px;
+
+background: rgba(119, 118, 123, 0.85);
+border-radius: 33px;
+
+
+/* Group 2 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 70px;
+top: 242px;
+
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 70px;
+top: 242px;
+
+background: #9A9996;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 90px;
+top: 251px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector 2 */
+
+position: absolute;
+width: 1.16px;
+height: 0.11px;
+left: 81.77px;
+top: 277.34px;
+
+border: 10px solid #E01B24;
+
+
+/* Dave’s iPhone */
+
+position: absolute;
+width: 239px;
+height: 36px;
+left: 151px;
+top: 258px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Group 3 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 70px;
+top: 322px;
+
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 70px;
+top: 322px;
+
+background: #9A9996;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 90px;
+top: 331px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector 2 */
+
+position: absolute;
+width: 1.16px;
+height: 0.11px;
+left: 81.77px;
+top: 357.34px;
+
+border: 10px solid #E01B24;
+
+
+/* Dave’s iPhone */
+
+position: absolute;
+width: 239px;
+height: 36px;
+left: 151px;
+top: 338px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Group 4 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 70px;
+top: 402px;
+
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 70px;
+top: 402px;
+
+background: #9A9996;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 90px;
+top: 411px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector 2 */
+
+position: absolute;
+width: 1.16px;
+height: 0.11px;
+left: 81.77px;
+top: 437.34px;
+
+border: 10px solid #E01B24;
+
+
+/* Dave’s iPhone */
+
+position: absolute;
+width: 239px;
+height: 36px;
+left: 151px;
+top: 418px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 7px;
+top: 93px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+Security Audit::Security Grade
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 905px;
+left: 31px;
+top: 142px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* Security Audit */
+
+position: absolute;
+width: 355px;
+height: 58px;
+left: 500px;
+top: 72px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 7px;
+top: 93px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+/* Your Security Grade */
+
+position: absolute;
+width: 344px;
+height: 108px;
+left: 55px;
+top: 170px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Frame */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 81px;
+top: 319px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 6.25%;
+top: 6.25%;
+bottom: 6.25%;
+
+background: #E01B24;
+
+
+/* 2 */
+
+position: absolute;
+left: 35.16%;
+right: 32.81%;
+top: 18.36%;
+bottom: 33.59%;
+
+font-family: 'CaskaydiaCove NF';
+font-style: normal;
+font-weight: 700;
+font-size: 128px;
+line-height: 149px;
+
+color: #E01B24;
+
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 0px;
+height: 857px;
+left: 418.5px;
+top: 164.5px;
+
+border: 1px solid #000000;
+
+
+/* Vector 2 */
+
+position: absolute;
+width: 383px;
+height: 0px;
+left: 37px;
+top: 664px;
+
+border: 1px solid #000000;
+
+
+/* Device: */
+
+position: absolute;
+width: 223px;
+height: 56px;
+left: 54px;
+top: 694px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Google Pixel 7 pro */
+
+position: absolute;
+width: 337px;
+height: 106px;
+left: 62px;
+top: 768px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+
+/* ipv4: 192.168.107.6 */
+
+position: absolute;
+width: 333px;
+height: 98px;
+left: 66px;
+top: 904px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Potential vulnerabilities */
+
+position: absolute;
+width: 574px;
+height: 58px;
+left: 522px;
+top: 158px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* code-symbolic 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 1106px;
+top: 158px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 3.71%;
+right: 3.71%;
+top: 25%;
+bottom: 25%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 62.5%;
+right: 3.71%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 3.71%;
+right: 62.5%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+/* Linus Droidvalds exploit. Danger: Very High! */
+
+position: absolute;
+width: 899px;
+height: 48px;
+left: 470px;
+top: 258px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Vector 3 */
+
+position: absolute;
+width: 999px;
+height: 86px;
+left: 420px;
+top: 233px;
+
+border: 1px solid #000000;
+
+
+View Saved Devices
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1153px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 712px;
+top: 567px;
+
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Group 4 */
+
+position: absolute;
+width: 1440px;
+height: 51.01px;
+left: 0px;
+top: 1104px;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1104px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1138px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1139px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1105px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Frame */
+
+position: absolute;
+width: 15px;
+height: 16px;
+left: 64px;
+top: 1137px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.96%;
+bottom: -0.17%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.96%;
+bottom: -0.17%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99.26%;
+bottom: 0.13%;
+
+background: #FFFFFF;
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 915px;
+left: 33px;
+top: 147px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 333px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 68px;
+top: 417px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 428px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0.1%;
+right: 0.1%;
+top: 0.16%;
+bottom: 0.05%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 31.25%;
+right: 31.26%;
+top: 18.7%;
+bottom: 18.82%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 0.1%;
+right: 0.1%;
+top: 0.16%;
+bottom: 0.05%;
+
+background: #222222;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 346px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* View Saved Devices */
+
+position: absolute;
+width: 501px;
+height: 58px;
+left: 444px;
+top: 70px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: matrix(0.64, 0.77, -0.77, 0.64, 0, 0);
+
+
+/* Group 2 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 166px;
+
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 166px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 176px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 0.37px;
+height: 0.78px;
+left: 84.88px;
+top: 201.44px;
+
+border: 10px solid #33D17A;
+
+
+/* Alex’s Pixel */
+
+position: absolute;
+width: 263px;
+height: 48px;
+left: 147px;
+top: 178px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Group 3 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 250px;
+
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 250px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 259px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector 2 */
+
+position: absolute;
+width: 1.16px;
+height: 0.11px;
+left: 83.77px;
+top: 285.34px;
+
+border: 10px solid #E01B24;
+
+
+/* Dave’s iPhone */
+
+position: absolute;
+width: 239px;
+height: 36px;
+left: 153px;
+top: 266px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Vector 3 */
+
+position: absolute;
+width: 0px;
+height: 0.48px;
+left: 83.01px;
+top: 367.92px;
+
+border: 10px solid #F5C211;
+
+
+/* Daniel’s PC */
+
+position: absolute;
+width: 195px;
+height: 43px;
+left: 153px;
+top: 347px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Vector 4 */
+
+position: absolute;
+width: 0.27px;
+height: 0.89px;
+left: 84.36px;
+top: 454.54px;
+
+border: 10px solid #F5C211;
+
+
+/* Unknown Device */
+
+position: absolute;
+width: 274px;
+height: 38px;
+left: 160px;
+top: 432px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 17px;
+top: 70px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 17px;
+top: 70px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 19px;
+top: 80px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+MAC Adresses Scan
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 712px;
+top: 567px;
+
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 915px;
+left: 33px;
+top: 147px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 440px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 770px;
+top: 449px;
+
+
+
+/* Page-1 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* Dribbble-Light-Preview */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* icons */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+
+
+/* microsoft-[#150] */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 70px;
+top: 611px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 94px;
+top: 622px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0.1%;
+right: 0.1%;
+top: 0.16%;
+bottom: 0.05%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 31.25%;
+right: 31.26%;
+top: 18.7%;
+bottom: 18.82%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 0.1%;
+right: 0.1%;
+top: 0.16%;
+bottom: 0.05%;
+
+background: #222222;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 452px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* MAC Addresses Scan */
+
+position: absolute;
+width: 528px;
+height: 58px;
+left: 456px;
+top: 70px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* Found MAC Adresses */
+
+position: absolute;
+width: 524px;
+height: 52px;
+left: 468px;
+top: 174px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #DEDDDA;
+
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 272px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 356px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 804px;
+top: 365px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 16.1%;
+right: 16.29%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #FFFFFF;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 365px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 282px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 0.37px;
+height: 0.78px;
+left: 84.88px;
+top: 307.44px;
+
+border: 10px solid #33D17A;
+
+
+/* Alex’s Pixel */
+
+position: absolute;
+width: 197px;
+height: 48px;
+left: 531px;
+top: 289px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Vector 2 */
+
+position: absolute;
+width: 1.16px;
+height: 0.11px;
+left: 83.77px;
+top: 391.34px;
+
+border: 10px solid #E01B24;
+
+
+/* Dave’s iPhone */
+
+position: absolute;
+width: 239px;
+height: 36px;
+left: 510px;
+top: 371px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Vector 3 */
+
+position: absolute;
+width: 0px;
+height: 0.48px;
+left: 83.01px;
+top: 474.92px;
+
+border: 10px solid #F5C211;
+
+
+/* Daniel’s PC */
+
+position: absolute;
+width: 195px;
+height: 43px;
+left: 510px;
+top: 452px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Vector 4 */
+
+position: absolute;
+width: 0.27px;
+height: 0.89px;
+left: 86.36px;
+top: 648.54px;
+
+border: 10px solid #F5C211;
+
+
+/* Unknown Device */
+
+position: absolute;
+width: 274px;
+height: 38px;
+left: 504px;
+top: 626px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 17px;
+top: 70px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 17px;
+top: 70px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 19px;
+top: 80px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+/* AA:BB:CC:31:59 */
+
+position: absolute;
+width: 282px;
+height: 32px;
+left: 159px;
+top: 289px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* AA:BB:CC:43:76 */
+
+position: absolute;
+width: 282px;
+height: 32px;
+left: 159px;
+top: 453px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* AA:BB:CC:57:97 */
+
+position: absolute;
+width: 282px;
+height: 32px;
+left: 159px;
+top: 371px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* arrow4-right-symbolic 1 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 438px;
+top: 284px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 12.5%;
+top: 18.85%;
+bottom: 18.65%;
+
+background: #FFFFFF;
+
+
+/* arrow4-right-symbolic 4 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 746px;
+top: 368px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 12.5%;
+top: 18.85%;
+bottom: 18.65%;
+
+background: #FFFFFF;
+
+
+/* arrow4-right-symbolic 3 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 438px;
+top: 365px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 12.5%;
+top: 18.85%;
+bottom: 18.65%;
+
+background: #FFFFFF;
+
+
+/* arrow4-right-symbolic 5 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 438px;
+top: 445px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 12.5%;
+top: 18.85%;
+bottom: 18.65%;
+
+background: #FFFFFF;
+
+
+/* arrow4-right-symbolic 6 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 706px;
+top: 445px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 12.5%;
+top: 18.85%;
+bottom: 18.65%;
+
+background: #FFFFFF;
+
+
+/* arrow4-right-symbolic 2 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 743px;
+top: 284px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 12.5%;
+top: 18.85%;
+bottom: 18.65%;
+
+background: #FFFFFF;
+
+
+/* goa-account-google-symbolic 1 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 806px;
+top: 282px;
+
+
+
+/* g39 */
+
+position: absolute;
+left: 3.45%;
+right: 3.45%;
+top: 2.81%;
+bottom: 4.1%;
+
+
+
+/* g8320-9-5 */
+
+position: absolute;
+left: 3.45%;
+right: 3.45%;
+top: 2.81%;
+bottom: 4.1%;
+
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Clip path group */
+
+position: absolute;
+left: 3.45%;
+right: 3.45%;
+top: 2.81%;
+bottom: 4.1%;
+
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* clipPath16-6-3 */
+
+position: absolute;
+left: 3.45%;
+right: 3.45%;
+top: 2.81%;
+bottom: 4.1%;
+
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* path18-8-6 */
+
+position: absolute;
+left: 3.45%;
+right: 3.45%;
+top: 2.81%;
+bottom: 4.1%;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* g8322-0-6 */
+
+position: absolute;
+left: 17.7%;
+right: 17.7%;
+top: 17.03%;
+bottom: 17.03%;
+
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* g8324-6-2 */
+
+position: absolute;
+left: 17.7%;
+right: 17.7%;
+top: 17.03%;
+bottom: 17.03%;
+
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* path8326-8-9 */
+
+position: absolute;
+left: 17.7%;
+right: 17.7%;
+top: 17.03%;
+bottom: 17.03%;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Google, Inc. */
+
+position: absolute;
+width: 286px;
+height: 35px;
+left: 863px;
+top: 289px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Apple, Inc. */
+
+position: absolute;
+width: 286px;
+height: 35px;
+left: 864px;
+top: 373px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Microsoft Corporation. */
+
+position: absolute;
+width: 470px;
+height: 37px;
+left: 835px;
+top: 456px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 525px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 770px;
+top: 535px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 41.31%;
+right: 44.21%;
+top: 30.92%;
+bottom: 64.57%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 15.63%;
+right: 15.63%;
+top: 8.4%;
+bottom: 8.39%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 45.46%;
+right: 49.56%;
+top: 27.91%;
+bottom: 71.29%;
+
+background: #FFFFFF;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 537px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector 5 */
+
+position: absolute;
+width: 0px;
+height: 0.48px;
+left: 83.01px;
+top: 559.92px;
+
+border: 10px solid #F5C211;
+
+
+/* Daniel’s PC */
+
+position: absolute;
+width: 195px;
+height: 43px;
+left: 510px;
+top: 537px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* AA:BB:CC:19:07 */
+
+position: absolute;
+width: 282px;
+height: 32px;
+left: 159px;
+top: 538px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* AA:BB:CC:73:01 */
+
+position: absolute;
+width: 282px;
+height: 32px;
+left: 159px;
+top: 626px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* arrow4-right-symbolic 7 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 438px;
+top: 530px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 12.5%;
+top: 18.85%;
+bottom: 18.65%;
+
+background: #FFFFFF;
+
+
+/* arrow4-right-symbolic 9 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 438px;
+top: 622px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 12.5%;
+top: 18.85%;
+bottom: 18.65%;
+
+background: #FFFFFF;
+
+
+/* arrow4-right-symbolic 10 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 798px;
+top: 622px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 12.5%;
+top: 18.85%;
+bottom: 18.65%;
+
+background: #FFFFFF;
+
+
+/* arrow4-right-symbolic 8 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 706px;
+top: 530px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 12.5%;
+top: 18.85%;
+bottom: 18.65%;
+
+background: #FFFFFF;
+
+
+/* Linux */
+
+position: absolute;
+width: 105px;
+height: 40px;
+left: 837px;
+top: 543px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Unknown */
+
+position: absolute;
+width: 265px;
+height: 37px;
+left: 866px;
+top: 627px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+User Commands
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 814px;
+left: 33px;
+top: 144px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* User Commands */
+
+position: absolute;
+width: 410px;
+height: 58px;
+left: 462px;
+top: 72px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Enter Command */
+
+position: absolute;
+width: 400px;
+height: 55px;
+left: 472px;
+top: 166px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 1365px;
+height: 120px;
+left: 46px;
+top: 258px;
+
+background: #77767B;
+border-radius: 3px;
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 1271px;
+height: 59px;
+left: 120px;
+top: 293px;
+
+background: #D9D9D9;
+border-radius: 84px;
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 0px;
+height: 33.5px;
+left: 157.5px;
+top: 308px;
+
+border: 1px solid #000000;
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 1365px;
+height: 473px;
+left: 46px;
+top: 450px;
+
+background: rgba(119, 118, 123, 0.85);
+border-radius: 33px;
+
+
+/* Rounded rectangle */
+
+position: absolute;
+width: 100px;
+height: 50px;
+left: 1284px;
+top: 298px;
+
+background: #3584E4;
+border-radius: 84px;
+
+
+/* Go! */
+
+position: absolute;
+width: 53px;
+height: 36px;
+left: 1303px;
+top: 305px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 30px;
+line-height: 36px;
+
+color: #FFFFFF;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 7px;
+top: 93px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+/* Network utils only! */
+
+position: absolute;
+width: 238px;
+height: 31px;
+left: 537px;
+top: 221px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+
+
+
+/* terminal-symbolic 1 */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 56px;
+top: 299px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 6.25%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 24.38%;
+right: 31.25%;
+top: 36.86%;
+bottom: 30.63%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 6.25%;
+
+background: #222222;
+
+
+/* Fast commands */
+
+position: absolute;
+width: 291px;
+height: 27px;
+left: 520px;
+top: 379px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 44px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 69px;
+top: 479px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 414px;
+top: 479px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Rectangle 10 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 69px;
+top: 634px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Rectangle 11 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 69px;
+top: 789px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Rectangle 12 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 414px;
+top: 634px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Rectangle 13 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 414px;
+top: 789px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Rectangle 14 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 747px;
+top: 479px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Rectangle 15 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 747px;
+top: 634px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Rectangle 16 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 747px;
+top: 789px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Rectangle 17 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 1082px;
+top: 479px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Rectangle 18 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 1082px;
+top: 634px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Rectangle 19 */
+
+position: absolute;
+width: 268px;
+height: 112px;
+left: 1082px;
+top: 789px;
+
+background: #D9D9D9;
+border-radius: 26px;
+
+
+/* Entry Terminal Mode */
+
+position: absolute;
+width: 408px;
+height: 40px;
+left: 58px;
+top: 926px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 24px;
+
+color: #FFFFFF;
+
+Device Ping:: Input/Choose
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 905px;
+left: 33px;
+top: 147px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* Device Ping */
+
+position: absolute;
+width: 322px;
+height: 58px;
+left: 500px;
+top: 72px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Enter Address */
+
+position: absolute;
+width: 377px;
+height: 55px;
+left: 472px;
+top: 175px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 1365px;
+height: 120px;
+left: 46px;
+top: 258px;
+
+background: #77767B;
+border-radius: 3px;
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 1271px;
+height: 59px;
+left: 120px;
+top: 293px;
+
+background: #D9D9D9;
+border-radius: 84px;
+
+
+/* Frame */
+
+position: absolute;
+width: 40px;
+height: 40px;
+left: 69px;
+top: 303px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 6.25%;
+top: 0%;
+bottom: 6.3%;
+
+background: #2E3436;
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 0px;
+height: 33.5px;
+left: 157.5px;
+top: 308px;
+
+border: 1px solid #000000;
+
+
+/* OR */
+
+position: absolute;
+width: 153px;
+height: 56px;
+left: 603px;
+top: 406px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Choose Device */
+
+position: absolute;
+width: 389px;
+height: 44px;
+left: 472px;
+top: 474px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 1365px;
+height: 473px;
+left: 46px;
+top: 555px;
+
+background: rgba(119, 118, 123, 0.85);
+border-radius: 33px;
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 73px;
+top: 579px;
+
+background: #9A9996;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 93px;
+top: 588px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector 2 */
+
+position: absolute;
+width: 1.16px;
+height: 0.11px;
+left: 84.77px;
+top: 614.34px;
+
+border: 10px solid #E01B24;
+
+
+/* Dave’s iPhone */
+
+position: absolute;
+width: 239px;
+height: 36px;
+left: 154px;
+top: 595px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Rounded rectangle */
+
+position: absolute;
+width: 100px;
+height: 50px;
+left: 1284px;
+top: 298px;
+
+background: #3584E4;
+border-radius: 84px;
+
+
+/* Go! */
+
+position: absolute;
+width: 68px;
+height: 26px;
+left: 1300px;
+top: 305px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 30px;
+line-height: 36px;
+
+color: #FFFFFF;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 5px;
+top: 83px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 7px;
+top: 93px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+Console
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 905px;
+left: 33px;
+top: 147px;
+
+background: #282C34;
+border-radius: 33px;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* Console */
+
+position: absolute;
+width: 322px;
+height: 58px;
+left: 500px;
+top: 72px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* jin> ping google.com PING google.com (209.85.233.102) 56(84) bytes of data. 64 bytes from lr-in-f102.1e100.net (209.85.233.102): icmp_seq=1 ttl=109 time=39.7 ms 64 bytes from lr-in-f102.1e100.net (209.85.233.102): icmp_seq=2 ttl=109 time=39.6 ms 64 bytes from lr-in-f102.1e100.net (209.85.233.102): icmp_seq=3 ttl=109 time=39.5 ms 64 bytes from lr-in-f102.1e100.net (209.85.233.102): icmp_seq=4 ttl=109 time=39.8 ms ^C --- google.com ping statistics --- 4 packets transmitted, 4 received, 0% packet loss, time 3003ms rtt min/avg/max/mdev = 39.515/39.652/39.797/0.120 ms */
+
+position: absolute;
+width: 1321px;
+height: 825px;
+left: 69px;
+top: 252px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #FFFFFF;
+
+
+
+/* Welcome to josh v1.2! Type “help” to more information or “license” to get more about joshell licensing. Enter a command to network scan. Commands filtered. */
+
+position: absolute;
+width: 1321px;
+height: 825px;
+left: 69px;
+top: 166px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+color: #FFFFFF;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 2px;
+top: 72px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 2px;
+top: 72px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 4px;
+top: 82px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+Network Scan:: Devices Found
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 712px;
+top: 567px;
+
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 915px;
+left: 33px;
+top: 147px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 440px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 68px;
+top: 524px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 535px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 0.1%;
+right: 0.1%;
+top: 0.16%;
+bottom: 0.05%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 31.25%;
+right: 31.26%;
+top: 18.7%;
+bottom: 18.82%;
+
+background: #222222;
+
+
+/* Vector */
+
+position: absolute;
+left: 0.1%;
+right: 0.1%;
+top: 0.16%;
+bottom: 0.05%;
+
+background: #222222;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 453px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Network Scan */
+
+position: absolute;
+width: 343px;
+height: 58px;
+left: 554px;
+top: 70px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* Found Devices */
+
+position: absolute;
+width: 357px;
+height: 52px;
+left: 540px;
+top: 172px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #DEDDDA;
+
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 272px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 1316px;
+height: 68px;
+left: 72px;
+top: 356px;
+
+background: #77767B;
+border-radius: 25px;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 365px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 92px;
+top: 282px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 0%;
+bottom: 0%;
+
+background: #222222;
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 0.37px;
+height: 0.78px;
+left: 84.88px;
+top: 307.44px;
+
+border: 10px solid #33D17A;
+
+
+/* Alex’s Pixel */
+
+position: absolute;
+width: 263px;
+height: 48px;
+left: 147px;
+top: 284px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Vector 2 */
+
+position: absolute;
+width: 1.16px;
+height: 0.11px;
+left: 83.77px;
+top: 391.34px;
+
+border: 10px solid #E01B24;
+
+
+/* Dave’s iPhone */
+
+position: absolute;
+width: 239px;
+height: 36px;
+left: 153px;
+top: 372px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Vector 3 */
+
+position: absolute;
+width: 0px;
+height: 0.48px;
+left: 83.01px;
+top: 474.92px;
+
+border: 10px solid #F5C211;
+
+
+/* Daniel’s PC */
+
+position: absolute;
+width: 195px;
+height: 43px;
+left: 153px;
+top: 454px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Vector 4 */
+
+position: absolute;
+width: 0.27px;
+height: 0.89px;
+left: 84.36px;
+top: 561.54px;
+
+border: 10px solid #F5C211;
+
+
+/* Unknown Device */
+
+position: absolute;
+width: 274px;
+height: 38px;
+left: 160px;
+top: 539px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 17px;
+top: 70px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 17px;
+top: 70px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 19px;
+top: 80px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+Network Scan::Scanning
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 712px;
+top: 567px;
+
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 915px;
+left: 33px;
+top: 147px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* Network Scan */
+
+position: absolute;
+width: 343px;
+height: 58px;
+left: 554px;
+top: 70px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 17px;
+top: 70px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 17px;
+top: 70px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 19px;
+top: 80px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+/* Scanning on... */
+
+position: absolute;
+width: 689px;
+height: 116px;
+left: 398px;
+top: 489px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 96px;
+line-height: 116px;
+
+color: #FFFFFF;
+
+
+
+/* 127.0.0.1/25 */ (тут я имел ввиду то что backend через bridge будет посылать данные о том какой ip он сканит и на каком порте поэтому статический текст делать не надо, просто плейсхолдер)
+
+position: absolute;
+width: 258px;
+height: 49px;
+left: 561px;
+top: 615px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 48px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+Network Scan::Devices Not Found
+
+/* Desktop - 1 */
+
+position: relative;
+width: 1440px;
+height: 1150px;
+
+background: #3D3846;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1440px;
+height: 60px;
+left: 0px;
+top: 0px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 16px;
+height: 16px;
+left: 712px;
+top: 567px;
+
+
+
+/* InetScann */
+
+position: absolute;
+width: 251px;
+height: 49px;
+left: 5px;
+top: 0px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1440px;
+height: 49px;
+left: 0px;
+top: 1101px;
+
+background: #000000;
+
+
+/* Copyright */
+
+position: absolute;
+width: 61px;
+height: 10px;
+left: 2px;
+top: 1135px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Group */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 4.38%;
+right: 94.65%;
+top: 98.7%;
+bottom: 0.09%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.61%;
+right: 94.96%;
+top: 99%;
+bottom: 0.39%;
+
+background: #FFFFFF;
+
+
+/* 2026 Int Software, the InetScann Team. */
+
+position: absolute;
+width: 241px;
+height: 11px;
+left: 81px;
+top: 1136px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Project is under GNU GPL v3 LICENSE. */
+
+position: absolute;
+width: 227px;
+height: 13px;
+left: 2px;
+top: 1102px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 4 */
+
+position: absolute;
+width: 1392px;
+height: 915px;
+left: 33px;
+top: 147px;
+
+background: rgba(94, 92, 100, 0.5);
+border-radius: 33px;
+
+
+/* sad-computer-symbolic */
+
+position: absolute;
+width: 256px;
+height: 256px;
+left: 592px;
+top: 447px;
+
+
+
+/* Group */
+
+position: absolute;
+left: 6.25%;
+right: 6.25%;
+top: 6.25%;
+bottom: 0%;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 6.25%;
+right: 6.25%;
+top: 6.25%;
+bottom: 18.75%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 18.75%;
+right: 18.75%;
+top: 87.5%;
+bottom: 0%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: 27.93%;
+right: 27.93%;
+top: 25%;
+bottom: 39.06%;
+
+background: #FFFFFF;
+
+
+/* Vector */
+
+position: absolute;
+left: -112.52%;
+right: 137.75%;
+top: -93.75%;
+bottom: 143.75%;
+
+border: 2px solid #241F31;
+
+
+/* Vector */
+
+position: absolute;
+left: -118.75%;
+right: 131.25%;
+top: -121.88%;
+bottom: 128.12%;
+
+border: 1px solid #241F31;
+
+
+/* Network Scan */
+
+position: absolute;
+width: 343px;
+height: 58px;
+left: 554px;
+top: 70px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 16.39%;
+right: 79.16%;
+top: -0.69%;
+bottom: 96.52%;
+
+background: #2E3436;
+transform: rotate(50deg);
+
+
+/* Devices not Found */
+
+position: absolute;
+width: 592px;
+height: 58px;
+left: 417px;
+top: 197px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 900;
+font-size: 64px;
+line-height: 77px;
+
+color: #FFFFFF;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 9px;
+top: 73px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 9px;
+top: 73px;
+
+background: #3584E4;
+
+
+/* Frame */
+
+position: absolute;
+width: 48px;
+height: 48px;
+left: 11px;
+top: 83px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 25.51%;
+right: 0%;
+top: 25%;
+bottom: 25%;
+
+background: #FFFFFF;
+
+
+#!# Список всех доступных иконок. \\ START
+
+apple.svg
+arrow1-left-symbolic.svg
+arrow1-right-symbolic.svg
+computer-symbolic.svg
+document-save-symbolic.svg
+dotGRN.svg
+dotRED.svg
+dotYLW.svg
+edit-find-symbolic.svg
+external-devices-symbolic.svg
+github.svg
+goa-account-google-symbolic.svg # по сути просто системная иконка гугла
+grade-num-10.svg
+grade-num-9.svg
+grade-num-8.svg
+grade-num-7.svg
+grade-num-6.svg
+grade-num-5.svg
+grade-num-4.svg
+grade-num-3.svg
+grade-num-2.svg
+grade-num-1.svg
+key4-symbolic.svg
+lan-symbolic.svg
+linux.svg
+microsoft.svg
+network-wireless-symbolic.svg
+person-symbolic.svg
+ping-symbolic.svg
+preferences-system-symbolic.svg
+question-round-outline-symbolic.svg
+radiowaves-4-symbolic.svg
+rich-text-symbolic.svg
+sad-computer-symbolic.svg
+settings-symbolic.svg
+smartphone2-symbolic.svg # если не ошибаюсь то это айфон
+smartphone-symbolic.svg # это андроид
+speedometer-symbolic.svg
+system-search-symbolic.svg
+terminal-symbolic.svg
+user-bookmarks-symbolic.svg
+user-info-symbolic.svg
+view-list-symbolic.svg
+
+#!# \\END
