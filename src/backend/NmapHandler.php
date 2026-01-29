@@ -39,7 +39,7 @@ use Nmap\Port;
         // Возвращение ip
         return $net . '/' . $mask;
 	}
-	function appendScan ($options)
+	function netAppendScan ($options)
 	{
 		$nmap = new Nmap();
         $subnet = getSubNet();

@@ -1,84 +1,254 @@
+@import url("tokens.css");
+
+/* Base */
 body {
   margin: 0;
   background: var(--color-bg-main);
   font-family: var(--font-main);
+  font-weight: var(--font-heavy);
   color: white;
-  display: flex;
-  justify-content: center;
 }
 
+/* Layout */
 .app {
   width: 100%;
   max-width: var(--layout-max-width);
-  min-height: 100vh;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /* Header */
 .header {
-  height: 60px;
-  background: var(--color-bg-header);
+  width: 100%;
+  padding: 16px 32px;
+  box-sizing: border-box;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
 }
 
 .header-title {
   font-size: var(--text-xl);
-  font-weight: var(--font-weight-heavy);
 }
 
 /* Footer */
 .footer {
-  height: 49px;
-  background: var(--color-bg-footer);
-  color: white;
-  font-size: var(--text-sm);
+  width: 100%;
+  padding: 16px 32px;
+  box-sizing: border-box;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 16px;
-  padding: 0 16px;
+  gap: 8px;
 }
 
-/* Панель */
+/* Panel */
 .panel {
   background: var(--color-bg-panel);
   border-radius: var(--radius-panel);
   margin: 32px;
   padding: 32px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Заголовок "Choose an option" */
+/* Title */
 .panel-title {
   font-size: var(--text-xl);
-  font-weight: var(--font-weight-heavy);
+  font-weight: var(--font-heavy);
   text-align: center;
   margin-bottom: 32px;
 }
 
-/* Сетка карточек */
+/* Grid */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
 
-/* Карточка */
+/* Card */
 .card {
   background: var(--color-bg-card);
   border-radius: var(--radius-card);
-  padding: 24px;
+  position: relative;
   height: 256px;
+  padding: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  cursor: pointer;
 }
 
 .card-title {
   font-size: var(--text-xl);
-  font-weight: var(--font-weight-heavy);
+  font-weight: var(--font-heavy);
   color: black;
+  text-align: center;
+}
+
+.header-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 48px;
+  height: 48px;
+}
+
+.icon-48px {
+  width: 100%;
+  height: 100%;
+}
+
+/* Settings Button */
+.settings-btn {
+  margin-top: -68px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3584E4;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.settings-btn:hover {
+  transform: scale(1.1);
+}
+
+.settings-icon {
+  color: #ffffff;
+  width: 48px;
+  height: 48px;
+}
+
+/* Pages */
+.page {
+  display: none;
+  width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+/* Forms */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.label {
+  font-size: 24px;
+  font-weight: var(--font-heavy);
+  color: white;
+}
+
+.input {
+  background: #DEDDDA;
+  border-radius: 25px;
+  padding: 16px 24px;
+  font-size: 24px;
+  font-weight: var(--font-heavy);
+  color: black;
+  border: none;
+  outline: none;
+}
+
+/* Buttons */
+.button {
+  background: #3584E4;
+  color: white;
+  font-size: 24px;
+  font-weight: var(--font-heavy);
+  padding: 16px 24px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button:hover {
+  background: #1C71D8;
+}
+
+/* Empty State */
+.empty-box {
+  background: #DEDDDA;
+  border-radius: 34px;
+  padding: 48px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.empty-title {
+  font-size: 32px;
+  font-weight: var(--font-heavy);
+  color: black;
+}
+
+.empty-sub {
+  font-size: 24px;
+  font-weight: var(--font-heavy);
+  color: black;
+}
+
+/* Lists */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.list-item {
+  background: #DEDDDA;
+  border-radius: 25px;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-title {
+  font-size: 28px;
+  font-weight: var(--font-heavy);
+  color: black;
+}
+
+.item-sub {
+  font-size: 20px;
+  font-weight: var(--font-heavy);
+  color: black;
+}
+
+/* Output */
+.output-box {
+  background: #DEDDDA;
+  border-radius: 25px;
+  padding: 24px;
+  font-size: 20px;
+  font-weight: var(--font-heavy);
+  color: black;
+  white-space: pre-wrap;
+}
+
+/* Console */
+.console-box {
+  background: black;
+  color: #00FF00;
+  font-family: monospace;
+  font-size: 18px;
+  padding: 24px;
+  border-radius: 25px;
+  height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
 }
 
