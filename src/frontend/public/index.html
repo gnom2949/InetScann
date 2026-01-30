@@ -15,16 +15,16 @@
 </head>
 
 <body>
-<div class="app">
 
   <!-- HEADER -->
   <header class="header">
+    <div class="healeft">
+    <img src="icons/network-wireless-symbolic.svg" class="headicon rotated">
     <div class="header-title">InetScann</div>
-    <svg width="49" height="51" viewBox="0 0 49 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M38.6426 15.1435C31.913 7.12345 22.3145 1.49031 11.5508 0.322995L8.7939 0.0253684C6.60911 -0.222 4.64119 1.36809 4.39539 3.55297C4.15962 5.74982 5.7509 7.7191 7.93568 7.96647L10.6807 8.27414C27.6705 10.1326 41.6721 26.819 40.552 43.8734L40.3784 46.6301C40.2426 48.8247 41.9056 50.7337 44.11 50.883C46.3145 51.0323 48.2121 49.3585 48.3478 47.1639L48.5435 44.4091C49.253 33.5943 45.3722 23.1635 38.6426 15.1435ZM26.2896 25.3457C22.2159 20.5638 16.3184 17.3735 9.90983 17.121L6.94954 16.994C5.88942 16.9453 4.8589 17.3204 4.07564 18.0388C3.29238 18.7573 2.82816 19.7587 2.79017 20.8309C2.74215 21.8911 3.11798 22.9221 3.84883 23.6959C4.56771 24.4797 5.56939 24.9447 6.62951 24.9935L9.57975 25.1085C17.1704 25.4094 24.8701 34.0025 23.7822 42.0344L23.3932 44.9717C23.2471 46.0122 23.5311 47.0794 24.1782 47.9235C24.8134 48.7776 25.7634 49.3268 26.8259 49.4756C27.8783 49.6124 28.9452 49.3291 29.7887 48.6825C30.6203 48.0459 31.1806 47.0862 31.3167 46.0337L31.7057 43.0963C32.6029 36.4892 30.3532 30.1156 26.2896 25.3457ZM14.1212 35.7194C12.8054 34.1513 10.8915 33.085 8.69094 32.8917C4.28978 32.5051 0.414209 35.7571 0.0307083 40.1585C-0.352788 44.56 2.90152 48.4383 7.30269 48.8249C11.7039 49.2116 15.5794 45.9596 15.9629 41.5581C16.1547 39.3574 15.437 37.2875 14.1212 35.7194Z" fill="#2E3436"/>
-    </svg>
+    </div>
   </header>
 
+<div class="app">
   <!-- MAIN PAGE -->
   <main class="panel" id="page-main" style="display: block;">
     <div class="panel-title">Choose an option</div>
@@ -86,6 +86,7 @@
       <div class="settings-title">InetScann Settings</div>
 
       <div class="settings-row">
+        
         <div class="settings-label">Theme</div>
         <div class="settings-switch" id="themeSwitch">
           <div class="settings-switch-handle"></div>
@@ -101,6 +102,9 @@
     <div class="audit-panel">
       <div class="audit-title">Security Audit</div>
 
+      <button class="back-btn" data-back>
+      <img src="icons/back.svg" class="back-buticon">
+    </button>
       <div class="audit-device-box">
         <div class="audit-device-icon" id="auditDeviceIcon"></div>
         <div class="audit-device-name" id="auditDeviceName"></div>
@@ -125,6 +129,9 @@
       <div class="panel-title">Saved Scan Profiles</div>
 
       <div class="empty-box">
+        <button class="back-btn" data-back>
+      <img src="icons/back.svg" class="back-buticon">
+    </button>
         <div class="empty-title">No profiles found</div>
         <div class="empty-sub">Create your first scan profile</div>
 
@@ -221,20 +228,13 @@
       </div>
     </div>
   </div>
-
+</div>
   <!-- FOOTER -->
   <footer class="footer">
-    <span>Project is under GNU GPL v3 LICENSE.</span>
-    <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 16 16" width="16px">
-      <g fill="#ffffff">
-        <path d="m 8 -0.0117188 c -4.417969 0 -8 3.5820308 -8 7.9999998 s 3.582031 8 8 8 s 8 -3.582031 8 -8 s -3.582031 -7.9999998 -8 -7.9999998 z m 0 1.9999998 c 3.3125 0 6 2.6875 6 6 s -2.6875 6 -6 6 s -6 -2.6875 -6 -6 s 2.6875 -6 6 -6 z m 0 0"/>
-        <path d="m 8.003906 3.933594 c 1.035156 0 2.070313 0.398437 2.851563 1.1875 c 1.566406 1.578125 1.566406 4.15625 0 5.734375 c -1.5625 1.582031 -4.140625 1.582031 -5.707031 0 c -0.386719 -0.390625 -0.382813 -1.023438 0.007812 -1.414063 c 0.394531 -0.386718 1.027344 -0.382812 1.414062 0.007813 c 0.804688 0.8125 2.0625 0.8125 2.863282 0 c 0.804687 -0.808594 0.804687 -2.109375 0 -2.921875 c -0.800782 -0.8125 -2.058594 -0.8125 -2.863282 0 c -0.386718 0.390625 -1.019531 0.394531 -1.414062 0.007812 c -0.390625 -0.386718 -0.394531 -1.019531 -0.007812 -1.414062 c 0.78125 -0.789063 1.820312 -1.1875 2.855468 -1.1875 z m 0 0"/>
-      </g>
-    </svg>
+    <span>Project is under GNU GPL v3 LICENSE.</span><img src="icons/license-copyleft-symbolic.svg" class="copyleft">
     <span>2026 InetScann</span>
   </footer>
 
-</div>
 
 
 <script type="module" src="../src/dist/main.js"></script>

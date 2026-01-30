@@ -2,7 +2,9 @@
 /* db.php
 Файл описания подключения php к MySQL через PDO (PHP Data Objects)
 */
-
+require __DIR__ . '../backend/writeron.php';
+writer()->writer_append();
+writer()->writer_colorify();
 // Установка хоста
 $host = 'mariadb';
 
@@ -31,6 +33,6 @@ try {
     // Создание объекта
     $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (\PDOException $e) {
-    die("DB connect failed: " . $e->getMessage());
+	writer()->db->error("DataBase connection failed!");
+    die($e->getMessage());
 }
-?>

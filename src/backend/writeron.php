@@ -131,7 +131,7 @@ class Writer {
     /**
      * Устанавливает цветовую схему
      */
-    public function writter_colorify($colorScheme = null) {
+    public function writer_colorify($colorScheme = null) {
         if ($colorScheme && is_array($colorScheme)) {
             $this->colors = array_merge($this->colors, $colorScheme);
         }
@@ -220,7 +220,7 @@ function writer() {
 /*
  Примеры использования:
 
- 1. Базовое использование (Legacy)
+ 1. Базовое использование
  writer()->db->error("Database connection failed!");
  writer()->api->warning("Slow response detected");
 
