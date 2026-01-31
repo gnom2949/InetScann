@@ -23,6 +23,15 @@
   --layout-max-width: 1440px;
   --layout-padding: 32px;
 }
+
+.dark {
+  --color-bg-main: #000000;
+  --color-bg-panel: #111111;
+  --color-bg-card: #222222;
+  --color-bg-header: #0A0A0A;
+  --color-bg-footer: #0A0A0A;
+}
+
 @font-face {
   font-family: 'CaskaydiaCoveNF-Regular';
   src: url('../../public/fonts/CaskaydiaCoveNerdFont-Regular.ttf') format('truetype');
@@ -35,3 +44,4 @@
   font-weight: 700;
   font-style: normal;
 }
+

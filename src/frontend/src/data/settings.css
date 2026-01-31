@@ -1,5 +1,5 @@
-@import: tokens.css;
-@import: main.css;
+@import url(tokens.css);
+@import url(main.css);
 /* Затемнение фона */
 .settings-overlay {
   position: fixed;
@@ -13,6 +13,7 @@
 
 /* Белая панель */
 .settings-modal {
+  position: relative;
   width: 1063px;
   max-width: 90%;
   background: #DEDDDA;
@@ -73,10 +74,29 @@
 
 /* Маленький текст */
 .settings-illegal {
-  font-size: 10px;
+  font-size: var(--text-sm);
   font-weight: 100;
-  color: #000;
+  color: #ffffff;
   text-align: right;
   margin-top: 32px;
 }
 
+.github-btn-pos {
+  position: absolute; /* Positions the button relative to its parent (.settings-modal) */
+  bottom: 20px;       /* Distance from the bottom edge */
+  left: 20px;         /* Distance from the left edge */
+  z-index: 210;       /* Ensures it's on top of everything else */
+  
+  /* Styling for the button appearance */
+  background-color: #24292f; 
+  padding: 10px;
+  border-radius: 50%; /* For a nice circular button */
+  display: block;
+}
+
+/* Style for the image inside the button */
+.github-btn-pos img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}

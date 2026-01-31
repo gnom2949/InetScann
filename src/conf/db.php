@@ -32,7 +32,8 @@ $options = [
 try {
     // Создание объекта
     $pdo = new PDO($dsn, $user, $pass, $options);
+    writer()->db->info ("DataBase connection successfully established");
 } catch (\PDOException $e) {
-	writer()->db->error("DataBase connection failed!");
-    die($e->getMessage());
+    writer()->db->error("DataBase connection failed!", ['error' => $e->getMessage()]);
+    die("DB Error: " . $e->getMessage());
 }
