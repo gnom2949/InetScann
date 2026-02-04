@@ -1,14 +1,11 @@
 <?php
-	require __DIR__ . '/../../vendor/autoload.php';
+use Predis\Client;
 
-	$write = new Writer;
-	$write->append();
-	$write->colorify();
-	$redis = new Predis\Client ([
-		'scheme' => 'tcp',
-		'host' => 'redis',
-		'port' => 6379,
-	]);
+	require_once __DIR__ . '/../../vendor/autoload.php';
+function redis ($write): Client
+{
+	
+}
 
 // Тест
 try {
