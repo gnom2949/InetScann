@@ -1,38 +1,31 @@
 #!/bin/bash
 
-# Настройки подключения к Redis в Docker
-REDIS_HOST="redis"
-REDIS_PORT="6379"
+# Настройки
+REDIS_CONTAINER="redis"
+OUI_URL="http://standards-oui.ieee.org"
 
-echo "Downloading IEEE OUI list (MAC addresses)..."
-DATA_URL="https://standards-oui.ieee.org"
-RAW_DATA=$(curl -s "$DATA_URL")
+echo "Downloading OUI data..."
+# Скачиваем CSV, убираем заголовки, парсим поля
+# Формат OUI.csv: Registry,Assignment,Organization Name,Organization Address
+curl -s "$OUI_URL" | sed 1d > oui.csv
 
-echo "Importing MAC Vendors into Redis..."
+echo "Generating Redis commands..."
+# Генерируем команды в формате Redis Protocol или просто CLI
+awk -F',' '{
+    gsub(/"/, "", $2); # Assignment (OUI)
+    gsub(/"/, "", $3); # Organization
+    gsub(/"/, "", $4); # Address
+    if ($2 != "" && $3 != "") {
+        # Команда для хеша вендора
+        printf "HMSET mac:%s vendor \"%s\" address \"%s\" registry \"%s\"\n", $2, $3, $4, $1;
+        # Команда для индекса
+        printf "SADD vendor_to_oui:\"%s\" %s\n", $3, $2;
+    }
+}' oui.csv > redis_commands.txt
 
-COUNT=0
-echo "$RAW_DATA" | sed 1d | while IFS=',' read -r registry assignment organization address; do
-    # Убираем лишние кавычки из данных
-    OUI=$(echo "$assignment" | tr -d '"')
-    VENDOR=$(echo "$organization" | tr -d '"')
-    
-    if [ -z "$OUI" ] || [ -z "$VENDOR" ]; then continue; fi
+echo "Piping commands to Redis..."
+# Пробрасываем файл внутрь контейнера и исполняем за один проход
+cat redis_commands.txt | docker exec -i $REDIS_CONTAINER redis-cli --pipe
 
-    # 1. Сохраняем подробную информацию о вендоре
-    docker exec -i $REDIS_HOST redis-cli HMSET "mac:$OUI" \
-        vendor "$VENDOR" \
-        address "$address" \
-        registry "$registry" > /dev/null
-
-    # 2. Создаем индекс: список всех OUI для конкретного вендора
-    # Это позволит потом связать вендора с CVE
-    docker exec -i $REDIS_HOST redis-cli SADD "vendor_to_oui:$VENDOR" "$OUI" > /dev/null
-
-    COUNT=$((COUNT+1))
-    
-    if (( COUNT % 500 == 0 )); then
-        echo "Processed $COUNT vendors..."
-    fi
-done
-
-echo "Import complete. Added $COUNT MAC prefixes."
+echo "Done! Clean up..."
+rm oui.csv redis_commands.txt

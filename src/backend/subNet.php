@@ -1,40 +1,35 @@
-<?php
+<?php // subNet.php \\ ну типа файл который получает маску подсети и дает нормальное сканирование || START
+require __DIR__ . '/writeron.php';
+
 header('Content-Type: application/json');
 
-function getSubNet(): array {
-    $out = [];
-    exec("ip a show eth0", $out);
+function pullAliveDev(): array 
+{
+    $write = new Writer;
+    $write->append();
+    $write->colorify();
 
-    foreach ($out as $line) {
-        if (preg_match('/inet ([0-9\.]+)\/([0-9]+)/', $line, $m)) {
-            $ip = $m[1];
-            $mask = (int)$m[2];
-
-            $ipL = ip2long($ip);
-            $maskL = -1 << (32 - $mask);
-            $netL = $ipL & $maskL;
-
-            $hosts = [];
-            $count = pow(2, 32 - $mask);
-
-            for ($i = 1; $i < $count - 1; $i++) {
-                $hosts[] = long2ip($netL + $i);
-            }
-
-            return $hosts;
-        }
+    // поиск строки 'default via ... dev eth0'
+    $write->Network->info ("Getting subnet ip...");
+    $subnet = shell_exec("ip -o -f inet addr show | awk '/scope global/ {print $4}' | head -n1");
+    $subnet = trim ($subnet);
+   
+    if (empty($subnet)) {
+        $write->Network->error ("We couldn't receive subnet");
+        return ['error' => 'We couldn receive subnet'];
     }
-    return [];
+
+    //запуск nmap
+    $rawOutput = shell_exec("sudo nmap -sn -n $subnet");
+
+    // парсинг вывода
+    preg_match_all('/report for ([\d\.]+)/', $rawOutput, $matches);
+
+    return [
+        'subnet' => $subnet,
+        'alive' => $matches[1] ?? []
+    ];
 }
+Response::json(pullAliveDev());
 
-$hosts = getSubNet();
-$alive = [];
-
-foreach ($hosts as $h) {
-    exec("ping -c 1 -W 1 $h > /dev/null 2>&1", $o, $c);
-    if ($c === 0) $alive[] = $h;
-}
-
-echo json_encode([
-    'alive' => $alive
-]);
+// subNet.php || END

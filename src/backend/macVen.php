@@ -1,4 +1,5 @@
 <?php
+$redis = require_once __DIR__ . '/redisHndl.php';
 use Predis\Client;
 
 function macVendor(string $mac): array {

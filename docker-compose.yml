@@ -4,10 +4,12 @@ services:
 	app:
 		build: .
 		container_name: InetScannDocImg
+		network_mode: host
 		ports:
 			- "8092:80"
 		volumes:
 			- ./src:/var/www/html
+		privileged: true
 		depends_on:
 			- mariadb
 			- redis
@@ -20,7 +22,7 @@ services:
 			MYSQL_ROOT_PASSWORD: dog-hot-copper-linux619
 			MYSQL_DATABASE: InetScann
 			MYSQL_USER: ISnn/user
-			MYSQL_PASSWORD: ISnn/user/pass/dog-hot-copper-linux619
+			MYSQL_PASSWORD: ISnn_user_pass_dog_hot_copper_linux619
 		ports:
 			- "3314:3314"
 		volumes:

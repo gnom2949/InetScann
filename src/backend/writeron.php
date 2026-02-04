@@ -78,7 +78,7 @@ class Writer {
     /**
      * Добавляет writer для записи в файл
      */
-    public function writer_append($def = null, $ld = null, $logcon = true) {
+    public function append($def = null, $ld = null, $logcon = true) {
         $logDir = $ld ?? $this->defaultLogDir;
         $this->logToConsole = $logcon;
 
@@ -131,7 +131,7 @@ class Writer {
     /**
      * Устанавливает цветовую схему
      */
-    public function writer_colorify($colorScheme = null) {
+    public function colorify($colorScheme = null) {
         if ($colorScheme && is_array($colorScheme)) {
             $this->colors = array_merge($this->colors, $colorScheme);
         }
@@ -162,7 +162,7 @@ class Writer {
     /**
      * Удаляет writer по ключу
      */
-    public function removeWriter($key) {
+    public function remove ($key) {
         if (isset($this->writers[$key]) && $key !== 'console') {
             fclose($this->writers[$key]->resources);
             unset($this->writers[$key]);
