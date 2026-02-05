@@ -33,13 +33,13 @@
 }
 
 @font-face {
-  font-family: 'CaskaydiaCoveNF-Regular';
+  font-family: 'CaskaydiaCoveNF';
   src: url('../../public/fonts/CaskaydiaCoveNerdFont-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'CaskaydiaCoveNF-Bold';
+  font-family: 'CaskaydiaCoveNF';
   src: url('../../public/fonts/CaskaydiaCoveNerdFont-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;

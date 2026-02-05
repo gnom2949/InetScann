@@ -624,3 +624,11 @@ footer.footer {
   font-size: 18px;
   color: #333;
 }
+.console-terminal {
+  background: black;
+  height: 400px;
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  margin-top: 24px;
+}

@@ -1,7 +1,8 @@
 {
     "require": {
         "willdurand/nmap": "@stable",
-        "predis/predis": "^3.3"
+        "predis/predis": "^3.3",
+        "cboden/ratchet": "^0.4.4"
     },
     "config": {
         "audit": {

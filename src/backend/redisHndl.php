@@ -1,18 +1,33 @@
-<?php
+<?php // redisHndl.php \\ A handler for redis db, the part of backend |MARK| START
 use Predis\Client;
 
-	require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+
 function redis ($write): Client
 {
-	
+	static $redis = null;
+
+	if ($redis !== null) return $redis;
+
+	try 
+	{
+		// схема подключения 
+		$redis = new Client([
+			'scheme' => 'tcp',
+			'host' => 'redis',
+			'port' => 6379,
+		]);
+
+		// проверка подключения типом PING|PONG
+		$redis->ping();
+		$write->redis->info ("We successfully caught the redis PONG");
+	} catch (Exception $ex) {
+		$write->redis->error("We not caught the redis PONG!!", [
+			'error' => $ex->getMessage()
+		]);
+	}
+
+	return $redis;
 }
 
-// Тест
-try {
-	$redis->ping();
-	$write->redis->info ("Redis PONG successfully catched");
-} catch (Exception $e) {
-	$write->redis->error ("We dont catch PONG!", ['error' => $e->getMessage()]);
-}
-
-return $redis;
+// redisHndl.php |MARK| END

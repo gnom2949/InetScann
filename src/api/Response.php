@@ -1,5 +1,4 @@
 <?php // Response.php \\ эээ ну типа ответ ввиде JSON ну всо || START
-require __DIR__ . '/../backend/writeron.php';
 
 class Response {
     private static $write = null;
@@ -40,9 +39,24 @@ class Response {
     // успешный ответ
     public static function ok ($data)
     {
-        if (self::$write) self::$write->api->info("API OK response");
+        if (self::$write) self::$write->api->info ("API OK response");
 
         self::json ($data);
+    }
+
+    // функция для потоков, разница в том что она не закрывает поток, на этом отличия закончились а и да очищает буфер
+    public static function stream ($data)
+    {
+        if (!headers_sent()) {
+            header('Content-Type: text/event-stream');
+            header('Cache-Control: no-cache');
+            header('Connection: keep-alive');
+            header('X-Accel-Buffering: no');
+            if (self::$write) self::$write->stream->info('Headers sent, stream starting');
+        }
+        echo "data: " . json_encode ($data, JSON_UNESCAPED_UNICODE) . "\n\n";
+        ob_flush();
+        flush();
     }
 }
 

@@ -12,10 +12,9 @@ class Router
     }
 
     public function handle()
-    {
-        header('Content-Type: application/json');
-
+    { 
         $action = $_GET['action'] ?? null;
+
         if (!$action) {
             Response::error ("No action provided");
         }
@@ -26,11 +25,15 @@ class Router
             Response::error ("Unknown action: $action");
         }
 
-        // передача логгера в endpoint
-        $write = $this->write;
-        $result = require __DIR__ . $file;
+        $endpoint = require $file;
 
-        Response::json ($result);
+        if (is_callable ($endpoint)) {
+            return $endpoint ($_GET, $this->write);
+        }
+
+        if (is_array ($endpoint)) return Response::json ($endpoint);
+
+        Response::error ("Invalid endpoint response");
     }
 }
 // Router.php || END

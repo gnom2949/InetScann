@@ -290,34 +290,25 @@
 
   <!-- USER COMMAND -->
   <div id="page-user-command" class="page" style="display:none;">
-  <div class="panel unavailable-panel">
-    <div class="unavailable-overlay">
-      <img src="icons/sad-computer-symbolic.svg" class="unavailable-icon">
-      <div class="unavailable-text">Not available</div>
-    </div>
+  <div class="panel">
 
     <div class="panel-title">
       <button class="back-btn" data-back>
         <img src="icons/back.svg">
       </button>
-      User Command
+      Enter User Command
     </div>
+
+    <div class="form">
+      <input id="consoleInput" class="input" placeholder="Enter command...">
+      <button id="consoleRun" class="button">Run</button>
+    </div>
+
+    <div id="consoleBox" class="console-terminal"></div>
+
   </div>
 </div>
 
-  <!-- CONSOLE -->
-  <div id="page-console" class="page" style="display:none;">
-    <div class="panel">
-      <div class="panel-title">Console</div>
-
-      <div class="console-box" id="consoleOutput"></div>
-
-      <div class="form">
-        <input class="input" id="consoleInput" placeholder="Enter command...">
-      </div>
-    </div>
-  </div>
-</div>
   <!-- FOOTER -->
   <footer class="footer">
     <span>Project is under GNU GPL v3 LICENSE.</span><img src="icons/license-copyleft-symbolic.svg" class="copyleft">

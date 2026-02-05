@@ -1,39 +1,47 @@
 version: "3.9"
 
 services:
-	app:
-		build: .
-		container_name: InetScannDocImg
-		network_mode: host
-		ports:
-			- "8092:80"
-		volumes:
-			- ./src:/var/www/html
-		privileged: true
-		depends_on:
-			- mariadb
-			- redis
+  app:
+    build: .
+    container_name: inet_scann_app
+    ports:
+      - "8092:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - mariadb
+      - redis
+    networks:
+      - inetnet
+    privileged: true   # нужно для ping, arp, traceroute
 
-	mariadb:
-		image: mariadb:11
-		container_name: mariadb
-		restart: always
-		env:
-			MYSQL_ROOT_PASSWORD: dog-hot-copper-linux619
-			MYSQL_DATABASE: InetScann
-			MYSQL_USER: ISnn/user
-			MYSQL_PASSWORD: ISnn_user_pass_dog_hot_copper_linux619
-		ports:
-			- "3314:3314"
-		volumes:
-			- mariadb_data:/var/lib/mysql
+  mariadb:
+    image: mariadb:11
+    container_name: inet_scann_mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: dog-hot-copper-linux619
+      MYSQL_DATABASE: InetScann
+      MYSQL_USER: ISnn_user
+      MYSQL_PASSWORD: ISnn_user_pass_dog_hot_copper_linux619
+    ports:
+      - "3314:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - inetnet
 
-	redis:
-		image: redis:8.4
-		container_name: redis
-		ports:
-			- "6379:6379"
-		command: ["redis-server", "--appendonly", "yes"]
+  redis:
+    image: redis:7
+    container_name: inet_scann_redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    networks:
+      - inetnet
+
+networks:
+  inetnet:
 
 volumes:
-	mariadb_data:
+  mariadb_data:

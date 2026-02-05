@@ -10,17 +10,18 @@ RUN apt-get update && apt-get install -y \
 	libxml2-dev \
 	libonig-dev \
 	mariadb-client \
-	phpmyadmin \
 	jq \
 	redis-tools \
+	iproute2 \
+	iputils-ping \
+	net-tools \
+	nmap \
+	traceroute \
 	&& docker-php-ext-install pdo pdo_mysql
 
 # Установка Redis и зависимостей к нему
 RUN pecl install redis \
 	&& docker-php-ext-enable redis
-
-# Установка Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Установка текущей рабочей директории
 WORKDIR /var/www/html
@@ -32,3 +33,5 @@ RUN a2enmod rewrite
 COPY ./src /var/www/html
 # Права
 RUN chown -R www-data:www-data /var/www/html
+
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf

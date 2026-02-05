@@ -11,7 +11,7 @@ function macVendor(string $mac, $write): array {
     $mac = strtoupper(str_replace([':', '-'], '', $mac));
     $prefix = substr($mac, 0, 6);
 
-    $redis = redis();
+    $redis = redis($write);
     $vendor = $redis->hget("mac:$prefix", "vendor");
 
     return [

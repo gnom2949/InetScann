@@ -1,5 +1,58 @@
+import { Terminal } from "@xterm/xterm";
+import { FitAddon } from "@xterm/addon-fit";
+
+let term: Terminal;
+let fitAddon: FitAddon;
+let eventSrc: EventSource | null = null;
+
+function initConsolePage()
+{
+  term = new Terminal ({
+    cursorBlink: true,
+    fontFamily: "CaskaydiaCoveNF, monospace",
+    fontSize: 16,
+    theme: {
+      background: "#241f31",
+      foreground: "#deddda"
+    }
+  });
+
+  fitAddon = new FitAddon();
+  term.loadAddon (fitAddon);
+
+  term.open(document.getElementById('consoleBox')!);
+  fitAddon.fit();
+
+  document.getElementById ("consoleRun")!.addEventListener ("click", () => {
+    const cmd = (document.getElementById ("consoleInput") as HTMLInputElement).value;
+    runConsoleCmd (cmd);
+  });
+}
+
+function runConsoleCmd (cmd: string)
+{
+  if (eventSrc) eventSrc.close();
+  term.clear();
+
+  eventSrc = new EventSource (`../../api/api.php?action=console&cmd=${encodeURIComponent(cmd)}`);
+
+  eventSrc.onmessage = (ev) => {
+    const data = JSON.parse (ev.data);
+    term.write (data.output);
+  };
+
+  eventSrc.onerror = () => {
+    term.write ("\r\n[Connection closed]\r\n");
+    eventSrc?.close();
+  };
+}
+
+document.fonts.load ('1em CaskaydiaCoveNF').then (() => {
+  term.options.fontFamily = 'CaskaydiaCoveNF, monospace';
+});
 // Скрыть все страницы
-function hideAllPages() {
+function hideAllPages() 
+{
   document.querySelectorAll<HTMLElement>(".page, #page-main").forEach(p => {
     p.style.display = "none";
   });
@@ -334,6 +387,7 @@ function init() {
   initBackButtons();
   initPingPage();
   initThemeSwitch();
+  initConsolePage();
   showPage("page-main");
 }
 

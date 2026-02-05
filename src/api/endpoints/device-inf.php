@@ -6,7 +6,7 @@ $ip = $_GET['ip'] ?? null;
 
 if (!$ip) return ['error' => 'IP required'];
 
-$mac = getMacFromArp ($ip);
+$mac = getMFA ($ip);
 $vendor = macVendor($mac, $write);
 
 return [
