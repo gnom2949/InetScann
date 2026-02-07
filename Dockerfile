@@ -20,8 +20,12 @@ RUN apt-get update && apt-get install -y \
 	&& docker-php-ext-install pdo pdo_mysql
 
 # Установка Redis и зависимостей к нему
-RUN pecl install redis \
-	&& docker-php-ext-enable redis
+#RUN pecl install redis \
+#	&& docker-php-ext-enable redis
+
+RUN curl -sS https://getcomposer.org/installer | php -- \
+    --install-dir=/usr/local/bin --filename=composer
+
 
 # Установка текущей рабочей директории
 WORKDIR /var/www/html
@@ -35,3 +39,6 @@ COPY ./src /var/www/html
 RUN chown -R www-data:www-data /var/www/html
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+# Разрешение использование .htaccess в директории /var/www/html
+RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf

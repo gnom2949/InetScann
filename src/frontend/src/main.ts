@@ -1,18 +1,200 @@
 import { Terminal } from "@xterm/xterm";
 import { FitAddon } from "@xterm/addon-fit";
+import "@xterm/xterm/css/xterm.css";
 
 let term: Terminal;
 let fitAddon: FitAddon;
 let eventSrc: EventSource | null = null;
 
-function initConsolePage()
+const API_BASEC = window.location.origin;
+
+//api wrapper/ оболочка над api
+async function api (action: string, params: Record<string, string> = {})  
+{
+  const query = new URLSearchParams ({ action, ...params });
+  const url = `${API_BASEC}/api.php?${query.toString()}`;
+
+  try {
+    const res = await fetch(url);
+
+    // если сервер вернул 404.html или другую ошибку
+    const ct = res.headers.get ("Content-Type") || "";
+    if (!ct.includes ("application/json")) {
+      return { error: "Server returned a non-JSON response" };
+    }
+
+    return await res.json();
+  } catch (error) {
+    return { error: "Network error: please check connection"}
+  }
+}
+
+/* PAGES\\Пагес */
+function hideAllPages()
+{
+  document.querySelectorAll<HTMLElement> (".page").forEach (p => p.style.display = "none");
+}
+
+function showPage (id: string) 
+{
+  hideAllPages();
+  const el = document.getElementById (id);
+  if (el) el.style.display = "block";
+}
+
+/* Error Screens\\ ихраны ошыбочек но через TS для json */
+function showErrScr(code: number, title: string, subtitle: string)
+{
+  hideAllPages();
+
+  const t = document.getElementById ("errorTitle");
+  const s = document.getElementById ("errorSubtitle");
+  const c = document.getElementById ("errorCode");
+
+  if (t) t.textContent = title;
+  if (s) s.textContent = subtitle;
+  if (c) c.textContent = String(code);
+
+  const page = document.getElementById ("error-screen");
+  if (page) page.style.display = "block";
+}
+
+/* Security Grade Parser \\ парсер секурити граде uicoG0 -> uicoG9 */
+function parseSecGrade (code: string): number
+{
+  const m = code.match (/G(\d)/);
+  if (!m) return 0;
+
+  const raw = Number(m[1]);
+
+  if (raw === 0) return 10;
+
+  return 10 - raw;
+}
+
+function updSecGradeIco (grade: number)
+{
+  const el = document.getElementById ("auditGrade") as HTMLElement | null;
+  if (!el) return;
+
+  el.style.backgroundImage = `url("/src/frontend/public/icons/grade-num-${grade}.svg")`
+  el.style.backgroundSize = "cover";
+  el.style.backgroundPosition = "center";
+  el.textContent = "";
+}
+
+/* Security Audit Page \\ секурити аудит паге */
+async function runSecAud (ip: string) 
+{
+  const list = document.getElementById ("auditVulnList");
+  const gradeEl = document.getElementById ("auditGrade");
+
+  if (list) list.innerHTML = "<div class='audit-vuln-item'>Running audit...</div>";
+  if (gradeEl) gradeEl.textContent = "?";
+
+  const data = await api ("audit", { ip });
+
+  if (data.error) {
+    showErrScr (500, "Audit Error", data.error);
+    return;
+  }
+
+  const grade = parseSecGrade (data.setSecGrade);
+  updSecGradeIco (grade);
+
+  if (list) {
+    list.innerHTML = "";
+    if (Array.isArray (data.vulns)) {
+      data.vulns.forEach ((v: string) => {
+        const item = document.createElement ("div");
+        item.className = "audit-vuln-item";
+        item.textContent = v;
+        list.appendChild (item);
+      });
+    } else {
+      list.innerHTML = "<div class='audit-vuln-item'>No Vulnerabilities Found</div>";
+    }
+  }
+}
+
+async function runPing (ip: string)
+{
+  const out = document.getElementById ("pingOutput");
+  if (out) out.textContent = "Ping...";
+
+  const data = await api ("ping", { ip });
+
+  if (data.error) out!.textContent = data.error; return;
+
+  out!.textContent = data.output || "No response!";
+}
+
+async function runScan (ip: string) 
+{
+  const out = document.getElementById ("scanOutput");
+  if (out) out.textContent = "Scanning on ...";
+  
+  const data = await api ("scan", { ip });
+
+  if (data.error) out!.textContent = data.error; return;
+
+  out!.textContent = data.output || "No devices found";
+}
+
+async function runMacS (mac: string) 
+{
+  const out = document.getElementById ("macOutput");
+  if (out) out.textContent = "Make queries to the Redis...";
+
+  const data = await api ("mac", { mac });
+
+  const icoPath = getIco (data.vendor, data.safery);
+  macIco.src = icoPath;
+
+  if (data.error) { 
+    out!.textContent = data.error;
+    return; 
+  }
+
+  out!.textContent = data.vendor || "Unknown vendor";
+}
+
+function getIco (vendor: string, safety: string): string
+{
+  let color = "YELLOW" // дефолтный цвет
+  if (safety === "normal") color = "GREEN";
+  else if (safety === "untrusted") color = "RED";
+  else if (safery === "doubtful") color = "YELLOW";
+
+  const v = vendor.toLowerCase();
+
+  let vendorNm = "Unknown";
+
+  if (v.includes ("cisco")) vendorNm = "Cisco";
+  else if (v.includes ("apple")) vendorNm = "Apple";
+  else if (v.includes ("google")) vendorNm = "Android";
+  else if (
+    v.includes ("tp-link") ||
+    v.includes ("d-link") ||
+    v.includes ("asus") ||
+    v.includes ("msi") ||
+    v.includes ("huawei") ||
+    v.includes ("router")
+  ) vendorNm = "Router";
+  else if (v.includes ("microsoft")) vendorNm = "Microsoft";
+
+  return `/src/frontend/public/icons/${vendorNm}${color}.svg`;
+}
+
+/* SSE Console \\ ССЕ консоль \\ SSE -> Server Sent Events */
+function initConsole() 
 {
   term = new Terminal ({
     cursorBlink: true,
     fontFamily: "CaskaydiaCoveNF, monospace",
     fontSize: 16,
     theme: {
-      background: "#241f31",
+      background: "#000000",
       foreground: "#deddda"
     }
   });
@@ -20,21 +202,34 @@ function initConsolePage()
   fitAddon = new FitAddon();
   term.loadAddon (fitAddon);
 
-  term.open(document.getElementById('consoleBox')!);
-  fitAddon.fit();
+  const box = document.getElementById ("consoleBox");
+  if (box) {
+    term.open (box);
+    fitAddon.fit();
+  }
 
-  document.getElementById ("consoleRun")!.addEventListener ("click", () => {
-    const cmd = (document.getElementById ("consoleInput") as HTMLInputElement).value;
-    runConsoleCmd (cmd);
-  });
+  const input = document.getElementById ("consoleInput") as HTMLInputElement;
+  const btn = document.getElementById ("consoleRun");
+
+  if (btn) {
+    btn.addEventListener ("click", () => {
+      if (input) runConsoleCommand (input.value);
+    });
+  }
+
+  if (input) {
+    input.addEventListener ("keydown", (ev) => {
+      if (ev.key === "Enter") {
+        runConsoleCommand (input.value);
+      } 
+    });
+  }
 }
 
-function runConsoleCmd (cmd: string)
+function runConsoleCommand (cmd: string)
 {
   if (eventSrc) eventSrc.close();
   term.clear();
-
-  eventSrc = new EventSource (`../../api/api.php?action=console&cmd=${encodeURIComponent(cmd)}`);
 
   eventSrc.onmessage = (ev) => {
     const data = JSON.parse (ev.data);
@@ -47,348 +242,21 @@ function runConsoleCmd (cmd: string)
   };
 }
 
-document.fonts.load ('1em CaskaydiaCoveNF').then (() => {
-  term.options.fontFamily = 'CaskaydiaCoveNF, monospace';
-});
-// Скрыть все страницы
-function hideAllPages() 
+function init()
 {
-  document.querySelectorAll<HTMLElement>(".page, #page-main").forEach(p => {
-    p.style.display = "none";
-  });
-}
+  initConsole();
 
-// Показ страницы
-function showPage(id: string) {
-  hideAllPages();
-  const page = document.getElementById(id) as HTMLElement | null;
-  if (page) {
-    page.style.display = "block";
-  } else {
-    const main = document.getElementById("page-main") as HTMLElement | null;
-    if (main) main.style.display = "block";
-  }
-}
-
-// Инициализация карточек
-function initCards() {
-  document.querySelectorAll<HTMLElement>(".card").forEach(card => {
-    card.addEventListener("click", () => {
-      const view = card.dataset.view;
-      if (!view) return;
-
-      switch (view) {
-        case "scan-network":
-          showPage("page-scan-start");
-          break;
-
-        case "ping-device":
-          showPage("page-ping-device");
-          break;
-
-        case "security-audit":
-          showPage("page-security-audit");
-          break;
-
-        case "saved-profiles":
-          showPage("page-profiles-list");
-          break;
-
-        case "mac-addresses":
-          showPage("page-mac-addresses");
-          break;
-
-        case "saved-devices":
-          showPage("page-saved-devices");
-          break;
-
-        case "user-command":
-          showPage("page-user-command");
-          break;
-
-        case "export-report":
-          break;
-      }
-    });
-  });
-}
-
-
-// Модалка настроек
-function initSettingsModal() {
-  const settingsBtn = document.querySelector<HTMLElement>(".settings-btn");
-  const settingsOverlay = document.getElementById("settings") as HTMLElement | null;
-
-  if (!settingsBtn || !settingsOverlay) return;
-
-  settingsBtn.addEventListener("click", () => {
-    settingsOverlay.style.display = "flex";
+  document.querySelectorAll ("[data-back]").forEach (btn => {
+    btn.addEventListener ("click", () => showPage("page-main"));
   });
 
-  settingsOverlay.addEventListener("click", (ev) => {
-    if (ev.target === settingsOverlay) {
-      settingsOverlay.style.display = "none";
-    }
-  });
+  document.getElementById ("navScan")?.addEventListener("click", () => showPage ("page-scan-start"));
+  document.getElementById ("navPing")?.addEventListener("click", () => showPage ("page-scan-start"));
+  document.getElementById ("navMAC")?.addEventListener("click", () => showPage ("page-scan-start"));
+  document.getElementById ("navAudit")?.addEventListener("click", () => showPage ("page-scan-start"));
+  document.getElementById ("navDevices")?.addEventListener("click", () => showPage ("page-scan-start"));
+  document.getElementById ("navProfiles")?.addEventListener("click", () => showPage ("page-scan-start"));
+  document.getElementById ("navConsole")?.addEventListener("click", () => showPage ("page-scan-start"));
+  document.getElementById ("navExport")?.addEventListener("click", () => showPage ("page-export"));
+  document.getElementById ("navSettings")?.addEventListener("click", () => showPage ("page-settings"));
 }
-
-// Security Audit
-async function runSecurityAudit(ip: string) {
-  const output = document.getElementById("auditVulnList");
-  const gradeCircle = document.getElementById("auditGrade");
-
-  if (gradeCircle) gradeCircle.textContent = "?";
-  if (output) output.innerHTML = "<div class='audit-vuln-item'>Running audit...</div>";
-
-  const data = await api("audit", { ip });
-
-  if (data.error) {
-    if (output) output.innerHTML = `<div class='audit-vuln-item'>Error: ${data.error}</div>`;
-    return;
-  }
-
-  // Парсинг оценки
-  const grade = parseSecurityGrade(data.setSecGrade);
-
-  // Обновление иконки
-  updateSecurityGradeIcon(grade);
-
-  // Вывод grade в текстовом виде
-  if (gradeCircle) gradeCircle.setAttribute("data-grade", String(grade));
-
-  // Если API отдаёт список уязвимостей
-  if (data.vulns && Array.isArray(data.vulns)) {
-    output!.innerHTML = "";
-    data.vulns.forEach((v: string) => {
-      const item = document.createElement("div");
-      item.className = "audit-vuln-item";
-      item.textContent = v;
-      output!.appendChild(item);
-    });
-  } else {
-    output!.innerHTML = "<div class='audit-vuln-item'>No vulnerabilities found</div>";
-  }
-}
-
-
-// Кнопки назад
-function initBackButtons() {
-  document.querySelectorAll<HTMLElement>("[data-back]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      showPage("page-main");
-    });
-  });
-}
-
-// MAC Address Page
-function renderMacDeviceList(devices: { name: string; icon: string; mac: string }[]) {
-  const container = document.getElementById("macDeviceList");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  devices.forEach(d => {
-    const card = document.createElement("div");
-    card.className = "device-card";
-
-    const img = document.createElement("img");
-    img.src = `icons/${d.icon}`;
-    img.alt = d.name;
-
-    const name = document.createElement("div");
-    name.className = "device-name";
-    name.textContent = d.name;
-
-    const mac = document.createElement("div");
-    mac.style.fontSize = "16px";
-    mac.style.color = "#333";
-    mac.textContent = d.mac;
-
-    card.appendChild(img);
-    card.appendChild(name);
-    card.appendChild(mac);
-
-    container.appendChild(card);
-  });
-}
-
-// Scan Network
-function updateScanStatus(text: string) {
-  const output = document.getElementById("scanStatusOutput");
-  if (output) output.textContent = text;
-}
-
-function renderDeviceList(devices: { name: string; icon: string }[]) {
-  const container = document.getElementById("deviceList");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  devices.forEach(device => {
-    const card = document.createElement("div");
-    card.className = "device-card";
-
-    const img = document.createElement("img");
-    img.src = `icons/${device.icon}`;
-    img.alt = device.name;
-
-    const name = document.createElement("div");
-    name.className = "device-name";
-    name.textContent = device.name;
-
-    card.appendChild(img);
-    card.appendChild(name);
-    container.appendChild(card);
-  });
-}
-
-// Ping Device
-function renderPingDeviceList(devices: { name: string; icon: string; address: string }[]) {
-  const container = document.getElementById("pingDeviceList");
-  if (!container) return;
-  container.innerHTML = "";
-
-  devices.forEach(d => {
-    const card = document.createElement("div");
-    card.className = "device-card";
-
-    const img = document.createElement("img");
-    img.src = `icons/${d.icon}`;
-    img.alt = d.name;
-
-    const name = document.createElement("div");
-    name.className = "device-name";
-    name.textContent = d.name;
-
-    card.appendChild(img);
-    card.appendChild(name);
-
-    card.addEventListener("click", () => {
-      const input = document.getElementById("pingAddress") as HTMLInputElement | null;
-      if (input) input.value = d.address;
-    });
-
-    container.appendChild(card);
-  });
-}
-
-function setPingOutput(text: string) {
-  const el = document.getElementById("pingOutput");
-  if (el) el.textContent = text;
-}
-
-function initPingPage() {
-  const btn = document.getElementById("pingGoBtn");
-  if (!btn) return;
-
-  btn.addEventListener("click", async () => {
-    const input = document.getElementById("pingAddress") as HTMLInputElement;
-    if (!input) return;
-
-    setPingOutput(`Pinging ${input.value}...`);
-
-    const result = await api("ping", { ip: input.value });
-
-    if (result.error) {
-      setPingOutput("Error: " + result.error);
-      return;
-    }
-
-    setPingOutput(result.alive ? "Device is online" : "Device is offline");
-  });
-}
-
-// API
-async function api(action: string, params: Record<string, string> = {}) {
-  const query = new URLSearchParams({ action, ...params });
-  const res = await fetch(`../../api.php?` + query.toString());
-  return res.json();
-}
-
-function renderSecurityAudit(data: {
-  icon: string;
-  name: string;
-  ip: string;
-  grade: number;
-  vulns: string[];
-}) {
-  const icon = document.getElementById("auditDeviceIcon") as HTMLImageElement;
-  const name = document.getElementById("auditDeviceName");
-  const ip = document.getElementById("auditDeviceIP");
-  const grade = document.getElementById("auditGrade");
-  const list = document.getElementById("auditVulnList");
-
-  if (icon) icon.src = `icons/${data.icon}`;
-  if (name) name.textContent = data.name;
-  if (ip) ip.textContent = data.ip;
-  if (grade) grade.textContent = String(data.grade);
-
-  if (list) {
-    list.innerHTML = "";
-    data.vulns.forEach(v => {
-      const item = document.createElement("div");
-      item.className = "audit-vuln-item";
-      item.textContent = v;
-      list.appendChild(item);
-    });
-  }
-}
-
-function initThemeSwitch() {
-  const btn = document.getElementById("settings-switch");
-  if (!btn) return;
-
-  btn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-  });
-
-  // загрузка темы
-  const saved = localStorage.getItem("theme");
-  if (saved === "dark") document.body.classList.add("dark");
-}
-
-function parseSecurityGrade(code: string): number {
-  // Ищет G + цифру
-  const match = code.match(/G(\d)/);
-  if (!match) return 0;
-
-  const num = Number(match[1]);
-
-  // G0 = 10
-  if (num === 0) {
-    return 10;
-  } else if (num === 1) {
-    return 1;
-  } else if (num === 2) {
-    return 2;
-  } else if (num === 3) {
-    return 3;
-  } else if (num === 4) {
-    return 4;
-  }
-
-  return num;
-}
-function updateSecurityGradeIcon(grade: number) {
-  const gradeEl = document.getElementById("auditGrade") as HTMLElement | null;
-  if (!gradeEl) return;
-
-  gradeEl.style.backgroundImage = `url("icons/grade-num-${grade}.svg")`;
-  gradeEl.style.backgroundSize = "cover";
-  gradeEl.textContent = ""; 
-}
-
-
-// Инициализация сайта
-function init() {
-  initCards();
-  initSettingsModal();
-  initBackButtons();
-  initPingPage();
-  initThemeSwitch();
-  initConsolePage();
-  showPage("page-main");
-}
-
-document.addEventListener("DOMContentLoaded", init);

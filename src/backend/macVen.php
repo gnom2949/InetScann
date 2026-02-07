@@ -1,21 +1,34 @@
-<?php
-use Predis\Client;
+<?php // macVen.php \\ обработка вендоров полученных с редисБД |MARK| START
 
 require_once __DIR__ . '/redisHndl.php';
+require_once __DIR__ . '/utils.php';
 
-function macVendor(string $mac, $write): array {
+function macVen (string $mac, $write): array
+{
     if (!$mac) {
-        $write->mac->error("empty input");
-        return ['error' => 'MAC required'];
+        return ['vendor' => 'Unknown', 'safety' => 'doubtful'];
     }
-    $mac = strtoupper(str_replace([':', '-'], '', $mac));
-    $prefix = substr($mac, 0, 6);
 
-    $redis = redis($write);
-    $vendor = $redis->hget("mac:$prefix", "vendor");
+    $macN = normalizeMac ($mac);
+    $prefix = substr ($macN, 0, 6);
+
+    $redis = redis ($write);
+    $vendor = $redis->hget ("mac::$prefix", "vendor");
+
+    // логика значений 'safery'
+    if ($vendor) {
+        $safety = "normal";
+    } else {
+        if (in_array ($prefix, ["000000", "FFFFFF"])) {
+            $safety = "untrusted";
+        } else {
+            $safety = "doubtful";
+        }
+    }
 
     return [
-        'mac' => $mac,
-        'vendor' => $vendor ?: 'Unknown'
+        'vendor' => $vendor ?: 'Unknown',
+        'safety' => $safety
     ];
 }
+//macVen.php |MARK| END

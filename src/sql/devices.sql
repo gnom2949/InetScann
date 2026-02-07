@@ -1,0 +1,9 @@
+CREATE TABLE devices (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ip VARCHAR(64),
+    mac VARCHAR(32),
+    vendor VARCHAR(128),
+    safety VARCHAR(32),
+    icon VARCHAR(128),
+    last_seen TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -5,9 +5,11 @@
   --color-bg-footer: #000000;
   --color-bg-panel: rgba(94, 92, 100, 0.5);
   --color-bg-card: #DEDDDA;
+  --color-bg-iconex: #ffffff;
 
   /* Текст */
   --font-main: 'Inter', sans-serif;
+  --font-koulen: 'KoulenR';
   --font-heavy: 900;
 
   --text-xl: 48px;
@@ -34,14 +36,19 @@
 
 @font-face {
   font-family: 'CaskaydiaCoveNF';
-  src: url('../../public/fonts/CaskaydiaCoveNerdFont-Regular.ttf') format('truetype');
+  src: url('/src/frontend/public/fonts/CaskaydiaCoveNerdFont-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'CaskaydiaCoveNF';
-  src: url('../../public/fonts/CaskaydiaCoveNerdFont-Bold.ttf') format('truetype');
+  src: url('/src/frontend/public/fonts/CaskaydiaCoveNerdFont-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'KoulenR';
+  src: url('/src/frontend/public/fonts/Koulen-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
