@@ -1,4 +1,4 @@
-@import url(tokens.css);
+@import url(/frontend/public/errorscreens/tokens.css);
 html, body {
     height: 100%;
     margin: 0;

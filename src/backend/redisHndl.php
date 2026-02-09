@@ -1,7 +1,7 @@
 <?php // redisHndl.php \\ A handler for redis db, the part of backend |MARK| START
 use Predis\Client;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 function redis ($write): Client
 {
@@ -14,7 +14,7 @@ function redis ($write): Client
 		// схема подключения 
 		$redis = new Client([
 			'scheme' => 'tcp',
-			'host' => 'redis',
+			'host' => '127.0.0.1',
 			'port' => 6379,
 		]);
 

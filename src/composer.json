@@ -1,0 +1,21 @@
+{
+  "require": {
+    "php": "^8.3",
+    "predis/predis": "^2.2",
+    "willdurand/nmap": "^0.5.0",
+    "symfony/polyfill-mbstring": "^1.29",
+    "symfony/polyfill-php80": "^1.29",
+    "symfony/polyfill-php81": "^1.29"
+  },
+  "autoload": {
+    "psr-4": {
+      "InetScann\\": "backend/",
+      "InetScann\\Api\\": "api/"
+    }
+  },
+  "config": {
+    "audit": {
+      "block-insecure": false
+    }
+  }
+}

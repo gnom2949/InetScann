@@ -13,7 +13,7 @@ services:
       - redis
     networks:
       - inetnet
-    privileged: true   # нужно для ping, arp, traceroute
+    privileged: true   
 
   mariadb:
     image: mariadb:11

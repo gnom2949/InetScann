@@ -1,19 +1,42 @@
 <?php // ping.php \\ ping endpoint || START
 
-$ip = $_GET['ip'] ?? null;
+require_once __DIR__ . '/../../backend/subNet.php';
 
-if (!$ip) {
-    $write->ping->error("no IP provided");
-    return ['error' => 'IP required'];
-}
+return function ($params, $write) {
+    $ip = $params['ip'] ?? null;
 
-exec ("ping -c 1 -W 1 $ip 2>&1", $output, $code);
+    if (!$ip) {
+        $write->ping->error("no IP provided, trying to detect subnet");
 
-if ($code !== 0) $write->ping->error("We not received any response from $ip");
+        $subnet = SubNet::pullSubnet ($write);
 
-return [
-    'ip' => $ip,
-    'alive' => $code === 0
-];
+        if (!$subnet) {
+            $write->ping->error ("Could not determine subnet");
+            Response::error ("Could not determine subnet", 400);
+        }
 
+        // определение подсети типа если было 192.168.1.42/24 -> 192.168.1.1
+        if (preg_match ('/(\d+\.\d+\.\d+)\.\d+\/\d+/', $subnet, $m)) {
+            $ip = $m[1] . ".1";
+            $write->ping->info ("Auto-selected gateway: $ip");
+        } else {
+            $write->ping->error ("Invalid subnet format: $subnet");
+            Response::error ("Invalid subnet format", 400);
+        }
+    }
+
+    exec ("ping -c 1 -W 1 $ip 2>&1", $output, $code);
+
+    if ($code !== 0) {
+        $write->ping->error("Could not receive any response from $ip"); 
+        Response::error("Could not receive any response from $ip", 400);
+
+    }
+    $write->ping->info ("Test");
+    Response::json ([
+        'ip' => $ip,
+        'alive' => true,
+        'output' => implode ("\n", $output)
+    ]);
+};
 // ping.php || END

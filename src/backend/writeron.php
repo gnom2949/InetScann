@@ -109,7 +109,7 @@ class Writer {
      * Добавляет консольный writer
      */
     private function addConsoleWriter() {
-        $writer = new LogWriter(STDERR, $this->useColors, true);
+        $writer = new LogWriter(fopen('php://stdout', 'w'), $this->useColors, true);
         $this->writers['console'] = $writer;
     }
 
@@ -204,13 +204,13 @@ class Writer {
         $this->moduleName = null;
     }
 
-    public function __destruct() {
-        foreach ($this->writers as $key => $writer) {
-            if ($key !== 'console') {
-                fclose($this->resource);
-            }
-        }
-    }
+    #public function __destruct() {
+     #   foreach ($this->writers as $key => $writer) {
+      #      if ($key !== 'console') {
+       #         fclose($this->resource);
+       #     }
+        #}
+    #}
 }
 
 function writer() {

@@ -1,20 +1,22 @@
 <?php // cves.php \\ cve's endpoint || START
 $redis = require_once __DIR__ . '/../../backend/redisHndl.php';
 
-$cve = $_GET['id'] ?? null;
+return function ($params, $write) use ($redis)
+{
+    $cve = $params['id'] ?? null;
 
-if (!$cve) {
-    $write->cve->error("CVE value is NULL!!!");
-    return ['error' => 'CVE ID Required'];
-}
+    if (!$cve) {
+        $write->cve->error("CVE value is NULL!!!");
+        Response::error ("CVE required", 400);
+    }
 
-$data = $redis->hgetall("cve:$cve");
+    $data = $redis->hgetall("cve:$cve");
 
-if (!$data) {
-    $write->cve->alert ("CVE not found");
-    return ['error' => 'CVE not found'];
-}
+    if (!$data) {
+        $write->cve->alert ("CVE not found");
+        Response::error ("CVE not found", 404);
+    }
 
-return $data;
-
+    Response::json ($data);
+};
 // cves.php || START

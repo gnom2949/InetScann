@@ -36,19 +36,19 @@
 
 @font-face {
   font-family: 'CaskaydiaCoveNF';
-  src: url('/src/frontend/public/fonts/CaskaydiaCoveNerdFont-Regular.ttf') format('truetype');
+  src: url('/frontend/public/fonts/CaskaydiaCoveNerdFont-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'CaskaydiaCoveNF';
-  src: url('/src/frontend/public/fonts/CaskaydiaCoveNerdFont-Bold.ttf') format('truetype');
+  src: url('/frontend/public/fonts/CaskaydiaCoveNerdFont-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'KoulenR';
-  src: url('/src/frontend/public/fonts/Koulen-Regular.ttf') format('truetype');
+  src: url('/frontend/public/fonts/Koulen-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }

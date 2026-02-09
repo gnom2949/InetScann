@@ -1,18 +1,21 @@
 <?php // device-inf.php \\ Device info endpoint || START
+
 require __DIR__ . '/../../backend/utils.php';
 require __DIR__ . '/../../backend/macVen.php';
 
-$ip = $_GET['ip'] ?? null;
+return function ($params, $write) 
+{
+    $ip = $params['ip'] ?? null;
 
-if (!$ip) return ['error' => 'IP required'];
+    if (!$ip) $write->device->error ("IP required"); Response::error ("Ip required", 400);
 
-$mac = getMFA ($ip);
-$vendor = macVendor($mac, $write);
+    $mac = getMFA ($ip);
+    $vendor = macVen($mac, $write);
 
-return [
-    'ip' => $ip,
-    'mac' => $mac,
-    'vendor' => $vendor['vendor'] ?? 'Unknown'
-];
-
+    Response::json ([
+        'ip' => $ip,
+        'mac' => $mac,
+        'vendor' => $vendor['vendor'] ?? 'Unknown'
+    ]);
+};
 // device-inf.php || END

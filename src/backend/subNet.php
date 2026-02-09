@@ -1,35 +1,64 @@
 <?php // subNet.php \\ ну типа файл который получает маску подсети и дает нормальное сканирование || START
-require __DIR__ . '/writeron.php';
+require_once __DIR__ . '/writeron.php';
 
 header('Content-Type: application/json');
 
-function pullAliveDev(): array 
+class SubNet 
 {
-    $write = new Writer;
-    $write->append();
-    $write->colorify();
+    public static function pullSubnet ($write): ?string
+    {
+      $raw = shell_exec("ip -o -f inet addr show | grep 'scope global' | grep -v 'lo' | awk '{print $4}' | head -n1");
 
-    // поиск строки 'default via ... dev eth0'
-    $write->Network->info ("Getting subnet ip...");
-    $subnet = shell_exec("ip -o -f inet addr show | awk '/scope global/ {print $4}' | head -n1");
-    $subnet = trim ($subnet);
-   
-    if (empty($subnet)) {
-        $write->Network->error ("We couldn't receive subnet");
-        return ['error' => 'We couldn receive subnet'];
+      $subnet = $raw ? trim ((string)$raw) : null;
+
+      if (empty ($subnet)) {
+        $write->Network->failure ("Ip command failed or returned nothing. Trying fallback");
+        
+        $fallback = shell_exec ("hostname -I | awk '{print $1}'");
+        if ($fallback) {
+            $ip = trim ($fallback);
+            $subnet = $ip . "/24";
+        }
+      }
+      return $subnet;
     }
 
-    //запуск nmap
-    $rawOutput = shell_exec("sudo nmap -sn -n $subnet");
+    public static function streamScan ($write) 
+    {
+        $subnet = self::pullSubnet ($write);
 
-    // парсинг вывода
-    preg_match_all('/report for ([\d\.]+)/', $rawOutput, $matches);
+        if (empty ($subnet)) {
+            Response::error ("Could not determine network");
+            return;
+        }
 
-    return [
-        'subnet' => $subnet,
-        'alive' => $matches[1] ?? []
-    ];
+        $cmd = "nmap -sn -n -PR " . escapeshellarg ($subnet);
+
+        $write->Network->info ("Executing: $cmd");
+        $handle = popen ("$cmd 2>&1", 'r');
+
+        while (!feof ($handle)) {
+            $line = fgets ($handle);
+            if (!$handle) continue;
+
+            // парсинг ip
+            if (preg_match ('/Nmap scan report for ([\d\.]+)/', $line, $m)) {
+                $ip = $m[1];
+
+                // поток в TS
+                Response::stream([
+                    'status' => 'alive',
+                    'ip' => $ip,
+                    'mode' => 'subnet_discovery',
+                    'raw' => "Host detected: $ip"
+                ]);
+
+                $write->Network->info ("Device online: $ip");
+            }
+        }
+
+        pclose ($handle);
+        $write->Network->info ("Subnet Scan finished");
+    }
 }
-Response::json(pullAliveDev());
-
 // subNet.php || END

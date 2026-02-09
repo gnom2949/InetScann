@@ -10,10 +10,19 @@ function macVen (string $mac, $write): array
     }
 
     $macN = normalizeMac ($mac);
-    $prefix = substr ($macN, 0, 6);
+
+    if (strlen ($macN) < 6) {
+        $write->vendor->warning ("MAC too short: $mac");
+        return ['vendor' => 'Unknown', 'safety' => 'doubtful'];
+    }
+
+    $prefixR = substr ($macN, 0, 6);
+
+    $prefix = implode ('-', str_split ($prefixR, 2));
 
     $redis = redis ($write);
-    $vendor = $redis->hget ("mac::$prefix", "vendor");
+    $key = "mac:$prefix";
+    $vendor = $redis->hget ($key, "vendor");
 
     // логика значений 'safery'
     if ($vendor) {

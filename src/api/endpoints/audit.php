@@ -1,19 +1,21 @@
 <?php // audit.php \\ Security Audit endpoint || START
 require __DIR__ . '/../../backend/nmap.php';
 
-$ip = $_GET['ip'] ?? null;
+return function ($params, $write)
+{
+    $ip = $params['ip'] ?? null;
 
-if (!$ip) {
-    $write->audit->error ("No Ip provided!");
-    return ['error' => 'IP required'];
-}
+    if (!$ip) {
+        $write->audit->error ("No Ip provided!");
+        Response::error ("Ip required", 400);
+    }
 
-$write->nmap->info ("Starting security audit for $ip");
+    $write->audit->info ("Starting security audit for $ip");
 
-$result = secAud ($ip, $write);
+    $result = secAud ($ip, $write);
 
-$write->nmap->info ("Audit work complete for $ip");
+    $write->audit->info ("Audit work complete for $ip");
 
-return $result;
-
+    Response::json ($result);
+};
 // audit.php || END

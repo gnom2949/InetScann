@@ -1,13 +1,20 @@
-<?php // mac.php \\ mac endpoint || START
+<?php // mac.php \\ mac endpoint |MARK| START
 require __DIR__ . '/../../backend/macVen.php';
 
-$mac = $_GET['mac'] ?? null;
+return function ($params, $write)
+{
+    $write->mac->info("MAC endpoint called");
 
-if (!$mac) {
-    $write->mac->error("no MAC provided");
-    return ['error' => 'MAC required'];
-}
+    $mac = $params['mac'] ?? null;
 
-return macVendor($mac, $write);
+    if (!$mac) {
+        Response::error("MAC is required");
+    }
 
-// mac.php || END
+    return [
+        'status' => 'ok',
+        'mac' => $mac
+    ];
+};
+
+// mac.php |MARK| START

@@ -27,7 +27,7 @@ class Response {
         http_response_code ($code);
 
         if (self::$write) {
-            self::$write->api->error ("API error: $msg");
+            self::$write->api->error ("$msg");
         }
 
         self::json([
@@ -44,7 +44,7 @@ class Response {
         self::json ($data);
     }
 
-    // функция для потоков, разница в том что она не закрывает поток, на этом отличия закончились а и да очищает буфер
+    // функция для потоков, разница в том что она не закрывает поток... на этом отличия закончились а и да очищает буфер ✔️✔️✔️
     public static function stream ($data)
     {
         if (!headers_sent()) {
@@ -55,7 +55,11 @@ class Response {
             if (self::$write) self::$write->stream->info('Headers sent, stream starting');
         }
         echo "data: " . json_encode ($data, JSON_UNESCAPED_UNICODE) . "\n\n";
-        ob_flush();
+        
+        if (ob_get_level() > 0) {
+            self::$write->buffer->debug("buffer: " . ob_get_level());
+            ob_flush();
+        }
         flush();
     }
 }

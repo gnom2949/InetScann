@@ -10,13 +10,13 @@ function getNetData ($write): array
     $write->export->debug ("Collecting network data");
 
     try {
-        $scan = pullAliveDev ($write);
+        $subnet = SubNet::pullSubnet ($write);
 
         return [
             'scan_time' => date ('Y-m-d H:i:s'),
-            'subnet' => $scan ['subnet'] ?? 'N/A',
-            'alive_hosts' => $scan ['alive'] ?? [],
-            'host_count' => count ($scan ['alive'] ?? [])
+            'subnet' => $subnet ?? 'N/A',
+            'alive_hosts' => [],
+            'host_count' => 0
         ];
     } catch (Throwable $e) {
         $write->export->warning ("Network scan failed: " . $e->getMessage());
@@ -48,7 +48,7 @@ function pullDevData ($write, $pdo): array
             $devices = $stmt->fetchAll();
 
             foreach ($devices as &$dev) {
-                $dev ['icon_url'] = '/src/frontend/public/icons/' . ($dev['icon'] ?? 'Group-Unknown-GREEN.svg');
+                $dev ['icon_url'] = '/frontend/public/icons/' . ($dev['icon'] ?? 'Group-Unknown-GREEN.svg');
             }
 
         } else {

@@ -1,0 +1,6 @@
+[2026-02-09 15:27:28] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-09 16:14:19] [DB] [ERROR]: DataBase connection failed!
+[2026-02-09 16:14:48] [DB] [ERROR]: DataBase connection failed!
+[2026-02-09 16:15:23] [DB] [INFO]: DataBase connection successfully established
+[2026-02-09 16:16:05] [DB] [DEFAULT]: Test message
+[2026-02-09 16:16:05] [DB] [INFO]: DataBase connection successfully established
