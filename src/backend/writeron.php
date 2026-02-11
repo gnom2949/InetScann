@@ -65,13 +65,12 @@ class Writer {
     }
 
     public function __call($method, $args) {
-        if ($this->moduleName === null) {
-            throw new Exception("specify the module first: writer()->db->error()");
-        }
-
-        $level = strtoupper($method);
+        $level = strtoupper ($method);
         $message = $args[0] ?? '';
-        $this->writeLog($this->moduleName, $level, $message);
+
+        $context = isset ($args[1]) ? " | CTX: " . json_encode($args[1], JSON_UNESCAPED_UNICODE) : "";
+
+        $this->writeLog ($this->moduleName, $level, $message . $context);
         $this->moduleName = null;
     }
 
@@ -128,14 +127,24 @@ class Writer {
         return isset($this->writers['console']);
     }
 
+    public function useCol (bool $yes = true)
+    {
+        $this->useColors = $yes;
+
+        if (isset ($this->writers['console'])) {
+            $this->addConsoleWriter();
+        } 
+        return $this;
+    }
+
     /**
      * Устанавливает цветовую схему
      */
-    public function colorify($colorScheme = null) {
+    public function colorify($colorScheme = null, bool $yes = true) {
         if ($colorScheme && is_array($colorScheme)) {
             $this->colors = array_merge($this->colors, $colorScheme);
         }
-        $this->useColors = true;
+        $this->useColors = ($yes);
         return $this;
     }
 

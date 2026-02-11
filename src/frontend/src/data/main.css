@@ -180,6 +180,7 @@ footer.footer {
   max-width: var(--layout-max-width);
   margin: 0 auto;
   padding: 32px;
+  position: relative;
   box-sizing: border-box;
 }
 
@@ -198,6 +199,10 @@ footer.footer {
 .page {
   display: none;
   width: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0;
 }
 
 #page-main {
@@ -287,14 +292,6 @@ footer.footer {
   color: #ffffff;
   width: 48px;
   height: 48px;
-}
-
-/* Pages */
-.page {
-  display: none;
-  width: 100%;
-  padding: 32px;
-  box-sizing: border-box;
 }
 
 /* Forms */

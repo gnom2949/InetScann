@@ -25,14 +25,15 @@ return function ($params, $write) {
         }
     }
 
-    exec ("ping -c 1 -W 1 $ip 2>&1", $output, $code);
+    $sip = escapeshellarg ($ip);
+    exec ("ping -c 1 -W 1 $sip 2>&1", $output, $code);
 
     if ($code !== 0) {
         $write->ping->error("Could not receive any response from $ip"); 
         Response::error("Could not receive any response from $ip", 400);
 
     }
-    $write->ping->info ("Test");
+    $write->ping->info ("BONK!");
     Response::json ([
         'ip' => $ip,
         'alive' => true,

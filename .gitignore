@@ -6,5 +6,5 @@ src/public/styles/UserProfilePBuf
 src/public/styles/ProfileAddPBuf
 src/public/styles/SecAuSecGradePBuf
 gd.txt
-vendor
-logger-*.log
+vendor/.
+src/logs/logger-*.log
