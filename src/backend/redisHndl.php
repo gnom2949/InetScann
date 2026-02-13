@@ -14,7 +14,7 @@ function redis ($write): Client
 		// схема подключения 
 		$redis = new Client([
 			'scheme' => 'tcp',
-			'host' => '127.0.0.1',
+			'host' => 'inet_scann_redis',
 			'port' => 6379,
 		]);
 

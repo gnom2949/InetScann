@@ -7,20 +7,24 @@ class SubNet
 {
     public static function pullSubnet ($write): ?string
     {
-      $raw = shell_exec("ip -o -f inet addr show | grep 'scope global' | grep -v 'lo' | awk '{print $4}' | head -n1");
+      $ip = trim (escapeshellarg ("hostname -I | awk '{print $1}'"));
 
-      $subnet = $raw ? trim ((string)$raw) : null;
-
-      if (empty ($subnet)) {
-        $write->Network->failure ("Ip command failed or returned nothing. Trying fallback");
-        
-        $fallback = shell_exec ("hostname -I | awk '{print $1}'");
-        if ($fallback) {
-            $ip = trim ($fallback);
-            $subnet = $ip . "/24";
-        }
+      if (!$ip) {
+        $write->Network->failure ("Subnet is null or wrong. Trying fallback");
+        return "192.168.0.0/24";
       }
-      return $subnet;
+
+      $mask = trim (escapeshellarg ("ip -o -f inet addr show eth0 | awk '{print $4}' | cut -d/ -f2"));
+
+      if (!$mask) {
+        $write->Network->failure ("Mask not found. Trying fallback");
+        $mask = 24;
+      }
+
+      $parts = explode ('.', $ip);
+      $parts[3] = '0';
+
+      return implode ('.', $parts) . "/$mask";
     }
 
     public static function streamScan ($write) 

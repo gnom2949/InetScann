@@ -1,5 +1,5 @@
 <?php // scan.php endpoint \\ ЫЫЫ Типо сканирует сеть и ищо перехватывает вывод nmap для цыфарак красиво |MARK| START
-require_once __DIR__ . '/../../backend/subNet.php';
+require_once __DIR__ . '/../../backend/scanner.php';
 
 return function ($params, $write)
 {

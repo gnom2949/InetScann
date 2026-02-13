@@ -16,13 +16,17 @@ function macVen (string $mac, $write): array
         return ['vendor' => 'Unknown', 'safety' => 'doubtful'];
     }
 
-    $prefixR = substr ($macN, 0, 6);
+    $prefix = normalizeMac ($mac);
 
-    $prefix = implode ('-', str_split ($prefixR, 2));
 
     $redis = redis ($write);
     $key = "mac:$prefix";
     $vendor = $redis->hget ($key, "vendor");
+
+    $write->vendor->info("PREFIX = $prefix");
+    $write->vendor->info("KEY = mac:$prefix");
+    $write->vendor->info("HGET = " . json_encode($redis->hget("mac:$prefix", "vendor")));
+
 
     // логика значений 'safery'
     if ($vendor) {

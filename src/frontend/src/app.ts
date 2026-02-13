@@ -54,3 +54,8 @@ export async function macify()
         ? `Some error was equired ${res.error}`
         : JSON.stringify (res, null, 2);
 }
+
+export async function Scanify() 
+{
+    
+}

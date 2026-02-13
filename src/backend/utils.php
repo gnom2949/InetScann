@@ -24,7 +24,11 @@ function getMFA (string $ip): ?string
 // нормализация MAC 
 function normalizeMac (string $mac): string 
 {
-    return strtoupper (str_replace ([':', '-'], '', $mac));
+   $mac = preg_replace ('/[^A-Fa-f0-9]/', '', $mac);
+
+   $mac = strtoupper ($mac);
+
+   return substr ($mac, 0, 6);
 }
 
 // utils.php |MARK| END

@@ -1,0 +1,32 @@
+[2026-02-12 14:55:03] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-12 14:55:03] [JSON] [INFO]: passing the JSON response
+[2026-02-12 14:55:50] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-12 14:55:50] [JSON] [INFO]: passing the JSON response
+[2026-02-12 14:58:35] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-12 14:58:35] [JSON] [INFO]: passing the JSON response
+[2026-02-12 14:58:41] [API] [ERROR]: Vendor required
+[2026-02-12 14:58:41] [JSON] [INFO]: passing the JSON response
+[2026-02-12 14:58:48] [API] [ERROR]: Vendor required
+[2026-02-12 14:58:48] [JSON] [INFO]: passing the JSON response
+[2026-02-12 14:58:54] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-12 14:58:54] [JSON] [INFO]: passing the JSON response
+[2026-02-12 15:06:59] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-12 15:06:59] [VENDOR] [INFO]: PREFIX = 28-6F-B9
+[2026-02-12 15:06:59] [VENDOR] [INFO]: KEY = mac:28-6F-B9
+[2026-02-12 15:06:59] [VENDOR] [INFO]: HGET = null
+[2026-02-12 15:06:59] [JSON] [INFO]: passing the JSON response
+[2026-02-12 15:09:19] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-12 15:09:19] [VENDOR] [INFO]: PREFIX = 28-6F-B9
+[2026-02-12 15:09:19] [VENDOR] [INFO]: KEY = mac:28-6F-B9
+[2026-02-12 15:09:19] [VENDOR] [INFO]: HGET = null
+[2026-02-12 15:09:19] [JSON] [INFO]: passing the JSON response
+[2026-02-12 15:10:20] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-12 15:10:20] [VENDOR] [INFO]: PREFIX = 
+[2026-02-12 15:10:20] [VENDOR] [INFO]: KEY = mac:
+[2026-02-12 15:10:20] [VENDOR] [INFO]: HGET = null
+[2026-02-12 15:10:20] [JSON] [INFO]: passing the JSON response
+[2026-02-12 15:11:02] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-12 15:11:02] [VENDOR] [INFO]: PREFIX = 286FB9
+[2026-02-12 15:11:02] [VENDOR] [INFO]: KEY = mac:286FB9
+[2026-02-12 15:11:02] [VENDOR] [INFO]: HGET = "Nokia Shanghai Bell Co., Ltd."
+[2026-02-12 15:11:02] [JSON] [INFO]: passing the JSON response

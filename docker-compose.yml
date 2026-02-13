@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   app:
     build: .
@@ -12,6 +10,7 @@ services:
       - mariadb
       - redis
     networks:
+      - macvlan0
       - inetnet
     privileged: true   
 
@@ -42,6 +41,8 @@ services:
 
 networks:
   inetnet:
+  macvlan0:
+    external: true
 
 volumes:
   mariadb_data:
