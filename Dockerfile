@@ -39,6 +39,8 @@ RUN a2enmod rewrite
 
 # Копирование проекта в /var/www/html то есть рабочую директорию для apache
 COPY ./src /var/www/html
+
+RUN mkdir /var/www/html/api/logs
 # Права
 RUN chown -R www-data:www-data /var/www/html
 

@@ -8,7 +8,12 @@ function secAud (string $ip, $write): array
         return ['error' => 'IP required'];
     }
 
-    $cmd = "nmap -sV --script vulners.nse -T4 -Pn $ip 2>&1";
+    $exp = "vulners.nse";
+    $cmd = "nmap -sV --script $exp -T4 -Pn $ip 2>&1";
+
+    if (file_exists ($exp)) {
+        $write->nmap->failure ("script $exp does not exists");
+    }
 
     $write->secAud->info ("executing: $cmd");
 
