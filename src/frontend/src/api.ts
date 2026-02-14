@@ -2,7 +2,7 @@
 
 const API_WRAP = '/api/api.php';
 
-export async function api (action: string, params: Record<string, string> = {}) 
+export async function api<T>(action: string, params: Record<string, string> = {}) 
 {
   const query = new URLSearchParams ({ action, ...params });
   const url = `${API_WRAP}?${query.toString()}`;
@@ -12,15 +12,15 @@ export async function api (action: string, params: Record<string, string> = {})
     const ct = res.headers.get ("Content-Type") || "";
 
     if (!ct.includes ("application/json")) {
-      return { error: "Server returned non-JSON Response!" };
       await TypeLog ("WARNING", "Non-JSON Response!", { url });
+      return { error: "Server returned non-JSON Response!" };
     }
 
-    return await res.json();
+    return await res.json() as T;
   } catch (exc) {
     await TypeLog ("FAILURE", "Fetch Failed!", {
       action, 
-      error: exc?.message || String (exc)
+      error: exc instanceof Error ? exc.message : String (exc)
     });
     return { error: "Access denied! Check you ownership, dumbass" };
   }

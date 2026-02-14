@@ -1,13 +1,13 @@
 # InetScann
-**InetScann** / Internet Scanner is a scanner that helps you scan YOUR network. It's a web-based tool rather than a website, as InetScann CAN ONLY RUN ON YOUR LOCAL NETWORK using Docker or Linux. So, how do you run it on your local PC? I recommend using Docker.
 
 ## Installation
+**InetScann** / Internet Scanner is a scanner that helps you scan YOUR network. It's a web-based tool rather than a website, as InetScann CAN ONLY RUN ON YOUR LOCAL NETWORK using Docker or Linux. So, how do you run it on your local PC? I recommend using Docker.
 `1st.` Clone this repo
 ```
 git clone https://github.com/gnom2949/InetScann.git ~/
 ```
 
-On **windows** it can be too easy, you should to install a [docker desktop](https://docks.docker.com/desktop), open it. 
+On **windows** it is very easy, you should install a [docker desktop](https://docks.docker.com/desktop), open it. 
 Then open **Powershell** and type
 ```powershell
    cd ~/InetScann
@@ -20,18 +20,8 @@ Then open **Powershell** and type
     # start within docker compose
     docker compose up -d
     # voila! You started the container! But needed to set up some DB's
-    docker exec -it inet_scann_app bash
-    # than start php script that automaticly load records to Redis!
-    php imoui.php
-    # the second script that automaticly load CVE's to Redis!
-    php imcve.php
-    # exit from the bash
-    exit
-```
-
-```powershell
-    # and You should to enter a command, this command allow access to LAN, for the get a devices in your network
-    docker network create -d macvlan --subnet=192.168.0.0/24 --gateway=192.168.0.1 -o parent=eth0 macvlan0
+    docker exec -it inet_scann_app php imoui.php
+    docker exec -it inet_scann_app php imcve.php
 ```
 Congrats! We start this container!
 
@@ -62,7 +52,7 @@ docker exec -it inet_scann_app php imcve.php
 [Open this](http://localhost:8092)
 
 ## Using with URL
-To use InetScann with url you need to known,
+To use InetScann with url you need to know,
 call ONLY with /api/api.php?action={filename without .php}
 
 #### Example
@@ -78,7 +68,7 @@ I want to call module `ping.php`, and i type in browser
 Because you don't specify the IP address, to solve this you
 have to specify `&ip=127.0.0.1`, full query: `localhost:8092/api/api.php?action=ping&ip=127.0.0.1`, [Test this](localhost:8092/api/api.php?action=ping&ip=127.0.0.1) 
 
-In different files, the target may have a different name, as example: scan.php, this endpoint requires a `target` than `ip`, console requires a `cmd`, cves requires a `id`, mac requires a `mac`, etc.
+In different files, the target may have a different name, as example: scan.php, this endpoint requires a `target` then `ip`, console requires a `cmd`, cves requires a `id`, mac requires a `mac`, etc.
 
 
 ## Architecture
@@ -88,7 +78,7 @@ API there a main, because the api proceed the queries
 
 
 ## API
-This is a 'heart' of utility, he proceed the queries, and call to Response and Router php scripts.
+This is a 'heart' of utility, it proceed the queries, and call to Response and Router php scripts.
 
 ### A little about interaction with API
 
@@ -127,13 +117,13 @@ To print message we must be use this method: `$write->modulename->info ("USER Re
 
 #### Deep use
 
-So we covered the basic usage
+So we covered the basic usage.
 
-By default args, writer write logs at logs dir(if it not exists, writer create it in dir from he started) and to console
+By default args, writer write logs at logs dir(if it not exists, writer create it in dir from he started) and to console.
 
-If you want to write only in file, you can, just change boolean arg in `append`: `$write->append (null, null, false)`
+If you want to write only in file, you can, just change boolean arg in `append`: `$write->append (null, null, false)`.
 
-If you want write logs in the your own dir, just specify the PATH : `$write->append (null, '/var/www/logs', false)`
+If you want write logs in the your own dir, just specify the PATH : `$write->append (null, '/var/www/logs', false)`.
 
 But if needed **more** writers, you can use this method:
 ```php
@@ -146,4 +136,70 @@ $write->addWriter ("w2", $files, true, false);
 And directly call:
 ```php
 $write->writeLog ('ALERT', "SERVER NOT RESPONDING ON PING"); // yea the same as Legacy
+```
+
+## Frontend
+
+In frontend we have an `API` **Wrapper**, [see the source](/src/frontend/src/api.ts).
+
+**Shortly** how it works.
+
+In `api.ts` we have an constant `API_WRAP` (analogue #define from C).
+
+And within async function we call this in another constant called `res`.
+
+Like this: `const res = '${API_WRAP}?${query}`(in string type).
+
+To do queries with api function we need to import this: `import { api } from './api'`.
+
+Now we can create a constants, for example hbm: `const hbm = await api ("action", { target });`.
+
+So in field **action** we provide an name of endpoint without .php, in field **target** we provide the query what we need, for example `mac`.
+
+So on this data TypeScript do the query on apache, it looks like this: `http://localhost:8092/api/api.php?action=vendor&mac=286FB9`.
+
+**Tip** You need an async function to use api!
+
+### Logs
+To do logs in file, we need a async function called `TypeLog`.
+
+If you seen the api source, you saw it.
+
+But it a just endpoint called `log.php`, api do query, api on php getting this and proceed this, do query on writer and he write to the file(or another options).
+
+#### How to use it
+
+First you needed an async function because TypeLog is an async function.
+
+Second, Import this: `import { api, TypeLog } from './api'`.
+
+So we have three fields.
+
+| Field  |  What he do |
+| :--- | ---: |
+| Module | Just module, can be only in ' '. |
+| Message | This is a message what we want to type. |
+| Ctx | This is a context if it exists, you can add this. |
+
+See the example:
+
+```TypeScript
+await TypeLog ('info', "Initializing an XTerm.js",  {process });
+```
+
+## TS to JS
+
+By default you start this with already compiled TS, but if you add you own feature, you can compile this with **Bun**.
+
+### Instalation
+
+First, go to the [Bun website](https://bun.com) and follow instructions for install it.
+
+Second, Compile it.
+```bash
+    #first cd to src
+    cd ~/InetScann/src
+
+    # compile
+    bun build frontend/src/*.ts --outdir dist
 ```

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <title>InetScann</title>
@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/frontend/src/data/tokens.css">
   <link rel="stylesheet" href="/frontend/src/data/main.css">
   <link rel="stylesheet" href="/frontend/src/data/settings.css">
+  <link rel="stylesheet" href="/dist/main.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,304 +21,336 @@
   <!-- HEADER -->
   <header class="header">
     <div class="healeft">
-      <div class="header-title">InetScann</div><img src="/frontend/public/icons/InetScann.svg">
+      <div class="header-title">InetScann</div><img src="/frontend/public/icons/InetScann.svg" alt="InetScann" class="Micon">
     </div>
-  </header>
 
-<div class="app">
-  <!-- MAIN PAGE -->
-  <main class="panel" id="page-main" style="display: block;">
-    <div class="panel-title">Choose an option</div>
-
-    <button class="settings-btn">
+    <button class="settings-btn" id="settings-btn">
       <div class="settings-icon">
         <img src="/frontend/public/icons/settings-symbolic.svg" alt="Settings button" class="icon-48">
       </div>
     </button>
+  </header>
 
-    <div class="card-grid">
+  <div class="app">
+    <!-- DASHBOARD -->
+    <main class="panel page active" id="dashboard">
+      <div class="panel-title">Choose an option</div>
 
-      <div class="card" data-view="scan-network">
-        <div class="card-title">Scan Network</div>
-        <div class="card-icon"><img src="/frontend/public/icons/lan-symbolic.svg" class="icon-48"></div>
-      </div>
+      <div class="card-grid">
 
-      <div class="card" data-view="ping-device">
-        <div class="card-title">Ping Device</div>
-        <div class="card-icon"><img src="/frontend/public/icons/ping-symbolic.svg" class="icon-48"></div>
-      </div>
-
-      <div class="card" data-view="security-audit">
-        <div class="card-title">Security Audit</div>
-        <div class="card-icon"><img src="/frontend/public/icons/key4-symbolic.svg" class="icon-48"></div>
-      </div>
-
-      <div class="card" data-view="export-report">
-        <div class="card-title">Export Report</div>
-        <div class="card-icon"><img src="/frontend/public/icons/document-save-symbolic.svg" class="icon-48"></div>
-      </div>
-
-      <div class="card" data-view="saved-profiles">
-        <div class="card-title">Saved Scan Profiles</div>
-        <div class="card-icon"><img src="/frontend/public/icons/person-symbolic.svg" class="icon-48"></div>
-      </div>
-
-      <div class="card" data-view="mac-addresses">
-        <div class="card-title">View MAC Addresses</div>
-        <div class="card-icon"><img src="/frontend/public/icons/edit-find-symbolic-1.svg" class="icon-48"></div>
-      </div>
-
-      <div class="card" data-view="saved-devices">
-        <div class="card-title">View Saved Devices</div>
-        <div class="card-icon"><img src="/frontend/public/icons/external-devices-symbolic.svg" class="icon-48"></div>
-      </div>
-
-      <div class="card" data-view="user-command">
-        <div class="card-title">Enter User Command</div>
-        <div class="card-icon"><img src="/frontend/public/icons/terminal-symbolic.svg" class="icon-48"></div>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- SETTINGS MODAL -->
-  <div class="settings-overlay" id="settings" style="display: none;">
-    <div class="settings-modal">
-      <div class="settings-title">InetScann Settings</div>
-
-      <div class="settings-row">
-        
-        <div class="settings-label">Theme</div>
-        <div class="settings-switch" id="themeSwitch">
-          <div class="settings-switch-handle"></div>
+        <div class="card" data-page="scan-page">
+          <div class="card-title">Scan Network</div>
+          <div class="card-icon">
+            <img src="/frontend/public/icons/lan-symbolic.svg" class="icon-48" alt="">
+          </div>
         </div>
+
+        <div class="card" data-page="ping-page">
+          <div class="card-title">Ping Device</div>
+          <div class="card-icon">
+            <img src="/frontend/public/icons/ping-symbolic.svg" class="icon-48" alt="">
+          </div>
+        </div>
+
+        <div class="card" data-page="audit-page">
+          <div class="card-title">Security Audit</div>
+          <div class="card-icon">
+            <img src="/frontend/public/icons/key4-symbolic.svg" class="icon-48" alt="">
+          </div>
+        </div>
+
+        <div class="card" data-page="mac-page">
+          <div class="card-title">MAC Scanner</div>
+          <div class="card-icon">
+            <img src="/frontend/public/icons/edit-find-symbolic-1.svg" class="icon-48" alt="">
+          </div>
+        </div>
+
+        <div class="card" data-page="profile-page">
+          <div class="card-title">Saved Scan Profiles</div>
+          <div class="card-icon">
+            <img src="/frontend/public/icons/person-symbolic.svg" class="icon-48" alt="">
+          </div>
+        </div>
+
+        <div class="card" data-page="saved-devices">
+          <div class="card-title">View Saved Devices</div>
+          <div class="card-icon">
+            <img src="/frontend/public/icons/external-devices-symbolic.svg" class="icon-48" alt="">
+          </div>
+        </div>
+
+        <div class="card" data-page="export-report">
+          <div class="card-title">Export Report</div>
+          <div class="card-icon">
+            <img src="/frontend/public/icons/document-save-symbolic.svg" class="icon-48">
+          </div>
+        </div>
+
+
+        <div class="card" data-page="user-command">
+          <div class="card-title">Enter User Command</div>
+          <div class="card-icon">
+            <img src="/frontend/public/icons/terminal-symbolic.svg" class="icon-48" alt="">
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- SETTINGS MODAL -->
+    <div class="settings-overlay" id="settings">
+      <div class="settings-modal">
+        <div class="settings-title">InetScann Settings</div>
+
+        <div class="settings-row">
+          <div class="settings-label">Theme</div>
+          <div class="settings-switch" id="theme-switch">
+            <div class="settings-switch-handle"></div>
+          </div>
           <a href="https://github.com/gnom2949" class="github-btn" target="_blank" rel="noopener noreferrer">
             <img src="/frontend/public/icons/github.svg" alt="Github" class="github-logo">
           </a>
+        </div>
+
+        <a href="/frontend/public/pubvid/chicken.mp4" class="illegal-btn">
+          something illegal
+        </a>
+
+
+        <button class="button" id="settings-close">Close</button>
       </div>
-
-      <a href="/frontend/public/pubvid/chicken.mp4" style="text-decoration: none;">
-        <span style="visibility: hidden;">something illegal</span>
-      </a>
     </div>
-  </div>
 
-  <!-- Network Scan Page -->
-   <div id="page-scan-start" class="page" style="display:none;">
+    <!-- Network Scan Page (start / status) -->
+      <div id="scan-page" class="page">
     <div class="panel">
-     <div class="panel-title">
-        <button class="back-btn" data-back>
-          <img src="/frontend/public/icons/back.svg" alt="Back">
-        </button>
+
+      <div class="panel-title">
+        <button class="back-btn" data-back><img src="/frontend/public/icons/back.svg"></button>
         Network Scan
       </div>
 
       <div class="scan-status-box">
         <div class="scan-status-title">Scanning on...</div>
-        <div class="scan-status-output" id="scanStatusOutput"></div>
-    </div>
-  </div>
-</div>
-
-  <div id="page-scan-network" class="page" style="display:none;">
-  <div class="panel">
-
-    <div class="panel-title">
-      <button class="back-btn" data-back>
-        <img src="/frontend/public/icons/back.svg" alt="Back">
-      </button>
-      Network Scan
-    </div>
-
-    <!-- STDIN placeholder -->
-    <div class="scan-status-box">
-      <div class="scan-status-title">Scanning on...</div>
-      <div class="scan-status-output" id="scanStatusOutput">127.0.0.1/25</div>
-    </div>
-
-    <!-- Device list -->
-    <div class="device-list-title">Found Devices</div>
-    <div class="device-list" id="deviceList"></div>
-
-  </div>
-</div>
-<div id="page-scan-error" class="page" style="display:none;">
-  <div class="panel">
-    <div class="panel-title">
-      <button class="back-btn" data-back>
-        <img src="/frontend/public/icons/back.svg" alt="Back">
-      </button>
-      Network Scan
-    </div>
-
-    <div class="empty-box">
-      <img src="/frontend/public/icons/sad-computer-symbolic.svg" class="sad">
-      <div class="empty-title">Devices not Found</div>
-      <div class="empty-sub">No devices responded to the scan.</div>
-    </div>
-  </div>
-</div>
-
-
-  <!-- SECURITY AUDIT PAGE -->
-  <div id="page-security-audit" class="page" style="display:none;">
-  <div class="panel">
-
-    <div class="panel-title">
-      <button class="back-btn" data-back>
-        <img src="/frontend/public/icons/back.svg">
-      </button>
-      Security Audit
-    </div>
-
-    <div class="audit-device-box">
-      <img id="auditDeviceIcon" class="audit-device-icon" src="" alt="">
-      <div id="auditDeviceName" class="audit-device-name"></div>
-      <div id="auditDeviceIP" class="audit-device-ip"></div>
-    </div>
-
-    <div class="audit-grade-box">
-      <div class="audit-grade-title">Your Security Grade</div>
-      <div id="auditGrade" class="audit-grade-circle">?</div>
-    </div>
-
-    <div class="audit-vuln-box">
-      <div class="audit-vuln-title">Potential Vulnerabilities</div>
-      <div id="auditVulnList" class="audit-vuln-list"></div>
-    </div>
-
-  </div>
-</div>
-
-
-  <!-- SAVED PROFILES — EMPTY -->
-  <div id="page-profiles-list" class="page" style="display:none;">
-  <div class="panel unavailable-panel">
-    <div class="unavailable-overlay">
-      <img src="/frontend/public/icons/sad-computer-symbolic.svg" class="unavailable-icon">
-      <div class="unavailable-text">Not available</div>
-    </div>
-
-    <div class="panel-title">
-      <button class="back-btn" data-back>
-        <img src="/frontend/public/icons/back.svg">
-      </button>
-      Saved Scan Profiles
-    </div>
-  </div>
-</div>
-
-
-  <!-- MAC SCAN -->
-  <div id="page-mac-scan" class="page" style="display:none;">
-    <div class="panel">
-      <div class="panel-title">MAC Address Scanner</div>
-
-      <div class="form">
-        <label class="label">Target IP / Range</label>
-        <input class="input" id="macTarget">
-
-        <button class="button" id="btnMacScan">Start Scan</button>
+        <div class="scan-status-output" id="scan-output"></div>
       </div>
 
-      <div class="list" id="macResults"></div>
+      <div class="device-list-title">Found Devices</div>
+      <div class="device-list" id="scan-device-list"></div>
+
+      <div id="consoleBox" class="console-terminal"></div>
     </div>
   </div>
 
-  <div id="page-mac-addresses" class="page" style="display:none;">
-  <div class="panel">
+    <!-- Scan Error Page -->
+    <div id="scan-error" class="page">
+      <div class="panel">
+        <div class="panel-title">
+          <button class="back-btn" data-back><img src="/frontend/public/icons/back.svg"></button>
+            Network Scan
+        </div>
 
-    <div class="panel-title">
-      <button class="back-btn" data-back>
-        <img src="/frontend/public/icons/back.svg" alt="Back">
-      </button>
-      MAC Addresses
-    </div>
-
-    <div class="device-list-title">Detected Devices</div>
-    <div class="device-list" id="macDeviceList"></div>
-
-  </div>
-</div>
-
-
-  <!-- PING DEVICE -->
-  <div id="page-ping-device" class="page" style="display:none;">
-  <div class="panel">
-    <div class="panel-title">
-      <button class="back-btn" data-back>
-        <img src="/frontend/public/icons/back.svg" alt="Back">
-      </button>
-      Device Ping
-    </div>
-
-    <div class="form">
-      <label class="label" for="pingAddress">Enter Address</label>
-      <div style="display:flex; gap:16px; align-items:center;">
-        <input id="pingAddress" class="input" type="text" placeholder="192.168.0.1">
-        <button id="pingGoBtn" class="gobutton">
-          <img src="/frontend/public/icons/Go!.svg">
-        </button>
-      </div>
-
-      <div style="text-align:center; font-size:20px; color:white; margin:16px 0;">OR</div>
-
-      <div class="device-list-title">Choose Device</div>
-      <div class="device-list" id="pingDeviceList"></div>
-
-      <div class="output-box" id="pingOutput">Ping result will appear here…</div>
-    </div>
-  </div>
-</div>
-
-  <!-- View Saved Devices-->
-  <div id="page-saved-devices" class="page" style="display:none;">
-    <div class="panel unavailable-panel">
-      <div class="unavailable-overlay">
-        <img src="/frontend/public/icons/sad-computer-symbolic.svg" class="unavailable-icon">
-        <div class="unavailable-text">Not available</div>
-      </div>
-
-      <div class="panel-title">
-        <button class="back-btn" data-back>
-          <img src="/frontend/public/icons/back.svg">
-        </button>
-        Saved Devices
+        <div class="empty-box">
+          <img src="/frontend/public/icons/sad-computer-symbolic.svg" class="sad">
+          <div class="empty-title">Devices not Found</div>
+          <div class="empty-sub">No devices responded to the scan.</div>
+        </div>
       </div>
     </div>
-  </div>
 
 
-  <!-- USER COMMAND -->
-  <div id="page-user-command" class="page" style="display:none;">
-  <div class="panel">
+    <!-- SECURITY AUDIT PAGE CHOOSE -->
+    <div id="audit-page" class="page">
+      <div class="panel">
 
-    <div class="panel-title">
-      <button class="back-btn" data-back>
-        <img src="/frontend/public/icons/back.svg">
-      </button>
-      Enter User Command
+        <div class="panel-title">
+          <button class="back-btn" data-back><img src="/frontend/public/icons/back.svg"></button>
+          Security Audit
+        </div>
+
+        <div class="device-list-title">Choose Device</div>
+        <div class="device-list" id="audit-device-list"></div>
+
+      </div>
     </div>
 
-    <div class="form">
-      <input id="consoleInput" class="input" placeholder="Enter command...">
-      <button id="consoleRun" class="button">Run</button>
+    <!-- SECURITY AUDIT PAGE RESULT -->
+    <div id="audit-result" class="page">
+      <div class="panel">
+
+        <div class="panel-title">
+          <button class="back-btn" data-back><img src="/frontend/public/icons/back.svg"></button>
+          Security Audit
+        </div>
+
+        <div class="audit-grade-box">
+          <div class="audit-grade-title">Your Security Grade</div>
+          <div id="audit-grade" class="audit-grade-circle"></div>
+        </div>
+
+        <div class="audit-device-box">
+          <img id="audit-icon" class="audit-device-icon">
+          <div id="audit-name" class="audit-device-name"></div>
+          <div id="audit-ip" class="audit-device-ip"></div>
+        </div>
+
+        <div class="audit-vuln-box">
+          <div class="audit-vuln-title">Potential Vulnerabilities</div>
+          <div id="audit-vuln-list" class="audit-vuln-list"></div>
+        </div>
+
+      </div>
     </div>
 
-    <div id="consoleBox" class="console-terminal"></div>
+    <!-- SAVED PROFILES LIST -->
+    <div id="profile-page" class="page">
+      <div class="panel">
 
-  </div>
-</div>
+        <div class="panel-title">
+          <button class="back-btn" data-back><img src="/frontend/public/icons/back.svg"></button>
+          Saved Scan Profiles
+        </div>
+
+        <div class="profile-list" id="profile-list"></div>
+
+      </div>
+    </div>
+
+    <!-- SAVED PROFILES CREATE PROFILE -->
+    <div id="profile-create" class="page">
+      <div class="panel">
+
+        <div class="panel-title">
+          <button class="back-btn" data-back><img src="/frontend/public/icons/back.svg"></button>
+          Profile Creation
+        </div>
+
+        <div class="form">
+          <label class="label">Enter Profile Name</label>
+          <div class="input-row">
+            <input id="profile-name" class="input">
+            <button id="profile-create-go" class="gobutton"><img src="/frontend/public/icons/Go!.svg"></button>
+          </div>
+        </div>
+
+        <div class="device-list-title">Choose Scanned Device</div>
+        <div class="device-list" id="profile-device-list"></div>
+
+      </div>
+    </div>
+
+    <!-- SAVED PROFILES PROFILE VIEW -->
+    <div id="profile-view" class="page">
+      <div class="panel">
+
+        <div class="panel-title">
+          <button class="back-btn" data-back><img src="/frontend/public/icons/back.svg"></button>
+          Saved Scan Profiles
+        </div>
+
+        <div class="profile-info" id="profile-info"></div>
+
+        <div class="device-list-title">Manage Devices</div>
+        <div class="device-list" id="profile-device-manage"></div>
+
+        <div class="profile-actions">
+          <button class="button blue" id="profile-add"><img src="/frontend/public/icons/Add.svg"></button>
+          <button class="button red" id="profile-remove"><img src="/frontend/public/icons/Remove.svg"></button>
+          <button class="button orange" id="profile-about"><img src="/frontend/public/icons/About.svg"></button>
+          <button class="button green" id="profile-rename"><img src="/frontend/public/icons/Rename.svg"></button>
+        </div>
+
+      </div>
+    </div>
+    <!-- VIEW SAVED DEVICES -->
+    <div id="saved-devices" class="page">
+      <div class="panel">
+
+        <div class="panel-title">
+        <button class="back-btn" data-back><img src="/frontend/public/icons/back.svg"></button>
+        View Saved Devices
+        </div>
+
+        <div class="device-list" id="saved-device-list"></div>
+
+      </div>
+    </div>
+
+    <!-- MAC SCAN -->
+    <div id="mac-page" class="page">
+      <div class="panel">
+
+        <div class="panel-title">
+          <button class="back-btn" data-back><img src="/frontend/public/icons/back.svg"></button>
+          MAC Addresses Scan
+        </div>
+
+        <div class="device-list-title">Found MAC Addresses</div>
+        <div class="device-list" id="mac-list"></div>
+
+      </div>
+    </div>
+
+    <!-- PING DEVICE -->
+    <div id="ping-page" class="page" style="display:none;">
+      <div class="panel">
+        <div class="panel-title">
+          <button class="back-btn" data-back>
+            <img src="/frontend/public/icons/back.svg" alt="Back">
+          </button>
+          Device Ping
+        </div>
+
+        <div class="form">
+          <label class="label" for="ping-ip">Enter Address</label>
+          <div style="display:flex; gap:16px; align-items:center;">
+            <input id="ping-ip" class="input" type="text" placeholder="192.168.0.1">
+            <button id="ping-go" class="gobutton">
+              <img src="/frontend/public/icons/Go!.svg" alt="Go">
+            </button>
+          </div>
+
+          <div style="text-align:center; font-size:20px; color:white; margin:16px 0;">OUTPUT</div>
+
+          <div class="output-box" id="ping-output">Ping result will appear here…</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USER COMMAND -->
+    <div id="user-command" class="page">
+      <div class="panel">
+
+        <div class="panel-title">
+          <button class="back-btn" data-back><img src="/frontend/public/icons/back.svg"></button>
+          User Commands
+        </div>
+
+        <div class="form">
+          <label class="label">Enter Command</label>
+          <div class="input-row">
+            <input id="consoleInput" class="input" placeholder="Network utils only!">
+            <button id="consoleRun" class="gobutton"><img src="/frontend/public/icons/Go!.svg"></button>
+          </div>
+        </div>
+
+        <div class="fast-commands" id="fast-commands"></div>
+
+        <div id="consoleBox" class="console-terminal"></div>
+
+      </div>
+    </div>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <span>Project is under GNU GPL v3 LICENSE.</span><img src="/frontend/public/icons/license-copyleft-symbolic.svg" class="copyleft">
+    <span>Project is under GNU GPL v3 LICENSE.</span>
+    <img src="/frontend/public/icons/license-copyleft-symbolic.svg" class="copyleft" alt="">
     <span>2026 InetScann</span>
   </footer>
 
-
-
-<script type="module" src="/dist/main.js"></script>
+  <script type="module" src="/dist/main.js"></script>
+  <script type="module" src="/dist/api.js"></script>
+  <script type="module" src="/dist/settings.js"></script>
 </body>
 </html>
-

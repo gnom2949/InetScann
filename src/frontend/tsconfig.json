@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
+    "target": "ESNext",
     "module": "ESNext",
-    "lib": ["ES2015", "DOM"],
-    "moduleResolution": "Node",
-    "strict": false,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["bun-types"]
   }
 }

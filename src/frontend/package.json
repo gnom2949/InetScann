@@ -5,5 +5,8 @@
   "scripts": {
     "dev": "bun build src/ts/main.ts --outdir public/js --watch",
     "build": "bun build src/ts/main.ts --outdir public/js --minify"
+  },
+  "devDependencies": {
+    "bun-types": "^1.3.9"
   }
 }

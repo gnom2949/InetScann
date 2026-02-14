@@ -1,0 +1,36 @@
+// frontend/src/api.ts
+var API_WRAP = "/api/api.php";
+async function api(action, params = {}) {
+  const query = new URLSearchParams({ action, ...params });
+  const url = `${API_WRAP}?${query.toString()}`;
+  try {
+    const res = await fetch(url);
+    const ct = res.headers.get("Content-Type") || "";
+    if (!ct.includes("application/json")) {
+      await TypeLog("WARNING", "Non-JSON Response!", { url });
+      return { error: "Server returned non-JSON Response!" };
+    }
+    return await res.json();
+  } catch (exc) {
+    await TypeLog("FAILURE", "Fetch Failed!", {
+      action,
+      error: exc instanceof Error ? exc.message : String(exc)
+    });
+    return { error: "Access denied! Check you ownership, dumbass" };
+  }
+}
+async function TypeLog(level, msg, ctx = {}) {
+  try {
+    await fetch(`${API_WRAP}?action=log`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ level, msg, ctx })
+    });
+  } catch (e) {
+    console.error("WARNING", "LOGGING CATCHED ERROR", e);
+  }
+}
+export {
+  api,
+  TypeLog
+};

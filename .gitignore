@@ -7,5 +7,7 @@ src/public/styles/ProfileAddPBuf
 src/public/styles/SecAuSecGradePBuf
 gd.txt
 vendor/.
-src/logs/logger-*.log
+src/logs/
+src/api/logs
+'~'
 ~

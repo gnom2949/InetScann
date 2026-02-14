@@ -2,21 +2,23 @@
 @import url(main.css);
 /* Затемнение фона */
 .settings-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(40, 38, 38, 0.96);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 200;
+  backdrop-filter: blur(6px);
+  transition: opacity 0.2s ease;
+}
+
+@keyframes settingsPop {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
 }
 
 .settings-overlay.active {
   display: flex;
 }
 
+
 /* Белая панель */
 .settings-modal {
+  animation: settingsPop 0.2s ease;
   position: relative;
   width: 1063px;
   max-width: 90%;
@@ -77,13 +79,13 @@
 }
 
 /* Маленький текст */
-.settings-illegal {
-  font-size: var(--text-sm);
-  font-weight: 100;
-  color: #ffffff;
-  text-align: right;
-  margin-top: 32px;
+.illegal-btn {
+  visibility: hidden;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
 }
+
 
 .github-btn-pos {
   position: absolute; /* Positions the button relative to its parent (.settings-modal) */
