@@ -1,9 +1,0 @@
-[2026-02-11 11:59:07] [PING] [INFO]: BONK!
-[2026-02-11 11:59:07] [JSON] [INFO]: passing the JSON response
-[2026-02-11 12:01:20] [PING] [INFO]: BONK!
-[2026-02-11 12:01:20] [JSON] [INFO]: passing the JSON response
-[2026-02-11 12:03:48] [PING] [ERROR]: Could not receive any response from 127.0.0.1; echo "Hello"
-[2026-02-11 12:03:48] [API] [ERROR]: Could not receive any response from 127.0.0.1; echo "Hello"
-[2026-02-11 12:03:48] [JSON] [INFO]: passing the JSON response
-[2026-02-11 12:03:54] [PING] [INFO]: BONK!
-[2026-02-11 12:03:54] [JSON] [INFO]: passing the JSON response
