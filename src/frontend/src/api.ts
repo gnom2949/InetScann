@@ -9,11 +9,18 @@ export async function api<T>(action: string, params: Record<string, string> = {}
 
   try {
     const res = await fetch (url);
-    const ct = res.headers.get ("Content-Type") || "";
 
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      await TypeLog ("FAILURE", `HTTP Error ${res.status}`, { action, errData});
+
+      throw new Error (errData.error || `Server error: ${res.status}`);
+    }
+
+    const ct = res.headers.get ("Content-Type") || "";
     if (!ct.includes ("application/json")) {
-      await TypeLog ("WARNING", "Non-JSON Response!", { url });
-      return { error: "Server returned non-JSON Response!" };
+      await TypeLog ("WARNING", "Server returned non-JSON response!", { url });
+      return { error: "Server returned non-JSON response!" } as T;
     }
 
     return await res.json() as T;
@@ -22,7 +29,7 @@ export async function api<T>(action: string, params: Record<string, string> = {}
       action, 
       error: exc instanceof Error ? exc.message : String (exc)
     });
-    return { error: "Access denied! Check you ownership, dumbass" };
+    return { error: exc instanceof Error ? exc.message : "Access denied! Check you ownership, dumbass" } as T;
   }
 }
 

@@ -1,20 +1,24 @@
 @import url(tokens.css);
 @import url(main.css);
-/* Затемнение фона */
+
 .settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
   backdrop-filter: blur(6px);
   transition: opacity 0.2s ease;
-}
-
-@keyframes settingsPop {
-  from { transform: scale(0.95); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
 }
 
 .settings-overlay.active {
   display: flex;
 }
-
 
 /* Белая панель */
 .settings-modal {
@@ -78,7 +82,6 @@
   left: 22px;
 }
 
-/* Маленький текст */
 .illegal-btn {
   visibility: hidden;
   position: absolute;
@@ -86,23 +89,40 @@
   right: 16px;
 }
 
-
-.github-btn-pos {
-  position: absolute; /* Positions the button relative to its parent (.settings-modal) */
-  bottom: 20px;       /* Distance from the bottom edge */
-  left: 20px;         /* Distance from the left edge */
-  z-index: 210;       /* Ensures it's on top of everything else */
-  
-  /* Styling for the button appearance */
-  background-color: #24292f; 
+.github-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 210;
+  background-color: #24292f;
   padding: 10px;
-  border-radius: 50%; /* For a nice circular button */
+  border-radius: 50%;
   display: block;
+  transition: opacity 0.2s;
 }
 
-/* Style for the image inside the button */
-.github-btn-pos img {
+.github-btn:hover {
+  opacity: 0.8;
+}
+
+.github-btn img,
+.github-logo {
   width: 32px;
   height: 32px;
   display: block;
+}
+
+.SetButton {
+  background-color: #3584e4;
+  border-radius: 28px;
+  border: none;
+  cursor: pointer;
+  width: 250px;
+  height: 48px; 
+  display: block; 
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  font-weight: var(--font-heavy);
+  color: white; 
+  font-size: 24px;
 }

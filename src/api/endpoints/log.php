@@ -2,7 +2,7 @@
 
 return function ($req)
 {
-    $input = json_encode (file_get_contents ('php://input'), true);
+    $input = json_decode (file_get_contents ('php://input'), true);
 
     $level = $input['level'] ?? 'default';
     $message = $input['msg'] ?? 'Message Missing!';

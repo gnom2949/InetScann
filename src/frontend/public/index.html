@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="/frontend/src/data/settings.css">
   <link rel="stylesheet" href="/dist/main.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com" rel="stylesheet">
   <link rel="icon" href="/frontend/public/favicon/favicon.ico">
@@ -60,7 +59,7 @@
         </div>
 
         <div class="card" data-page="mac-page">
-          <div class="card-title">MAC Scanner</div>
+          <div class="card-title">View MAC Adresses</div>
           <div class="card-icon">
             <img src="/frontend/public/icons/edit-find-symbolic-1.svg" class="icon-48" alt="">
           </div>
@@ -118,7 +117,7 @@
         </a>
 
 
-        <button class="button" id="settings-close">Close</button>
+        <button class="SetButton" id="settings-close">Close</button>
       </div>
     </div>
 
@@ -139,7 +138,7 @@
       <div class="device-list-title">Found Devices</div>
       <div class="device-list" id="scan-device-list"></div>
 
-      <div id="consoleBox" class="console-terminal"></div>
+      <div id="consoleScanBox" class="console-terminal"></div>
     </div>
   </div>
 
@@ -337,10 +336,11 @@
 
         <div class="fast-commands" id="fast-commands"></div>
 
-        <div id="consoleBox" class="console-terminal"></div>
+        <div id="consoleCommandBox" class="console-terminal"></div>
 
       </div>
     </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">

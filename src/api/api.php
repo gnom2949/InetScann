@@ -1,4 +1,5 @@
 <?php // api.php \\ MAIN ROUTER || START
+ob_start();
 
 use Symfony\Component\Routing\Route;
 

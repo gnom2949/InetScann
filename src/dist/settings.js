@@ -1,14 +1,19 @@
-// frontend/src/api.ts
+// src/frontend/src/api.ts
 var API_WRAP = "/api/api.php";
 async function api(action, params = {}) {
   const query = new URLSearchParams({ action, ...params });
   const url = `${API_WRAP}?${query.toString()}`;
   try {
     const res = await fetch(url);
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      await TypeLog("FAILURE", `HTTP Error ${res.status}`, { action, errData });
+      throw new Error(errData.error || `Server error: ${res.status}`);
+    }
     const ct = res.headers.get("Content-Type") || "";
     if (!ct.includes("application/json")) {
-      await TypeLog("WARNING", "Non-JSON Response!", { url });
-      return { error: "Server returned non-JSON Response!" };
+      await TypeLog("WARNING", "Server returned non-JSON response!", { url });
+      return { error: "Server returned non-JSON response!" };
     }
     return await res.json();
   } catch (exc) {
@@ -16,7 +21,7 @@ async function api(action, params = {}) {
       action,
       error: exc instanceof Error ? exc.message : String(exc)
     });
-    return { error: "Access denied! Check you ownership, dumbass" };
+    return { error: exc instanceof Error ? exc.message : "Access denied! Check you ownership, dumbass" };
   }
 }
 async function TypeLog(level, msg, ctx = {}) {
@@ -31,8 +36,8 @@ async function TypeLog(level, msg, ctx = {}) {
   }
 }
 
-// frontend/src/settings.ts
-function applyTheme(isDark) {
+// src/frontend/src/settings.ts
+async function applyTheme(isDark) {
   document.documentElement.dataset.theme = isDark ? "dark" : "light";
   const sw = document.getElementById("theme-switch");
   if (sw) {
@@ -41,7 +46,7 @@ function applyTheme(isDark) {
     else
       sw.classList.remove("active");
   }
-  TypeLog("info", `Theme changed to: ${isDark ? "dark" : "light"}`);
+  await TypeLog("info", `Theme changed to: ${isDark ? "dark" : "light"}`);
   localStorage.setItem("theme", isDark ? "dark" : "light");
 }
 function loadTheme() {
@@ -54,27 +59,27 @@ function loadTheme() {
     document.getElementById("theme-switch")?.classList.remove("active");
   }
 }
-function initSettings() {
+async function initSettings() {
   loadTheme();
   const sw = document.getElementById("theme-switch");
   if (sw) {
-    sw.addEventListener("click", () => {
+    sw.addEventListener("click", async () => {
       const isDark = document.documentElement.dataset.theme !== "dark";
-      applyTheme(isDark);
+      await applyTheme(isDark);
     });
   }
   const closeBtn = document.getElementById("settings-close");
   if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
+    closeBtn.addEventListener("click", async () => {
       document.getElementById("settings")?.classList.remove("active");
-      TypeLog("info", "Settings closed");
+      await TypeLog("info", "Settings closed");
     });
   }
   const openBtn = document.getElementById("settings-btn");
   if (openBtn) {
-    openBtn.addEventListener("click", () => {
+    openBtn.addEventListener("click", async () => {
       document.getElementById("settings")?.classList.add("active");
-      TypeLog("info", "Settings opened");
+      await TypeLog("info", "Settings opened");
     });
   }
 }

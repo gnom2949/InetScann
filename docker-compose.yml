@@ -4,6 +4,7 @@ services:
     container_name: inet_scann_app
     ports:
       - "8092:80"
+    network_mode: "host"
     volumes:
       - ./src:/var/www/html
     depends_on:

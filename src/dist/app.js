@@ -1,14 +1,19 @@
-// frontend/src/api.ts
+// src/frontend/src/api.ts
 var API_WRAP = "/api/api.php";
 async function api(action, params = {}) {
   const query = new URLSearchParams({ action, ...params });
   const url = `${API_WRAP}?${query.toString()}`;
   try {
     const res = await fetch(url);
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      await TypeLog("FAILURE", `HTTP Error ${res.status}`, { action, errData });
+      throw new Error(errData.error || `Server error: ${res.status}`);
+    }
     const ct = res.headers.get("Content-Type") || "";
     if (!ct.includes("application/json")) {
-      await TypeLog("WARNING", "Non-JSON Response!", { url });
-      return { error: "Server returned non-JSON Response!" };
+      await TypeLog("WARNING", "Server returned non-JSON response!", { url });
+      return { error: "Server returned non-JSON response!" };
     }
     return await res.json();
   } catch (exc) {
@@ -16,7 +21,7 @@ async function api(action, params = {}) {
       action,
       error: exc instanceof Error ? exc.message : String(exc)
     });
-    return { error: "Access denied! Check you ownership, dumbass" };
+    return { error: exc instanceof Error ? exc.message : "Access denied! Check you ownership, dumbass" };
   }
 }
 async function TypeLog(level, msg, ctx = {}) {
@@ -31,7 +36,7 @@ async function TypeLog(level, msg, ctx = {}) {
   }
 }
 
-// ../node_modules/@xterm/xterm/lib/xterm.mjs
+// node_modules/@xterm/xterm/lib/xterm.mjs
 var zs = Object.defineProperty;
 var Rl = Object.getOwnPropertyDescriptor;
 var Ll = (s, t) => {
@@ -9732,7 +9737,7 @@ var Dl = class extends D {
   }
 };
 
-// ../node_modules/@xterm/addon-fit/lib/addon-fit.mjs
+// node_modules/@xterm/addon-fit/lib/addon-fit.mjs
 var h = 2;
 var _ = 1;
 var o = class {
@@ -9758,7 +9763,7 @@ var o = class {
   }
 };
 
-// frontend/src/app.ts
+// src/frontend/src/app.ts
 var term = new Dl({
   theme: { background: "#241f31", foreground: "#2ec27e" },
   cursorBlink: true,

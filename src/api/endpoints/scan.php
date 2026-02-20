@@ -1,78 +1,40 @@
 <?php // scan.php endpoint \\ ЫЫЫ Типо сканирует сеть и ищо перехватывает вывод nmap для цыфарак красиво |MARK| START
 require_once __DIR__ . '/../../backend/scanner.php';
+require_once __DIR__ . '/../../backend/redisHndl.php';
 
 return function ($params, $write)
 {
-    set_time_limit(0);
-    SubNet::streamScan ($write);
+    $redis = redis($write);
+    $write->scanEndp->info("Starting an Scanner class");
 
-    $target = $params['target'] ?? null;
-    $mode = $params['mode'] ?? 'single';
+    $conf = require_once __DIR__ . '/../../config.php';
 
-    if (!$target) {
-        Response::error ("Target is required"); 
-    }
+    $db = new SQL($conf);
 
-    // очистка, избавление от мусора
-    $target = preg_replace ('/[^a-zA-Z0-9\.\-]/', '', $target);
-    
-    if ($mode == 'multi') {
-        $cmd = "nmap -sn -n " . escapeshellarg ($target);
-        $write->scan->info ("Starting multi scan on: $target");
-    } else {
-        $cmd = "nmap -F " . escapeshellarg ($target);
-        $write->scan->info ("Starting port scan on: $target");
-    }
+    $devices = Scanner::netScanify($write, $redis);
 
-    $handle = popen ("$cmd 2>&1", "r");
-    if (!$handle) {
-        Response::error("Could not execute nmap!");
-    }
+    // сохранение устройств в бд
+    foreach ($devices as $dev) {
+        $db->exec ("
+            INSERT INTO device (profile_owner_id, ip, mac, vendor, hostname, os_desc, safety_status)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE
+                mac = VALUES(mac),
+                vendor = VALUES(vendor)");
+        if (!empty($dev['ip'])) {
+            $redis->hmset("device:{$dev['ip']}", [
+                'ip'         => $dev['ip'],
+                'mac'        => $dev['mac'] ?? null,
+                'vendor'     => $dev['vendor'] ?? null,
+                'safety'     => $dev['safety'] ?? null,
+                'os'         => $dev['os'] ?? null,
+                'deviceType' => $dev['deviceType'] ?? null,
+            ]);
 
-    $curIp = null;
-
-    while (!feof ($handle)) {
-        $line = fgets ($handle);
-        if ($line === false) break;
-        $line = trim ($line);
-        if (empty($line)) continue;
-
-        $data = ['raw' => $line, 'mode' => $mode];
-
-        if (preg_match ('/Nmap scan report for ([a-zA-Z0-9\.\-]+ )?\(?(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\)?/', $line, $match)) {
-            $curIp = $match[2];
-            $data['ip'] = $curIp;
+            $redis->expire("device:{$dev['ip']}", 600);
         }
-
-        if ($mode === 'multi' && preg_match ('/Host is up/', $line)) {
-            $data['status'] = 'up';
-            $data['message'] = "Host ONLINE: $curIp";
-            Response::stream ($data);
-            continue;
-        }
-
-        if ($mode === 'single') {
-            if (preg_match('/(\d+)\/(tcp|udp)\s+(\w+)\s+(.*)/', $line, $portMatch)) {
-                $data['port'] = $portMatch[1];
-                $data['protocol'] = $portMatch[2];
-                $data['state'] = $portMatch[3];
-                $data['service'] = trim ($portMatch[4]);
-
-                if ($data['state'] === 'open') {
-                    $data['message'] = "Port {$data['port']} is OPEN ({$data['service']})";
-                    $write->scan->warning ("Port {$data['port']} is OPEN ({$data['service']})");
-                }
-                Response::stream ($data);
-                continue;
-            }
-        }
-
-        Response::stream ($data);
     }
 
-    pclose ($handle);
-    $write->scan->info ("Scan complete");
-    exit;
+    Response::json($devices);
 };
-
 // scan.php endpoint |MARK| END

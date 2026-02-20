@@ -1,37 +1,50 @@
-<?php
-/* db.php
-Файл описания подключения php к MySQL через PDO (PHP Data Objects)
-*/
+<?php // db.php \\ файл описания подключения к бд через PDO (PHP Data Objects) |MARK| START
+
 require_once __DIR__ . '/backend/writeron.php';
 
-$write = Writer::getInstance();
-$write->append();
-$write->colorify();
+class SQL
+{
+    private PDO $pdo;
 
-// Установка хоста
-$host = 'mariadb';
-$db = 'InetScann';
-$user = 'root';
-$pass = 'dog-hot-copper-linux619';
-$charset = 'utf8mb4';
+    public function __construct(array $cfg)
+    {
+        $conScheme = "mysql:host={$cfg['host']};dbname={$cfg['db']};charset=utf8mb4";
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+        $this->pdo = new PDO ($conScheme, $cfg['user'], $cfg['pass'], [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false,
+        ]);
+    }
 
-// Опции
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES => false,
-];
+    public function dFetch (string $sql, array $params = []): ?array
+    {
+        $stmt = $this->pdo->prepare ($sql);
+        $stmt->execute ($params);
+        $row = $stmt->fetch();
+        return $row ?: null;
+    }
 
-try {
-    // Создание объекта
-    $pdo = new PDO($dsn, $user, $pass, $options);
-    $write->db->info("DataBase connection successfully established");
-} catch (\PDOException $e) {
-    $write->db->error("DataBase connection failed!", ['error' => $e->getMessage()]);
-    $pdo = null;
+    public function muchFetch (string $sql, array $params = []): array
+    {
+        $stmt = $this->pdo->prepare ($sql);
+        $stmt->execute ($params);
+        return $stmt->fetchAll();
+    }
+
+    public function exec (string $sql, array $params = []): int
+    {
+        $stmt = $this->pdo->prepare ($sql);
+        $stmt->execute ($params);
+        return $stmt->rowCount();
+    }
+
+    public function insert (string $sql, array $params = []): int
+    {
+        $stmt = $this->pdo->prepare ($sql);
+        $stmt->execute ($params);
+        return (int)$this->pdo->lastInsertId();
+    }
 }
 
-global $pdo;
-?>
+// db.php /\\ |MARK| END

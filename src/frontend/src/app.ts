@@ -28,14 +28,15 @@ const term = new Terminal({
 const fit = new FitAddon();
 term.loadAddon(fit);
 
-export function initTerminal() {
+export async function initTerminal() {
   document.fonts.ready.then(() => {
-    const box = document.getElementById("consoleBox");
+    const box = document.getElementById("consoleCommandBox");
     if (box) {
       term.open(box);
       fit.fit();
     }
   });
+  await TypeLog ('info', "User open terminal");
 
   window.addEventListener("resize", () => fit.fit());
 }

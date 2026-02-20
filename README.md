@@ -158,7 +158,7 @@ So in field **action** we provide an name of endpoint without .php, in field **t
 
 So on this data TypeScript do the query on apache, it looks like this: `http://localhost:8092/api/api.php?action=vendor&mac=286FB9`.
 
-**Tip** You need an async function to use api!
+***Tip*** you need an async function to use api!
 
 ### Logs
 To do logs in file, we need a async function called `TypeLog`.
@@ -203,3 +203,51 @@ Second, Compile it.
     # compile
     bun build frontend/src/*.ts --outdir dist
 ```
+
+## Backend
+
+So i update the InetScann backend, some endpoint just call to classes in backend, i told you about new classes and how to work with them.
+
+#### first i want learn about DB's interaction
+So i use the Redis and Oracle MySQL(mariadb on linux).
+
+### Redis
+
+So we have an a file called `RedisHndl.php`, we use them to interact with redis.
+
+To know i use an Predis extension and it already installed with 'vendor' dir, you need to known a Predis API and Redis.
+
+**First** connect this file to the file: `require_once __DIR__ . '/redisHndl.php';`.
+
+**Second** create a variable and type a function name `redis` within $write
+```php
+    $redisE = redis ($write);
+```
+
+**Third** use! to use just call the you created variable with using Objects
+```php
+    $redisE->hget ("mac:$prefix");
+```
+
+So it a base!
+
+### MySQL
+And we have an `db.php` file but it placed in root project (src dir), but it needs in configuration! go to the config.php and change db, user, password on yours.
+
+#### Types
+| Type | Description | Use | param |
+| :---: | ---:| ---:| ---: |
+| dFetch | an universal SELECT | $db->dFetch ("SELECT * FROM d WHERE g", [$g]); | dFetch-> (string $sql, array $params): array |
+| muchFetch | an SELECT for multiple strings | $db->muchFetch ("SELECT"); | muchFetch-> (string $sql, array $params): array |
+| exec | Can exec any other queries to the SQL like insert, WHERE | $db->exec ("INSERT INTO d (g, o, o, m, y, c), [$d['g'], $d['o'], $d['m'], $d['y'], $d['c'] ]); | exec (string $sql, array $params): int |
+| insert | An insert who returns id | $db->insert ("INSERT INTO cve (dip, cip, cvss) VALUES (?, ?, ?, ?) [$i, $c['id'], $cvss['count']]); | insert (string $sql, array $params): int | 
+
+#### Usage 
+
+Require it.
+```php
+    $conf = require __DIR__ . '/config.php';
+    $db = new SQL ($conf['mysql']);
+```
+
+And all done! You can do the queries! within Object-like model!

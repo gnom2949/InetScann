@@ -1,24 +1,16 @@
-// settings.ts — управление темой и настройками
+// settings.ts
 import { TypeLog } from "./api";
 
-/* -----------------------------------------
-   ТЕМА
------------------------------------------ */
-
-export function applyTheme(isDark: boolean) {
+export async function applyTheme(isDark: boolean) {
   document.documentElement.dataset.theme = isDark ? "dark" : "light";
 
-  // визуальное состояние переключателя
   const sw = document.getElementById("theme-switch");
   if (sw) {
     if (isDark) sw.classList.add("active");
     else sw.classList.remove("active");
   }
 
-  // лог
-  TypeLog("info", `Theme changed to: ${isDark ? "dark" : "light"}`);
-
-  // сохранение
+  await TypeLog("info", `Theme changed to: ${isDark ? "dark" : "light"}`);
   localStorage.setItem("theme", isDark ? "dark" : "light");
 }
 
@@ -34,38 +26,31 @@ export function loadTheme() {
   }
 }
 
-/* -----------------------------------------
-   ИНИЦИАЛИЗАЦИЯ НАСТРОЕК
------------------------------------------ */
-
-export function initSettings() {
-  // загрузка темы при старте
+export async function initSettings() 
+{
   loadTheme();
 
-  // переключатель темы
   const sw = document.getElementById("theme-switch");
   if (sw) {
-    sw.addEventListener("click", () => {
+    sw.addEventListener("click", async () => {
       const isDark = document.documentElement.dataset.theme !== "dark";
-      applyTheme(isDark);
+      await applyTheme(isDark);
     });
   }
 
-  // кнопка закрытия настроек
   const closeBtn = document.getElementById("settings-close");
   if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
+    closeBtn.addEventListener("click", async () => {
       document.getElementById("settings")?.classList.remove("active");
-      TypeLog("info", "Settings closed");
+      await TypeLog("info", "Settings closed");
     });
   }
 
-  // кнопка открытия настроек
   const openBtn = document.getElementById("settings-btn");
   if (openBtn) {
-    openBtn.addEventListener("click", () => {
+    openBtn.addEventListener("click", async () => {
       document.getElementById("settings")?.classList.add("active");
-      TypeLog("info", "Settings opened");
+      await TypeLog("info", "Settings opened");
     });
   }
 }

@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y \
 	npm \
 	nano \
 	gcc \
+	sudo \
 	wget \
 	redis-server \
 	&& docker-php-ext-install pdo pdo_mysql
@@ -40,13 +41,15 @@ RUN a2enmod rewrite
 # Копирование проекта в /var/www/html то есть рабочую директорию для apache
 COPY ./src /var/www/html
 
-RUN mkdir /var/www/html/api/logs
+#RUN mkdir /var/www/html/api/logs
 # Права
 RUN chown -R www-data:www-data /var/www/html
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 RUN composer require
+
+RUN echo "www-data ALL=(ALL) NOPASSWD: /usr/bin/nmap" >> /etc/sudoers
 
 # Разрешение использование .htaccess в директории /var/www/html
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf

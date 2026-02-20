@@ -5,26 +5,31 @@ header('Content-Type: application/json');
 
 class SubNet 
 {
-    public static function pullSubnet ($write): ?string
+    public static function pullSubnet($write): ?string
     {
-      $ip = trim (escapeshellarg ("hostname -I | awk '{print $1}'"));
+        $ip_output = shell_exec("hostname -I | awk '{print $1}'");
+        $ip = trim($ip_output);
 
-      if (!$ip) {
-        $write->Network->failure ("Subnet is null or wrong. Trying fallback");
-        return "192.168.0.0/24";
-      }
+        if (empty($ip) || !filter_var($ip, FILTER_VALIDATE_IP)) {
+            $write->Network->failure("IP is invalid or empty ($ip). Trying fallback");
+            return "192.168.0.0/24";
+        }
 
-      $mask = trim (escapeshellarg ("ip -o -f inet addr show eth0 | awk '{print $4}' | cut -d/ -f2"));
+        $mask_output = shell_exec("ip -o -f inet addr show eth0 | awk '{print $4}' | cut -d/ -f2");
+        $mask = trim($mask_output);
 
-      if (!$mask) {
-        $write->Network->failure ("Mask not found. Trying fallback");
-        $mask = 24;
-      }
+        if (empty($mask) || !is_numeric($mask)) {
+            $write->Network->failure("Mask not found or wrong ($mask). Trying fallback");
+            $mask = 24;
+        }
 
-      $parts = explode ('.', $ip);
-      $parts[3] = '0';
+        $parts = explode('.', $ip);
+        $parts[3] = '0';
 
-      return implode ('.', $parts) . "/$mask";
+        $subnet = implode('.', $parts) . "/24";
+        $write->Network->info("Detected subnet: $subnet");
+
+        return $subnet;
     }
 
     public static function streamScan ($write) 
