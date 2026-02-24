@@ -15,7 +15,7 @@ class SubNet
             return "192.168.0.0/24";
         }
 
-        $mask_output = shell_exec("ip -o -f inet addr show eth0 | awk '{print $4}' | cut -d/ -f2");
+        $mask_output = shell_exec("ip -o -f inet addr show wlan0 | awk '{print $4}' | cut -d/ -f2");
         $mask = trim($mask_output);
 
         if (empty($mask) || !is_numeric($mask)) {

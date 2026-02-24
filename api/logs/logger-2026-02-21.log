@@ -1,0 +1,452 @@
+[2026-02-21 12:39:54] [REDIS] [ERROR]: We not caught the redis PONG!! | CTX: {"error":"php_network_getaddresses: getaddrinfo for inet_scann_redis failed: Name or service not known [tcp:\/\/inet_scann_redis:6379]"}
+[2026-02-21 12:39:54] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:39:54] [API] [ERROR]: Crash detected: Class "SQL" not found | CTX: {"file":"\/var\/www\/html\/api\/endpoints\/scan.php","line":12}
+[2026-02-21 12:40:49] [REDIS] [ERROR]: We not caught the redis PONG!! | CTX: {"error":"php_network_getaddresses: getaddrinfo for inet_scann_redis failed: Name or service not known [tcp:\/\/inet_scann_redis:6379]"}
+[2026-02-21 12:40:49] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:40:49] [API] [ERROR]: Crash detected: SQL::__construct(): Argument #1 ($cfg) must be of type array, int given, called in /var/www/html/api/endpoints/scan.php on line 13 | CTX: {"file":"\/var\/www\/html\/db.php","line":9}
+[2026-02-21 12:41:54] [REDIS] [ERROR]: We not caught the redis PONG!! | CTX: {"error":"php_network_getaddresses: getaddrinfo for redis failed: Name or service not known [tcp:\/\/redis:6379]"}
+[2026-02-21 12:41:54] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:41:54] [API] [ERROR]: Crash detected: SQL::__construct(): Argument #1 ($cfg) must be of type array, int given, called in /var/www/html/api/endpoints/scan.php on line 13 | CTX: {"file":"\/var\/www\/html\/db.php","line":9}
+[2026-02-21 12:42:17] [API] [ERROR]: Crash detected: Undefined constant "redis" | CTX: {"file":"\/var\/www\/html\/backend\/redisHndl.php","line":17}
+[2026-02-21 12:43:05] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:43:05] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:43:05] [API] [ERROR]: Crash detected: SQL::__construct(): Argument #1 ($cfg) must be of type array, int given, called in /var/www/html/api/endpoints/scan.php on line 13 | CTX: {"file":"\/var\/www\/html\/db.php","line":9}
+[2026-02-21 12:45:02] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:45:02] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:45:02] [API] [ERROR]: Crash detected: SQL::__construct(): Argument #1 ($cfg) must be of type array, int given, called in /var/www/html/api/endpoints/scan.php on line 13 | CTX: {"file":"\/var\/www\/html\/db.php","line":9}
+[2026-02-21 12:47:32] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:47:32] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:47:32] [API] [ERROR]: Crash detected: SQL::__construct(): Argument #1 ($cfg) must be of type array, int given, called in /var/www/html/api/endpoints/scan.php on line 19 | CTX: {"file":"\/var\/www\/html\/db.php","line":9}
+[2026-02-21 12:47:50] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:47:50] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:47:50] [API] [ERROR]: Crash detected: SQL::__construct(): Argument #1 ($cfg) must be of type array, int given, called in /var/www/html/api/endpoints/scan.php on line 13 | CTX: {"file":"\/var\/www\/html\/db.php","line":9}
+[2026-02-21 12:48:56] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:48:56] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:48:56] [API] [ERROR]: Crash detected: SQL::__construct(): Argument #1 ($cfg) must be of type array, null given, called in /var/www/html/api/endpoints/scan.php on line 13 | CTX: {"file":"\/var\/www\/html\/db.php","line":9}
+[2026-02-21 12:49:37] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:49:37] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:49:37] [API] [ERROR]: Crash detected: SQL::__construct(): Argument #1 ($cfg) must be of type array, null given, called in /var/www/html/api/endpoints/scan.php on line 13 | CTX: {"file":"\/var\/www\/html\/db.php","line":9}
+[2026-02-21 12:50:23] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:50:23] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:50:23] [API] [ERROR]: Crash detected: SQL::__construct(): Argument #1 ($cfg) must be of type array, null given, called in /var/www/html/api/endpoints/scan.php on line 13 | CTX: {"file":"\/var\/www\/html\/db.php","line":9}
+[2026-02-21 12:51:51] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:51:51] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:51:51] [API] [ERROR]: Crash detected: SQL::__construct(): Argument #1 ($cfg) must be of type array, null given, called in /var/www/html/api/endpoints/scan.php on line 18 | CTX: {"file":"\/var\/www\/html\/db.php","line":9}
+[2026-02-21 12:52:54] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:52:54] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:52:54] [API] [ERROR]: Crash detected: Config structure is broken! | CTX: {"file":"\/var\/www\/html\/api\/endpoints\/scan.php","line":22}
+[2026-02-21 12:53:56] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:53:56] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:53:56] [API] [ERROR]: Crash detected: SQL::__construct(): Argument #1 ($cfg) must be of type array, null given, called in /var/www/html/api/endpoints/scan.php on line 22 | CTX: {"file":"\/var\/www\/html\/db.php","line":9}
+[2026-02-21 12:55:14] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:55:14] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:55:14] [API] [ERROR]: Crash detected: SQLSTATE[HY000] [2002] No such file or directory | CTX: {"file":"\/var\/www\/html\/db.php","line":13}
+[2026-02-21 12:56:06] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:56:06] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:56:06] [API] [ERROR]: Crash detected: SQLSTATE[HY000] [2002] No such file or directory | CTX: {"file":"\/var\/www\/html\/db.php","line":13}
+[2026-02-21 12:57:35] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 12:57:35] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 12:57:35] [API] [ERROR]: Crash detected: SQLSTATE[HY000] [2002] No such file or directory | CTX: {"file":"\/var\/www\/html\/db.php","line":13}
+[2026-02-21 13:01:27] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 13:01:27] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 13:01:27] [NETWORK] [INFO]: Detected subnet: 192.168.0.0/24
+[2026-02-21 13:01:27] [SCANNER] [INFO]: Scanning subnet: 192.168.0.0/24
+[2026-02-21 13:01:27] [SCANNER] [INFO]: RAW NMAP: sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper
+sudo: a password is required
+
+[2026-02-21 13:01:27] [JSON] [INFO]: passing the JSON response
+[2026-02-21 13:03:38] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 13:03:38] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 13:03:38] [NETWORK] [INFO]: Detected subnet: 192.168.0.0/24
+[2026-02-21 13:03:38] [SCANNER] [INFO]: Scanning subnet: 192.168.0.0/24
+[2026-02-21 13:03:40] [SCANNER] [INFO]: RAW NMAP: Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-21 13:03 UTC
+Nmap scan report for 192.168.0.1
+Host is up (0.00032s latency).
+MAC Address: 0C:80:63:4E:6C:13 (TP-Link Technologies)
+Nmap scan report for 192.168.0.100
+Host is up (0.073s latency).
+MAC Address: 70:2A:D5:8B:30:97 (Samsung Electronics)
+Nmap scan report for 192.168.0.101
+Host is up (0.063s latency).
+MAC Address: EE:4B:98:04:61:F7 (Unknown)
+Nmap scan report for 192.168.0.103
+Host is up (0.089s latency).
+MAC Address: F2:6F:4A:26:01:03 (Unknown)
+Nmap scan report for 192.168.0.104
+Host is up (0.089s latency).
+MAC Address: 08:C7:29:07:08:93 (Apple)
+Nmap scan report for 192.168.0.105
+Host is up.
+Nmap done: 256 IP addresses (6 hosts up) scanned in 2.51 seconds
+
+[2026-02-21 13:03:40] [VENDOR] [INFO]: PREFIX = 0C8063
+[2026-02-21 13:03:40] [VENDOR] [INFO]: KEY = mac:0C8063
+[2026-02-21 13:03:40] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:03:40] [VENDOR] [INFO]: PREFIX = 702AD5
+[2026-02-21 13:03:40] [VENDOR] [INFO]: KEY = mac:702AD5
+[2026-02-21 13:03:40] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:03:40] [VENDOR] [INFO]: PREFIX = EE4B98
+[2026-02-21 13:03:40] [VENDOR] [INFO]: KEY = mac:EE4B98
+[2026-02-21 13:03:40] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:03:40] [VENDOR] [INFO]: PREFIX = F26F4A
+[2026-02-21 13:03:40] [VENDOR] [INFO]: KEY = mac:F26F4A
+[2026-02-21 13:03:40] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:03:40] [VENDOR] [INFO]: PREFIX = 08C729
+[2026-02-21 13:03:40] [VENDOR] [INFO]: KEY = mac:08C729
+[2026-02-21 13:03:40] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:03:40] [API] [ERROR]: Crash detected: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'InnDB.device' doesn't exist | CTX: {"file":"\/var\/www\/html\/db.php","line":41}
+[2026-02-21 13:08:47] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 13:08:47] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 13:08:47] [NETWORK] [INFO]: Detected subnet: 192.168.0.0/24
+[2026-02-21 13:08:47] [SCANNER] [INFO]: Scanning subnet: 192.168.0.0/24
+[2026-02-21 13:08:49] [SCANNER] [INFO]: RAW NMAP: Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-21 13:08 UTC
+Nmap scan report for 192.168.0.1
+Host is up (0.00032s latency).
+MAC Address: 0C:80:63:4E:6C:13 (TP-Link Technologies)
+Nmap scan report for 192.168.0.100
+Host is up (0.020s latency).
+MAC Address: 70:2A:D5:8B:30:97 (Samsung Electronics)
+Nmap scan report for 192.168.0.101
+Host is up (0.040s latency).
+MAC Address: EE:4B:98:04:61:F7 (Unknown)
+Nmap scan report for 192.168.0.105
+Host is up.
+Nmap done: 256 IP addresses (4 hosts up) scanned in 2.03 seconds
+
+[2026-02-21 13:08:49] [VENDOR] [INFO]: PREFIX = 0C8063
+[2026-02-21 13:08:49] [VENDOR] [INFO]: KEY = mac:0C8063
+[2026-02-21 13:08:49] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:08:49] [VENDOR] [INFO]: PREFIX = 702AD5
+[2026-02-21 13:08:49] [VENDOR] [INFO]: KEY = mac:702AD5
+[2026-02-21 13:08:49] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:08:49] [VENDOR] [INFO]: PREFIX = EE4B98
+[2026-02-21 13:08:49] [VENDOR] [INFO]: KEY = mac:EE4B98
+[2026-02-21 13:08:49] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:08:49] [API] [ERROR]: Crash detected: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'InnDB.device' doesn't exist | CTX: {"file":"\/var\/www\/html\/db.php","line":41}
+[2026-02-21 13:09:32] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 13:09:32] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 13:09:32] [NETWORK] [INFO]: Detected subnet: 192.168.0.0/24
+[2026-02-21 13:09:32] [SCANNER] [INFO]: Scanning subnet: 192.168.0.0/24
+[2026-02-21 13:09:34] [SCANNER] [INFO]: RAW NMAP: Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-21 13:09 UTC
+Nmap scan report for 192.168.0.1
+Host is up (0.00031s latency).
+MAC Address: 0C:80:63:4E:6C:13 (TP-Link Technologies)
+Nmap scan report for 192.168.0.100
+Host is up (0.080s latency).
+MAC Address: 70:2A:D5:8B:30:97 (Samsung Electronics)
+Nmap scan report for 192.168.0.105
+Host is up.
+Nmap done: 256 IP addresses (3 hosts up) scanned in 2.01 seconds
+
+[2026-02-21 13:09:34] [VENDOR] [INFO]: PREFIX = 0C8063
+[2026-02-21 13:09:34] [VENDOR] [INFO]: KEY = mac:0C8063
+[2026-02-21 13:09:34] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:09:34] [VENDOR] [INFO]: PREFIX = 702AD5
+[2026-02-21 13:09:34] [VENDOR] [INFO]: KEY = mac:702AD5
+[2026-02-21 13:09:34] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:09:34] [JSON] [INFO]: passing the JSON response
+[2026-02-21 13:11:13] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 13:11:13] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 13:11:13] [NETWORK] [INFO]: Detected subnet: 192.168.0.0/24
+[2026-02-21 13:11:13] [SCANNER] [INFO]: Scanning subnet: 192.168.0.0/24
+[2026-02-21 13:11:15] [SCANNER] [INFO]: RAW NMAP: Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-21 13:11 UTC
+Nmap scan report for 192.168.0.1
+Host is up (0.00037s latency).
+MAC Address: 0C:80:63:4E:6C:13 (TP-Link Technologies)
+Nmap scan report for 192.168.0.100
+Host is up (0.017s latency).
+MAC Address: 70:2A:D5:8B:30:97 (Samsung Electronics)
+Nmap scan report for 192.168.0.101
+Host is up (0.038s latency).
+MAC Address: EE:4B:98:04:61:F7 (Unknown)
+Nmap scan report for 192.168.0.104
+Host is up (0.051s latency).
+MAC Address: 08:C7:29:07:08:93 (Apple)
+Nmap scan report for 192.168.0.105
+Host is up.
+Nmap done: 256 IP addresses (5 hosts up) scanned in 2.43 seconds
+
+[2026-02-21 13:11:15] [VENDOR] [INFO]: PREFIX = 0C8063
+[2026-02-21 13:11:15] [VENDOR] [INFO]: KEY = mac:0C8063
+[2026-02-21 13:11:15] [VENDOR] [INFO]: HGET = "TP-LINK TECHNOLOGIES CO.,LTD."
+[2026-02-21 13:11:15] [VENDOR] [INFO]: PREFIX = 702AD5
+[2026-02-21 13:11:15] [VENDOR] [INFO]: KEY = mac:702AD5
+[2026-02-21 13:11:15] [VENDOR] [INFO]: HGET = "Samsung Electronics Co.,Ltd"
+[2026-02-21 13:11:15] [VENDOR] [INFO]: PREFIX = EE4B98
+[2026-02-21 13:11:15] [VENDOR] [INFO]: KEY = mac:EE4B98
+[2026-02-21 13:11:15] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:11:15] [VENDOR] [INFO]: PREFIX = 08C729
+[2026-02-21 13:11:15] [VENDOR] [INFO]: KEY = mac:08C729
+[2026-02-21 13:11:15] [VENDOR] [INFO]: HGET = "Apple, Inc."
+[2026-02-21 13:11:15] [JSON] [INFO]: passing the JSON response
+[2026-02-21 13:12:11] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 13:12:11] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 13:12:11] [NETWORK] [INFO]: Detected subnet: 192.168.0.0/24
+[2026-02-21 13:12:11] [SCANNER] [INFO]: Scanning subnet: 192.168.0.0/24
+[2026-02-21 13:12:14] [SCANNER] [INFO]: RAW NMAP: Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-21 13:12 UTC
+Nmap scan report for 192.168.0.1
+Host is up (0.00034s latency).
+MAC Address: 0C:80:63:4E:6C:13 (TP-Link Technologies)
+Nmap scan report for 192.168.0.100
+Host is up (0.074s latency).
+MAC Address: 70:2A:D5:8B:30:97 (Samsung Electronics)
+Nmap scan report for 192.168.0.101
+Host is up (0.076s latency).
+MAC Address: EE:4B:98:04:61:F7 (Unknown)
+Nmap scan report for 192.168.0.105
+Host is up.
+Nmap done: 256 IP addresses (4 hosts up) scanned in 3.15 seconds
+
+[2026-02-21 13:12:14] [VENDOR] [INFO]: PREFIX = 0C8063
+[2026-02-21 13:12:14] [VENDOR] [INFO]: KEY = mac:0C8063
+[2026-02-21 13:12:14] [VENDOR] [INFO]: HGET = "TP-LINK TECHNOLOGIES CO.,LTD."
+[2026-02-21 13:12:14] [VENDOR] [INFO]: PREFIX = 702AD5
+[2026-02-21 13:12:14] [VENDOR] [INFO]: KEY = mac:702AD5
+[2026-02-21 13:12:14] [VENDOR] [INFO]: HGET = "Samsung Electronics Co.,Ltd"
+[2026-02-21 13:12:14] [VENDOR] [INFO]: PREFIX = EE4B98
+[2026-02-21 13:12:14] [VENDOR] [INFO]: KEY = mac:EE4B98
+[2026-02-21 13:12:14] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:12:14] [JSON] [INFO]: passing the JSON response
+[2026-02-21 13:14:38] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 13:14:38] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 13:14:38] [NETWORK] [INFO]: Detected subnet: 192.168.0.0/24
+[2026-02-21 13:14:38] [SCANNER] [INFO]: Scanning subnet: 192.168.0.0/24
+[2026-02-21 13:14:55] [SCANNER] [INFO]: RAW NMAP: Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-21 13:14 UTC
+Nmap scan report for 192.168.0.1
+Host is up (0.0010s latency).
+Not shown: 994 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+23/tcp   open  telnet
+80/tcp   open  http
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+1900/tcp open  upnp
+MAC Address: 0C:80:63:4E:6C:13 (TP-Link Technologies)
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.13
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.0.100
+Host is up (0.039s latency).
+All 1000 scanned ports on 192.168.0.100 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 70:2A:D5:8B:30:97 (Samsung Electronics)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.0.101
+Host is up (0.032s latency).
+All 1000 scanned ports on 192.168.0.101 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: EE:4B:98:04:61:F7 (Unknown)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.0.105
+Host is up (0.000042s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE
+80/tcp open  http
+Device type: general purpose
+Running: Linux 2.6.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:linux:linux_kernel:5 cpe:/o:linux:linux_kernel:6
+OS details: Linux 2.6.32, Linux 5.0 - 6.2
+Network Distance: 0 hops
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 256 IP addresses (4 hosts up) scanned in 17.21 seconds
+
+[2026-02-21 13:14:55] [VENDOR] [INFO]: PREFIX = 0C8063
+[2026-02-21 13:14:55] [VENDOR] [INFO]: KEY = mac:0C8063
+[2026-02-21 13:14:55] [VENDOR] [INFO]: HGET = "TP-LINK TECHNOLOGIES CO.,LTD."
+[2026-02-21 13:14:55] [VENDOR] [INFO]: PREFIX = 702AD5
+[2026-02-21 13:14:55] [VENDOR] [INFO]: KEY = mac:702AD5
+[2026-02-21 13:14:55] [VENDOR] [INFO]: HGET = "Samsung Electronics Co.,Ltd"
+[2026-02-21 13:14:55] [VENDOR] [INFO]: PREFIX = EE4B98
+[2026-02-21 13:14:55] [VENDOR] [INFO]: KEY = mac:EE4B98
+[2026-02-21 13:14:55] [VENDOR] [INFO]: HGET = null
+[2026-02-21 13:14:55] [JSON] [INFO]: passing the JSON response
+[2026-02-21 14:05:32] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 14:05:32] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 14:05:32] [NETWORK] [INFO]: Detected subnet: 192.168.0.0/24
+[2026-02-21 14:05:32] [SCANNER] [INFO]: Scanning subnet: 192.168.0.0/24
+[2026-02-21 14:05:43] [SCANNER] [INFO]: RAW NMAP: Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-21 14:05 UTC
+Nmap scan report for 192.168.0.1
+Host is up (0.00066s latency).
+Not shown: 994 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+23/tcp   open  telnet
+80/tcp   open  http
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+1900/tcp open  upnp
+MAC Address: 0C:80:63:4E:6C:13 (TP-Link Technologies)
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.13
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.0.100
+Host is up (0.038s latency).
+All 1000 scanned ports on 192.168.0.100 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 70:2A:D5:8B:30:97 (Samsung Electronics)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.0.105
+Host is up (0.000039s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE
+80/tcp open  http
+Device type: general purpose
+Running: Linux 2.6.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:linux:linux_kernel:5 cpe:/o:linux:linux_kernel:6
+OS details: Linux 2.6.32, Linux 5.0 - 6.2
+Network Distance: 0 hops
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 256 IP addresses (3 hosts up) scanned in 11.30 seconds
+
+[2026-02-21 14:05:43] [VENDOR] [INFO]: PREFIX = 0C8063
+[2026-02-21 14:05:43] [VENDOR] [INFO]: KEY = mac:0C8063
+[2026-02-21 14:05:43] [VENDOR] [INFO]: HGET = "TP-LINK TECHNOLOGIES CO.,LTD."
+[2026-02-21 14:05:43] [VENDOR] [INFO]: PREFIX = 702AD5
+[2026-02-21 14:05:43] [VENDOR] [INFO]: KEY = mac:702AD5
+[2026-02-21 14:05:43] [VENDOR] [INFO]: HGET = "Samsung Electronics Co.,Ltd"
+[2026-02-21 14:05:43] [JSON] [INFO]: passing the JSON response
+[2026-02-21 14:21:28] [PING] [ERROR]: Could not receive any response from 198.0.0.1
+[2026-02-21 14:21:28] [API] [ERROR]: Could not receive any response from 198.0.0.1
+[2026-02-21 14:21:28] [JSON] [INFO]: passing the JSON response
+[2026-02-21 14:21:28] [FRONTEND] [FAILURE]: HTTP Error 400 | CTX: {"action":"ping","errData":{"error":"Could not receive any response from 198.0.0.1","code":400},"ua":"Mozilla\/5.0 (X11; Linux x86_64; rv:128.0) Gecko\/20100101 Firefox\/128.0"}
+[2026-02-21 14:21:28] [JSON] [INFO]: passing the JSON response
+[2026-02-21 14:21:28] [FRONTEND] [FAILURE]: Fetch Failed! | CTX: {"action":"ping","error":"Could not receive any response from 198.0.0.1","ua":"Mozilla\/5.0 (X11; Linux x86_64; rv:128.0) Gecko\/20100101 Firefox\/128.0"}
+[2026-02-21 14:21:28] [JSON] [INFO]: passing the JSON response
+[2026-02-21 14:29:11] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 14:29:11] [BACKAUDIT] [WARNING]: Device not found in redis
+[2026-02-21 14:29:11] [JSON] [INFO]: passing the JSON response
+[2026-02-21 14:29:27] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 14:29:27] [BACKAUDIT] [WARNING]: Device not found in redis
+[2026-02-21 14:29:27] [JSON] [INFO]: passing the JSON response
+[2026-02-21 14:29:42] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 14:29:42] [BACKAUDIT] [WARNING]: Device not found in redis
+[2026-02-21 14:29:42] [JSON] [INFO]: passing the JSON response
+[2026-02-21 14:29:47] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 14:29:47] [SCANENDP] [INFO]: Starting an Scanner class
+[2026-02-21 14:29:47] [NETWORK] [INFO]: Detected subnet: 192.168.0.0/24
+[2026-02-21 14:29:47] [SCANNER] [INFO]: Scanning subnet: 192.168.0.0/24
+[2026-02-21 14:30:08] [SCANNER] [INFO]: RAW NMAP: Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-21 14:29 UTC
+Nmap scan report for 192.168.0.1
+Host is up (0.00081s latency).
+Not shown: 994 closed tcp ports (reset)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+23/tcp   open  telnet
+80/tcp   open  http
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+1900/tcp open  upnp
+MAC Address: 0C:80:63:4E:6C:13 (TP-Link Technologies)
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.13
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.0.100
+Host is up (0.080s latency).
+All 1000 scanned ports on 192.168.0.100 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 70:2A:D5:8B:30:97 (Samsung Electronics)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.0.101
+Host is up (0.0038s latency).
+All 1000 scanned ports on 192.168.0.101 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: EE:4B:98:04:61:F7 (Unknown)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.0.103
+Host is up (0.035s latency).
+All 1000 scanned ports on 192.168.0.103 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: F2:6F:4A:26:01:03 (Unknown)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.0.104
+Host is up (0.012s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT      STATE SERVICE
+49152/tcp open  unknown
+62078/tcp open  iphone-sync
+MAC Address: 08:C7:29:07:08:93 (Apple)
+Device type: general purpose
+Running: Apple macOS 11.X|12.X|13.X
+OS CPE: cpe:/o:apple:mac_os_x:11 cpe:/o:apple:mac_os_x:12 cpe:/o:apple:mac_os_x:13
+OS details: Apple macOS 11 (Big Sur) - 13 (Ventura) or iOS 16 (Darwin 20.6.0 - 22.4.0)
+Network Distance: 1 hop
+
+Nmap scan report for 192.168.0.105
+Host is up (0.000040s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE
+80/tcp open  http
+Device type: general purpose
+Running: Linux 2.6.X|5.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6.32 cpe:/o:linux:linux_kernel:5 cpe:/o:linux:linux_kernel:6
+OS details: Linux 2.6.32, Linux 5.0 - 6.2
+Network Distance: 0 hops
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 256 IP addresses (6 hosts up) scanned in 20.38 seconds
+
+[2026-02-21 14:30:08] [VENDOR] [INFO]: PREFIX = 0C8063
+[2026-02-21 14:30:08] [VENDOR] [INFO]: KEY = mac:0C8063
+[2026-02-21 14:30:08] [VENDOR] [INFO]: HGET = "TP-LINK TECHNOLOGIES CO.,LTD."
+[2026-02-21 14:30:08] [VENDOR] [INFO]: PREFIX = 702AD5
+[2026-02-21 14:30:08] [VENDOR] [INFO]: KEY = mac:702AD5
+[2026-02-21 14:30:08] [VENDOR] [INFO]: HGET = "Samsung Electronics Co.,Ltd"
+[2026-02-21 14:30:08] [VENDOR] [INFO]: PREFIX = EE4B98
+[2026-02-21 14:30:08] [VENDOR] [INFO]: KEY = mac:EE4B98
+[2026-02-21 14:30:08] [VENDOR] [INFO]: HGET = null
+[2026-02-21 14:30:08] [VENDOR] [INFO]: PREFIX = F26F4A
+[2026-02-21 14:30:08] [VENDOR] [INFO]: KEY = mac:F26F4A
+[2026-02-21 14:30:08] [VENDOR] [INFO]: HGET = null
+[2026-02-21 14:30:08] [VENDOR] [INFO]: PREFIX = 08C729
+[2026-02-21 14:30:08] [VENDOR] [INFO]: KEY = mac:08C729
+[2026-02-21 14:30:08] [VENDOR] [INFO]: HGET = "Apple, Inc."
+[2026-02-21 14:30:08] [JSON] [INFO]: passing the JSON response
+[2026-02-21 14:30:57] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 14:30:57] [JSON] [INFO]: passing the JSON response
+[2026-02-21 14:31:00] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 14:31:00] [JSON] [INFO]: passing the JSON response
+[2026-02-21 14:32:08] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 14:32:08] [JSON] [INFO]: passing the JSON response
+[2026-02-21 16:39:55] [REDIS] [INFO]: We successfully caught the redis PONG
+[2026-02-21 16:39:55] [BACKAUDIT] [WARNING]: Device not found in redis
+[2026-02-21 16:39:55] [JSON] [INFO]: passing the JSON response
+[2026-02-21 16:41:25] [FRONTEND] [INFO]: Settings opened | CTX: {"ua":"Mozilla\/5.0 (X11; Linux x86_64; rv:128.0) Gecko\/20100101 Firefox\/128.0"}
+[2026-02-21 16:41:25] [JSON] [INFO]: passing the JSON response
+[2026-02-21 16:41:33] [FRONTEND] [INFO]: Settings closed | CTX: {"ua":"Mozilla\/5.0 (X11; Linux x86_64; rv:128.0) Gecko\/20100101 Firefox\/128.0"}
+[2026-02-21 16:41:33] [JSON] [INFO]: passing the JSON response
+[2026-02-21 17:09:50] [CONSOLE] [INFO]: Streaming started for: gcc
+[2026-02-21 17:09:50] [STREAM] [INFO]: Headers sent, stream starting
+[2026-02-21 17:09:50] [BUFFER] [DEBUG]: buffer: 2
+[2026-02-21 17:09:50] [CONSOLE] [INFO]: Stream closed
+[2026-02-21 17:09:50] [FRONTEND] [WARNING]: Server returned non-JSON response! | CTX: {"url":"\/api\/api.php?action=console&cmd=gcc","ua":"Mozilla\/5.0 (X11; Linux x86_64; rv:128.0) Gecko\/20100101 Firefox\/128.0"}
+[2026-02-21 17:09:50] [JSON] [INFO]: passing the JSON response
+[2026-02-21 17:09:52] [CONSOLE] [INFO]: Streaming started for: gcc
+[2026-02-21 17:09:52] [STREAM] [INFO]: Headers sent, stream starting
+[2026-02-21 17:09:52] [BUFFER] [DEBUG]: buffer: 2
+[2026-02-21 17:09:52] [CONSOLE] [INFO]: Stream closed
+[2026-02-21 17:09:52] [FRONTEND] [WARNING]: Server returned non-JSON response! | CTX: {"url":"\/api\/api.php?action=console&cmd=gcc","ua":"Mozilla\/5.0 (X11; Linux x86_64; rv:128.0) Gecko\/20100101 Firefox\/128.0"}
+[2026-02-21 17:09:52] [JSON] [INFO]: passing the JSON response
