@@ -16,9 +16,7 @@ export type PageID =
   | "user-command"
   | "ping-page";
 
-// -----------------------------
-// TYPES
-// -----------------------------
+/* Types */
 export interface Device {
   id: string;
   name: string;
@@ -28,6 +26,7 @@ export interface Device {
   icon: string;
   vendor?: string;
   os?: string;
+  onClick?: () => void;
 }
 
 export interface Profile {
@@ -66,6 +65,84 @@ export interface MACResult {
   vendor: string;
   vendorIcon?: string;
   status: "online" | "offline" | "warning" | "unknown";
+}
+
+type RawDevice = Partial<Device> & {
+  id: string;
+  name: string;
+  ip: string;
+};
+
+
+function normalizeStatus(status?: string): Device["status"] {
+  if (!status) return "unknown";
+  const s = status.toLowerCase();
+  if (s === "online" || s === "up") return "online";
+  if (s === "offline" || s === "down") return "offline";
+  if (s === "warning" || s === "unstable") return "warning";
+  return "unknown";
+}
+
+function pickDeviceIcon(os?: string, vendor?: string): string {
+  const v = (vendor || "").toLowerCase();
+  const o = (os || "").toLowerCase();
+
+  if (v.includes("apple") || v.includes("iphone") || v.includes("ipad")) {
+    return "/frontend/public/icons/smartphone-symbolic.svg";
+  }
+  if (v.includes("android") || o.includes("android")) {
+    return "/frontend/public/icons/smartphone2-symbolic.svg";
+  }
+  if (v.includes("microsoft") || o.includes("windows")) {
+    return "/frontend/public/icons/computer-symbolic.svg";
+  }
+  if (v.includes("cisco") || v.includes("router")) {
+    return "/frontend/public/icons/RouterGREEN.svg";
+  }
+
+  // Default device icon
+  return "/frontend/public/icons/external-devices-symbolic.svg";
+}
+
+function pickVendorIcon(vendor?: string): string | undefined {
+  if (!vendor) return undefined;
+  const v = vendor.toLowerCase();
+
+  if (v.includes("apple")) return "/frontend/public/icons/apple.svg";
+  if (v.includes("google")) return "/frontend/public/icons/goa-account-google-symbolic.svg";
+  if (v.includes("microsoft")) return "/frontend/public/icons/microsoft.svg";
+  if (v.includes("cisco")) return "/frontend/public/icons/CiscoGREEN.svg";
+
+  return "/frontend/public/icons/Group-Unknown-GREEN.svg";
+}
+
+function normalizeDevice(raw: RawDevice): Device {
+  const status = normalizeStatus(raw.status);
+  const icon = raw.icon || pickDeviceIcon(raw.os, raw.vendor);
+
+  return {
+    id: raw.id,
+    name: raw.name,
+    ip: raw.ip,
+    mac: raw.mac,
+    status,
+    icon,
+    vendor: raw.vendor,
+    os: raw.os,
+  };
+}
+
+function normalizeMACEntry(raw: any): MACResult {
+  const status = normalizeStatus(raw.status);
+  const vendor: string = raw.vendor || "Unknown";
+
+  return {
+    address: raw.address,
+    device: raw.device || "Unknown Device",
+    vendor,
+    vendorIcon: pickVendorIcon(vendor),
+    status,
+  };
 }
 
 // -----------------------------
@@ -273,75 +350,44 @@ export function renderProfileInfo(data: Profile) {
 }
 
 export function renderAuditResult(result: AuditResult) {
-  const container = document.getElementById("audit-result-container");
-  if (!container) return;
+  const gradeEl = document.getElementById("audit-grade");
+  const nameEl = document.getElementById("audit-name");
+  const ipEl = document.getElementById("audit-ip");
+  const vulnList = document.getElementById("audit-vuln-list");
 
-  const gradeClass =
-    result.grade >= 8
-      ? "excellent"
-      : result.grade >= 6
-      ? "good"
-      : result.grade >= 4
-      ? "warning"
-      : "critical";
+  if (!gradeEl || !nameEl || !ipEl || !vulnList) return;
 
-  container.innerHTML = `
-    <div class="audit-container">
-      <div class="audit-grade-panel">
-        <div class="audit-grade-header">
-          <div class="audit-grade-title">Your Security Grade</div>
-          <div class="audit-grade-circle ${gradeClass}">${result.grade}</div>
-        </div>
-        <div class="audit-device-details">
-          <div class="audit-detail-group">
-            <div class="audit-detail-label">Device:</div>
-            <div class="audit-detail-value">${result.device.name}</div>
-          </div>
-          <div class="audit-detail-group">
-            <div class="audit-detail-label">IPv4:</div>
-            <div class="audit-detail-value">${result.device.ip}</div>
-          </div>
-          ${result.device.mac ? `
-          <div class="audit-detail-group">
-            <div class="audit-detail-label">MAC:</div>
-            <div class="audit-detail-value">${result.device.mac}</div>
-          </div>
-          ` : ""}
-        </div>
+  gradeEl.textContent = String(result.grade);
+
+  gradeEl.classList.remove("excellent", "good", "warning", "critical");
+  if (result.grade >= 8) gradeEl.classList.add("excellent");
+  else if (result.grade >= 6) gradeEl.classList.add("good");
+  else if (result.grade >= 4) gradeEl.classList.add("warning");
+  else gradeEl.classList.add("critical");
+
+  nameEl.textContent = result.device.name;
+  ipEl.textContent = result.device.ip;
+
+  vulnList.innerHTML = "";
+  if (!result.vulnerabilities.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty-state-text";
+    empty.textContent = "No known vulnerabilities";
+    vulnList.appendChild(empty);
+    return;
+  }
+
+  result.vulnerabilities.forEach((v) => {
+    const item = document.createElement("div");
+    item.className = `vuln-item ${v.risk}`;
+    item.innerHTML = `
+      <div class="vuln-name">${v.name}</div>
+      <div class="vuln-danger-level">
+        Danger: ${v.risk.charAt(0).toUpperCase() + v.risk.slice(1)}
+        ${v.cve ? ` • ${v.cve}` : ""}
       </div>
-      <div class="vulnerabilities-panel">
-        <div class="vulnerabilities-header">
-          <div class="vulnerabilities-title">Potential Vulnerabilities</div>
-          <div class="vulnerabilities-nav">
-            <button class="vuln-nav-button" id="vuln-prev">‹</button>
-            <button class="vuln-nav-button" id="vuln-next">›</button>
-          </div>
-        </div>
-        <div class="vuln-list" id="vuln-list">
-          ${result.vulnerabilities
-            .map(
-              (v) => `
-            <div class="vuln-item ${v.risk}">
-              <div class="vuln-name">${v.name}</div>
-              <div class="vuln-danger-level">Danger: ${v.risk.charAt(0).toUpperCase() + v.risk.slice(1)}${v.cve ? ` • ${v.cve}` : ""}</div>
-            </div>
-          `
-            )
-            .join("")}
-        </div>
-      </div>
-    </div>
-  `;
-
-  // Navigation handlers
-  document.getElementById("vuln-prev")?.addEventListener("click", () => {
-    const list = document.getElementById("vuln-list");
-    if (list) list.scrollBy({ left: -300, behavior: "smooth" });
-  });
-
-  document.getElementById("vuln-next")?.addEventListener("click", () => {
-    const list = document.getElementById("vuln-list");
-    if (list) list.scrollBy({ left: 300, behavior: "smooth" });
+    `;
+    vulnList.appendChild(item);
   });
 }
 
@@ -352,84 +398,43 @@ export function renderAuditResult(result: AuditResult) {
 // NETWORK SCAN
 export async function performNetworkScan() {
   try {
-    showScanState("scanning");
+    const scanOutput = document.getElementById("scan-output");
+    const deviceList = document.getElementById("scan-device-list");
+
+    if (scanOutput) {
+      scanOutput.textContent = "Scanning…";
+    }
+    if (deviceList) {
+      deviceList.innerHTML = "";
+    }
+
     await TypeLog("info", "Starting network scan...");
 
-    const result = await api<ScanResult>("scan");
+    const raw = await api<any>("scan");
 
-    if (result.error) {
-      await TypeLog("error", "Scan failed", { error: result.error });
-      showScanState("error", result.error);
+    if (raw.error) {
+      await TypeLog("error", "Scan failed", { error: raw.error });
+      showPage("scan-error");
       return;
     }
 
-    if (result.devices && result.devices.length > 0) {
-      await TypeLog("info", `Scan completed. Found ${result.devices.length} devices`);
-      showScanState("found", result);
+    const devices: Device[] = (raw.devices || []).map((d: any) =>
+      normalizeDevice(d),
+    );
+
+    if (devices.length > 0) {
+      await TypeLog("info", `Scan completed. Found ${devices.length} devices`);
+      if (scanOutput) {
+        scanOutput.textContent = raw.network || "Scan completed";
+      }
+      renderDeviceList("scan-device-list", devices, false);
     } else {
       await TypeLog("warning", "No devices found");
-      showScanState("notfound");
+      showPage("scan-error");
     }
   } catch (err) {
     await TypeLog("error", "Scan exception", { error: err });
-    showScanState("error", err instanceof Error ? err.message : "Unknown error");
-  }
-}
-
-export function showScanState(
-  state: "scanning" | "found" | "notfound" | "error",
-  data?: any
-) {
-  const container = document.getElementById("scan-container");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  switch (state) {
-    case "scanning":
-      container.innerHTML = `
-        <div class="scanning-state">
-          <div class="scanning-title">Scanning on...</div>
-          <div class="scanning-address">${data?.network || "127.0.0.1/25"}</div>
-          <div class="scan-progress">
-            <div class="scan-progress-bar"></div>
-          </div>
-          <div class="scanning-spinner"></div>
-        </div>
-      `;
-      break;
-
-    case "found":
-      const devices = data.devices || [];
-      container.innerHTML = `
-        <div class="found-devices-state">
-          <div class="found-devices-title">Found Devices</div>
-          <div class="found-devices-list" id="scan-device-list"></div>
-        </div>
-      `;
-      renderDeviceList("scan-device-list", devices, false);
-      break;
-
-    case "notfound":
-      container.innerHTML = `
-        <div class="empty-scan-state">
-          <div class="empty-scan-icon">
-            <img src="/frontend/public/icons/sad-computer-symbolic.svg" alt="No devices">
-          </div>
-          <div class="empty-scan-title">Devices not Found</div>
-          <div class="empty-scan-text">No devices responded to the scan.</div>
-        </div>
-      `;
-      break;
-
-    case "error":
-      container.innerHTML = `
-        <div class="empty-scan-state">
-          <div class="empty-scan-title" style="color: #e01b24;">Scan Error</div>
-          <div class="empty-scan-text">${data || "Failed to scan network"}</div>
-        </div>
-      `;
-      break;
+    showPage("scan-error");
   }
 }
 
@@ -446,29 +451,26 @@ export async function Pingify() {
 
 // MAC SCAN
 export async function performMACScan() {
-  const container = document.getElementById("mac-container");
-  if (!container) return;
+  const list = document.getElementById("mac-list");
+  if (!list) return;
 
-  container.innerHTML = `<div class="scanning-state">
+  list.innerHTML = `<div class="scanning-state">
     <div class="scanning-title">Scanning MAC Addresses...</div>
     <div class="scanning-spinner"></div>
   </div>`;
 
   try {
-    const res = await api<MACResult[]>("mac");
+    const res = await api<any[]>("mac");
     if (res.error) {
-      container.innerHTML = `<div class="empty-state"><div class="empty-state-text">Error: ${res.error}</div></div>`;
+      list.innerHTML = `<div class="empty-state"><div class="empty-state-text">Error: ${res.error}</div></div>`;
       return;
     }
-    container.innerHTML = `
-      <div class="page-section-title">Found MAC Addresses</div>
-      <div class="mac-list-container">
-        <div class="mac-list" id="mac-list"></div>
-      </div>
-    `;
-    renderMACList("mac-list", res);
+    const normalized = (Array.isArray(res) ? res : []).map((m) =>
+      normalizeMACEntry(m),
+    );
+    renderMACList("mac-list", normalized);
   } catch (err) {
-    container.innerHTML = `<div class="empty-state"><div class="empty-state-text">Scan failed</div></div>`;
+    list.innerHTML = `<div class="empty-state"><div class="empty-state-text">Scan failed</div></div>`;
   }
 }
 
@@ -491,19 +493,23 @@ export async function performAudit(deviceId?: string) {
 
 export async function showAuditDeviceChoice() {
   try {
-    const data = await api<{ devices: Device[] }>("devices");
+    const data = await api<{ devices: any[] }>("device-inf");
     if (data.error) return;
 
     const container = document.getElementById("audit-device-list");
     if (!container) return;
 
+    const devices: Device[] = (data.devices || []).map((d) =>
+      normalizeDevice(d as RawDevice),
+    );
+
     container.innerHTML = "";
-    renderDeviceList("audit-device-list", data.devices, true);
+    renderDeviceList("audit-device-list", devices, true);
 
     // Add click handlers
     container.querySelectorAll(".device-item").forEach((item, index) => {
       item.addEventListener("click", () => {
-        performAudit(data.devices[index].id);
+        performAudit(devices[index].id);
       });
     });
   } catch (err) {
@@ -547,13 +553,16 @@ export async function loadProfiles() {
 // SAVED DEVICES
 export async function loadSavedDevices() {
   try {
-    const res = await api<Device[]>("devices");
+    const res = await api<any[]>("device-inf");
     if (res.error) return;
 
     const container = document.getElementById("saved-devices-list");
     if (!container) return;
 
-    renderDeviceList("saved-devices-list", res, false);
+    const devices: Device[] = (Array.isArray(res) ? res : []).map((d) =>
+      normalizeDevice(d as RawDevice),
+    );
+    renderDeviceList("saved-devices-list", devices, false);
   } catch (err) {
     await TypeLog("error", "Failed to load saved devices", { error: err });
   }
@@ -614,6 +623,34 @@ async function runConsole(cmd: string) {
 }
 
 // -----------------------------
+// EXPORT REPORT
+// -----------------------------
+export async function downloadExportReport() {
+  try {
+    const data = await api<any>("export");
+
+    const blob = new Blob([JSON.stringify(data, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `inetscann-report-${new Date()
+      .toISOString()
+      .replace(/[:.]/g, "-")}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+
+    await TypeLog("info", "Report exported");
+  } catch (err) {
+    await TypeLog("error", "Export failed", { error: err });
+  }
+}
+
+// -----------------------------
 // HOTKEYS
 // -----------------------------
 export function initHotkeys() {
@@ -632,20 +669,18 @@ export function initHotkeys() {
 // INITIALIZATION
 // -----------------------------
 export function initApp() {
-  // Scan page
-  const scanGo = document.getElementById("scan-go");
-  if (scanGo) {
-    scanGo.addEventListener("click", () => {
-      showPage("scan-page");
+  // Scan card (dashboard)
+  const scanCard = document.querySelector('[data-page="scan-page"]');
+  if (scanCard) {
+    scanCard.addEventListener("click", () => {
       performNetworkScan();
     });
   }
 
-  // MAC page
-  const macGo = document.getElementById("mac-go");
-  if (macGo) {
-    macGo.addEventListener("click", () => {
-      showPage("mac-page");
+  // MAC card (dashboard)
+  const macCard = document.querySelector('[data-page="mac-page"]');
+  if (macCard) {
+    macCard.addEventListener("click", () => {
       performMACScan();
     });
   }
@@ -709,6 +744,14 @@ export function initApp() {
     pingGo.addEventListener("click", () => {
       showPage("ping-page");
       Pingify();
+    });
+  }
+
+  // Export report button (dashboard card)
+  const exportBtn = document.getElementById("export-report-btn");
+  if (exportBtn) {
+    exportBtn.addEventListener("click", () => {
+      downloadExportReport();
     });
   }
 }

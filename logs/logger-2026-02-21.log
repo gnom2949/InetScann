@@ -1,4 +1,0 @@
-[2026-02-21 13:10:54] [IMCVE] [INFO]: Starting CVE sync...
-[2026-02-21 13:10:54] [REDIS] [INFO]: We successfully caught the redis PONG
-[2026-02-21 13:10:56] [IMCVE] [SUCCESS]: Successfully imported 1866 CVE's!
-[2026-02-21 13:11:02] [REDIS] [INFO]: We successfully caught the redis PONG

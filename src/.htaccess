@@ -1,8 +1,0 @@
-ErrorDocument 400 /frontend/public/errorscreens/400.html
-ErrorDocument 401 /frontend/public/errorscreens/401.html
-ErrorDocument 403 /frontend/public/errorscreens/403.html
-ErrorDocument 404 /frontend/public/errorscreens/404.html
-ErrorDocument 500 /frontend/public/errorscreens/500.html 
-ErrorDocument 501 /frontend/public/errorscreens/501.html 
-ErrorDocument 502 /frontend/public/errorscreens/502.html
-ErrorDocument 503 /frontend/public/errorscreens/503.html
