@@ -1,22 +1,31 @@
-// src/frontend/src/api.ts
+// frontend/src/api.ts
 var API_WRAP = "/api/api.php";
 async function api(action, params = {}) {
+  const controller = new AbortController;
+  const timeoutId = setTimeout(() => controller.abort(), 90000);
   const query = new URLSearchParams({ action, ...params });
   const url = `${API_WRAP}?${query.toString()}`;
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeoutId);
     if (!res.ok) {
       const errData = await res.json().catch(() => ({}));
+      console.error(`FAILURE. HTTP Error ${res.status}`);
       await TypeLog("FAILURE", `HTTP Error ${res.status}`, { action, errData });
       throw new Error(errData.error || `Server error: ${res.status}`);
     }
     const ct = res.headers.get("Content-Type") || "";
     if (!ct.includes("application/json")) {
       await TypeLog("WARNING", "Server returned non-JSON response!", { url });
+      console.error("Non JSON Response!");
       return { error: "Server returned non-JSON response!" };
     }
     return await res.json();
   } catch (exc) {
+    if (exc.name === "AbortError") {
+      await TypeLog("FAILURE", "SCAN TIMEOUT", { action });
+      return { error: "Scanner took too long, aborted." };
+    }
     await TypeLog("FAILURE", "Fetch Failed!", {
       action,
       error: exc instanceof Error ? exc.message : String(exc)
@@ -9763,7 +9772,79 @@ var o = class {
   }
 };
 
-// src/frontend/src/app.ts
+// frontend/src/app.ts
+function normalizeStatus(status) {
+  if (!status)
+    return "unknown";
+  const s15 = status.toLowerCase();
+  if (s15 === "online" || s15 === "up")
+    return "online";
+  if (s15 === "offline" || s15 === "down")
+    return "offline";
+  if (s15 === "warning" || s15 === "unstable")
+    return "warning";
+  return "unknown";
+}
+function pickDeviceIcon(os2, vendor) {
+  const v2 = (vendor || "").toLowerCase();
+  const o2 = (os2 || "").toLowerCase();
+  if (v2.includes("apple") || v2.includes("iphone") || v2.includes("ipad")) {
+    return "/frontend/public/icons/smartphone-symbolic.svg";
+  }
+  if (v2.includes("android") || o2.includes("android")) {
+    return "/frontend/public/icons/smartphone2-symbolic.svg";
+  }
+  if (v2.includes("microsoft") || o2.includes("windows")) {
+    return "/frontend/public/icons/computer-symbolic.svg";
+  }
+  if (v2.includes("cisco") || v2.includes("router")) {
+    return "/frontend/public/icons/RouterGREEN.svg";
+  }
+  return "/frontend/public/icons/external-devices-symbolic.svg";
+}
+function pickVendorIcon(vendor) {
+  if (!vendor)
+    return;
+  const v2 = vendor.toLowerCase();
+  if (v2.includes("apple"))
+    return "/frontend/public/icons/apple.svg";
+  if (v2.includes("google"))
+    return "/frontend/public/icons/goa-account-google-symbolic.svg";
+  if (v2.includes("microsoft"))
+    return "/frontend/public/icons/microsoft.svg";
+  if (v2.includes("cisco"))
+    return "/frontend/public/icons/CiscoGREEN.svg";
+  return "/frontend/public/icons/Group-Unknown-GREEN.svg";
+}
+function normalizeDevice(raw) {
+  const status = normalizeStatus(raw.status);
+  const icon = raw.icon || pickDeviceIcon(raw.os, raw.vendor);
+  return {
+    id: raw.id,
+    name: raw.name,
+    ip: raw.ip,
+    mac: raw.mac,
+    status,
+    icon,
+    vendor: raw.vendor,
+    os: raw.os
+  };
+}
+function normalizeMACEntry(raw) {
+  const status = normalizeStatus(raw.status);
+  const vendor = raw.vendor || "Unknown";
+  return {
+    address: raw.address,
+    device: raw.device || "Unknown Device",
+    vendor,
+    vendorIcon: pickVendorIcon(vendor),
+    status
+  };
+}
+function formatPingResult(res) {
+  const aliveHuman = res.alive ? "True" : "False";
+  return `ip = ${res.ip}, alive = ${aliveHuman}`;
+}
 var term = new Dl({
   theme: { background: "#241f31", foreground: "#2ec27e" },
   cursorBlink: true,
@@ -9772,14 +9853,15 @@ var term = new Dl({
 });
 var fit = new o;
 term.loadAddon(fit);
-function initTerminal() {
+async function initTerminal() {
   document.fonts.ready.then(() => {
-    const box = document.getElementById("consoleBox");
+    const box = document.getElementById("consoleCommandBox");
     if (box) {
       term.open(box);
       fit.fit();
     }
   });
+  await TypeLog("info", "User open terminal");
   window.addEventListener("resize", () => fit.fit());
 }
 function showPage(id) {
@@ -9792,6 +9874,7 @@ function showPage(id) {
     el2.style.display = "block";
     el2.classList.add("active");
   }
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 function openSettings() {
   document.getElementById("settings")?.classList.add("active");
@@ -9799,24 +9882,65 @@ function openSettings() {
 function closeSettings() {
   document.getElementById("settings")?.classList.remove("active");
 }
-function renderDeviceList(containerId, devices) {
+function renderDeviceList(containerId, devices, clickable = true) {
   const box = document.getElementById(containerId);
   if (!box)
     return;
   box.innerHTML = "";
+  if (devices.length === 0) {
+    box.innerHTML = `<div class="empty-state">
+      <div class="empty-state-text">No devices found</div>
+    </div>`;
+    return;
+  }
   devices.forEach((dev) => {
     const el2 = document.createElement("div");
     el2.className = "device-item";
     el2.innerHTML = `
-      <div class="device-icon"><img src="${dev.icon}"></div>
+      <div class="device-status-indicator ${dev.status}"></div>
+      <div class="device-icon">
+        <img src="${dev.icon}" alt="">
+      </div>
       <div class="device-info">
         <div class="device-name">${dev.name}</div>
-        <div class="device-sub">${dev.sub || ""}</div>
+        <div class="device-subtitle">${dev.ip}${dev.mac ? ` • ${dev.mac}` : ""}</div>
       </div>
-      <div class="device-status ${dev.status}"></div>
+      ${dev.vendor ? `<div class="device-vendor">${dev.vendor}</div>` : ""}
     `;
-    if (dev.onClick)
+    if (clickable && dev.onClick) {
       el2.addEventListener("click", dev.onClick);
+    }
+    box.appendChild(el2);
+  });
+}
+function renderMACList(containerId, macs) {
+  const box = document.getElementById(containerId);
+  if (!box)
+    return;
+  box.innerHTML = "";
+  if (macs.length === 0) {
+    box.innerHTML = `<div class="empty-state">
+      <div class="empty-state-text">No MAC addresses found</div>
+    </div>`;
+    return;
+  }
+  macs.forEach((mac) => {
+    const el2 = document.createElement("div");
+    el2.className = "mac-item";
+    el2.innerHTML = `
+      <div class="device-status-indicator ${mac.status}"></div>
+      <div class="device-icon">
+        <img src="/frontend/public/icons/device-symbolic.svg" alt="">
+      </div>
+      <div class="mac-address">${mac.address}</div>
+      <div class="mac-separator">→</div>
+      <div class="mac-device-name">${mac.device}</div>
+      <div class="mac-separator">→</div>
+      <div class="mac-vendor">
+        ${mac.vendorIcon ? `<img src="${mac.vendorIcon}" alt="">` : ""}
+        <span>${mac.vendor}</span>
+      </div>
+    `;
     box.appendChild(el2);
   });
 }
@@ -9825,15 +9949,37 @@ function renderProfileList(profiles) {
   if (!box)
     return;
   box.innerHTML = "";
+  if (profiles.length === 0) {
+    box.innerHTML = `<div class="empty-state">
+      <div class="empty-state-text">No saved profiles</div>
+    </div>`;
+    return;
+  }
   profiles.forEach((p) => {
     const row = document.createElement("div");
-    row.className = "profile-row";
+    row.className = "profile-item";
     row.innerHTML = `
-      <div class="profile-name">${p.name}</div>
-      <div class="profile-status ${p.active ? "green" : "red"}">
-        ${p.active ? "Active" : "Inactive"}
+      <div class="profile-icon">
+        <img src="/frontend/public/icons/person-symbolic.svg" alt="">
       </div>
-      <button class="button small" data-id="${p.id}">View</button>
+      <div class="profile-info">
+        <div class="profile-name">${p.name}</div>
+        <div class="profile-meta">
+          <div class="profile-meta-item">
+            <span class="profile-meta-label">PiD:</span>
+            <span>${p.id}</span>
+          </div>
+          <div class="profile-meta-item">
+            <span class="profile-meta-label">DB:</span>
+            <span class="profile-status ${p.active ? "active" : "inactive"}">
+              ${p.active ? "Active" : "Inactive"}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-actions">
+        <button class="profile-action-btn" data-id="${p.id}">View</button>
+      </div>
     `;
     row.querySelector("button")?.addEventListener("click", () => {
       showPage("profile-view");
@@ -9851,24 +9997,98 @@ function renderProfileInfo(data) {
       <div class="profile-label">Name:</div>
       <div class="profile-value">${data.name}</div>
     </div>
-
     <div class="profile-block">
       <div class="profile-label">Database:</div>
       <div class="profile-value">${data.db}</div>
     </div>
-
     <div class="profile-block">
       <div class="profile-label">Status:</div>
       <div class="profile-value ${data.active ? "green" : "red"}">
         ${data.active ? "Active" : "Inactive"}
       </div>
     </div>
-
     <div class="profile-block">
       <div class="profile-label">DB Table:</div>
       <div class="profile-value">${data.table}</div>
     </div>
+    <div class="profile-block">
+      <div class="profile-label">Created:</div>
+      <div class="profile-value">${new Date(data.created).toLocaleString()}</div>
+    </div>
   `;
+}
+function renderAuditResult(result) {
+  const gradeEl = document.getElementById("audit-grade");
+  const nameEl = document.getElementById("audit-name");
+  const ipEl = document.getElementById("audit-ip");
+  const vulnList = document.getElementById("audit-vuln-list");
+  if (!gradeEl || !nameEl || !ipEl || !vulnList)
+    return;
+  gradeEl.textContent = String(result.grade);
+  gradeEl.classList.remove("excellent", "good", "warning", "critical");
+  if (result.grade >= 8)
+    gradeEl.classList.add("excellent");
+  else if (result.grade >= 6)
+    gradeEl.classList.add("good");
+  else if (result.grade >= 4)
+    gradeEl.classList.add("warning");
+  else
+    gradeEl.classList.add("critical");
+  nameEl.textContent = result.device.name;
+  ipEl.textContent = result.device.ip;
+  vulnList.innerHTML = "";
+  if (!result.vulnerabilities.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty-state-text";
+    empty.textContent = "No known vulnerabilities";
+    vulnList.appendChild(empty);
+    return;
+  }
+  result.vulnerabilities.forEach((v2) => {
+    const item = document.createElement("div");
+    item.className = `vuln-item ${v2.risk}`;
+    item.innerHTML = `
+      <div class="vuln-name">${v2.name}</div>
+      <div class="vuln-danger-level">
+        Danger: ${v2.risk.charAt(0).toUpperCase() + v2.risk.slice(1)}
+        ${v2.cve ? ` • ${v2.cve}` : ""}
+      </div>
+    `;
+    vulnList.appendChild(item);
+  });
+}
+async function performNetworkScan() {
+  try {
+    const scanOutput = document.getElementById("scan-output");
+    const deviceList = document.getElementById("scan-device-list");
+    if (scanOutput) {
+      scanOutput.textContent = "Scanning…";
+    }
+    if (deviceList) {
+      deviceList.innerHTML = "";
+    }
+    await TypeLog("info", "Starting network scan...");
+    const raw = await api("scan");
+    if (raw.error) {
+      await TypeLog("error", "Scan failed", { error: raw.error });
+      showPage("scan-error");
+      return;
+    }
+    const devices = (raw.devices || []).map((d) => normalizeDevice(d));
+    if (devices.length > 0) {
+      await TypeLog("info", `Scan completed. Found ${devices.length} devices`);
+      if (scanOutput) {
+        scanOutput.textContent = raw.network || "Scan completed";
+      }
+      renderDeviceList("scan-device-list", devices, false);
+    } else {
+      await TypeLog("warning", "No devices found");
+      showPage("scan-error");
+    }
+  } catch (err) {
+    await TypeLog("error", "Scan exception", { error: err });
+    showPage("scan-error");
+  }
 }
 async function Pingify() {
   const ip = document.getElementById("ping-ip")?.value;
@@ -9877,46 +10097,135 @@ async function Pingify() {
     return;
   out.textContent = `Pinging ${ip}...`;
   const res = await api("ping", { ip });
-  out.textContent = res.error ? `Error: ${res.error}` : JSON.stringify(res, null, 2);
+  if (res.error) {
+    out.textContent = `Error: ${res.error}`;
+  } else {
+    out.textContent = formatPingResult(res);
+  }
 }
-async function macify() {
-  const out = document.getElementById("mac-output");
-  if (!out)
+async function performMACScan() {
+  const list = document.getElementById("mac-list");
+  if (!list)
     return;
-  out.textContent = "Scanning MAC addresses...";
-  const res = await api("mac");
-  out.textContent = res.error ? `Error: ${res.error}` : JSON.stringify(res, null, 2);
+  list.innerHTML = `<div class="scanning-state">
+    <div class="scanning-title">Scanning MAC Addresses...</div>
+    <div class="scanning-spinner"></div>
+  </div>`;
+  try {
+    const res = await api("mac");
+    if (res.error) {
+      list.innerHTML = `<div class="empty-state"><div class="empty-state-text">Error: ${res.error}</div></div>`;
+      return;
+    }
+    const normalized = (Array.isArray(res) ? res : []).map((m) => normalizeMACEntry(m));
+    renderMACList("mac-list", normalized);
+  } catch (err) {
+    list.innerHTML = `<div class="empty-state"><div class="empty-state-text">Scan failed</div></div>`;
+  }
 }
-async function Scanify() {
-  const out = document.getElementById("scan-output");
-  if (!out)
-    return;
-  out.textContent = "Scanning network...";
-  const res = await api("scan");
-  out.textContent = res.error ? `Error: ${res.error}` : JSON.stringify(res, null, 2);
+async function performAudit(deviceId) {
+  try {
+    const data = await api("audit", deviceId ? { device_id: deviceId } : {});
+    if (data.error) {
+      await TypeLog("error", "Audit failed", { error: data.error });
+      return;
+    }
+    renderAuditResult(data);
+    showPage("audit-result");
+  } catch (err) {
+    await TypeLog("error", "Audit exception", { error: err });
+  }
+}
+async function showAuditDeviceChoice() {
+  try {
+    const data = await api("device-inf");
+    if (data.error)
+      return;
+    const container = document.getElementById("audit-device-list");
+    if (!container)
+      return;
+    const devices = (data.devices || []).map((d) => normalizeDevice(d));
+    container.innerHTML = "";
+    renderDeviceList("audit-device-list", devices, true);
+    container.querySelectorAll(".device-item").forEach((item, index) => {
+      item.addEventListener("click", () => {
+        performAudit(devices[index].id);
+      });
+    });
+  } catch (err) {
+    await TypeLog("error", "Failed to load devices for audit", { error: err });
+  }
 }
 async function loadProfile(id) {
   const res = await api("profile", { id });
   if (res.error)
     return;
-  renderProfileInfo(res.info);
-  renderDeviceList("profile-device-manage", res.devices);
+  renderProfileInfo(res);
+  renderDeviceList("profile-device-manage", res.devices, false);
+}
+async function createProfile(name, deviceId) {
+  try {
+    const res = await api("profile_create", { name, device_id: deviceId });
+    if (res.error) {
+      alert(`Failed to create profile: ${res.error}`);
+      return;
+    }
+    await TypeLog("info", "Profile created", { name });
+    showPage("profile-page");
+    loadProfiles();
+  } catch (err) {
+    await TypeLog("error", "Profile creation failed", { error: err });
+  }
+}
+async function loadProfiles() {
+  try {
+    const res = await api("profiles");
+    if (res.error)
+      return;
+    renderProfileList(res);
+  } catch (err) {
+    await TypeLog("error", "Failed to load profiles", { error: err });
+  }
+}
+async function loadSavedDevices() {
+  try {
+    const res = await api("device-inf");
+    if (res.error)
+      return;
+    const container = document.getElementById("saved-devices-list");
+    if (!container)
+      return;
+    const devices = (Array.isArray(res) ? res : []).map((d) => normalizeDevice(d));
+    renderDeviceList("saved-devices-list", devices, false);
+  } catch (err) {
+    await TypeLog("error", "Failed to load saved devices", { error: err });
+  }
 }
 async function profileAdd() {
   await TypeLog("info", "Profile Add");
-  alert("Add device (TS will implement logic)");
+  showPage("profile-create");
 }
-async function profileRemove() {
-  await TypeLog("info", "Profile Remove");
-  alert("Remove device");
+async function profileRemove(id) {
+  await TypeLog("info", "Profile Remove", { id });
+  const res = await api("profile_delete", { id });
+  if (res.error) {
+    alert(`Failed to remove: ${res.error}`);
+    return;
+  }
+  loadProfiles();
 }
-async function profileAbout() {
-  await TypeLog("info", "Profile About");
-  alert("About profile");
+async function profileAbout(id) {
+  await TypeLog("info", "Profile About", { id });
+  loadProfile(id);
 }
-async function profileRename() {
-  await TypeLog("info", "Profile Rename");
-  alert("Rename profile");
+async function profileRename(id, newName) {
+  await TypeLog("info", "Profile Rename", { id, newName });
+  const res = await api("profile_rename", { id, name: newName });
+  if (res.error) {
+    alert(`Failed to rename: ${res.error}`);
+    return;
+  }
+  loadProfiles();
 }
 function initConsoleHandlers() {
   const input = document.getElementById("consoleInput");
@@ -9939,34 +10248,132 @@ $ ${cmd}\r
   term.write((res.output || res.error || "No output") + `\r
 `);
 }
+async function downloadExportReport() {
+  try {
+    const data = await api("export");
+    const blob = new Blob([JSON.stringify(data, null, 2)], {
+      type: "application/json"
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `inetscann-report-${new Date().toISOString().replace(/[:.]/g, "-")}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    await TypeLog("info", "Report exported");
+  } catch (err) {
+    await TypeLog("error", "Export failed", { error: err });
+  }
+}
 function initHotkeys() {
   document.addEventListener("keydown", (ev) => {
     if (ev.ctrlKey && ev.key === "a")
       profileAdd();
     if (ev.ctrlKey && ev.key === "b")
-      profileAbout();
+      profileAbout("current");
     if (ev.ctrlKey && ev.key === "r")
-      profileRemove();
-    if (ev.ctrlKey && ev.key === "n")
-      profileRename();
+      profileRemove("current");
+    if (ev.ctrlKey && ev.key === "n") {
+      const name = prompt("New profile name:");
+      if (name)
+        profileRename("current", name);
+    }
   });
+}
+function initApp() {
+  const scanCard = document.querySelector('[data-page="scan-page"]');
+  if (scanCard) {
+    scanCard.addEventListener("click", () => {
+      performNetworkScan();
+    });
+  }
+  const macCard = document.querySelector('[data-page="mac-page"]');
+  if (macCard) {
+    macCard.addEventListener("click", () => {
+      performMACScan();
+    });
+  }
+  const auditBtn = document.querySelector('[data-page="audit-page"]');
+  if (auditBtn) {
+    auditBtn.addEventListener("click", () => {
+      showPage("audit-page");
+      showAuditDeviceChoice();
+    });
+  }
+  const profilesBtn = document.querySelector('[data-page="profile-page"]');
+  if (profilesBtn) {
+    profilesBtn.addEventListener("click", () => {
+      showPage("profile-page");
+      loadProfiles();
+    });
+  }
+  const devicesBtn = document.querySelector('[data-page="saved-devices"]');
+  if (devicesBtn) {
+    devicesBtn.addEventListener("click", () => {
+      showPage("saved-devices");
+      loadSavedDevices();
+    });
+  }
+  const profileCreateForm = document.getElementById("profile-create-form");
+  if (profileCreateForm) {
+    profileCreateForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("profile-name")?.value;
+      const device = document.getElementById("profile-device")?.value;
+      if (name && device) {
+        await createProfile(name, device);
+      }
+    });
+  }
+  document.getElementById("profile-add-btn")?.addEventListener("click", profileAdd);
+  document.getElementById("profile-remove-btn")?.addEventListener("click", () => profileRemove("current"));
+  document.getElementById("profile-about-btn")?.addEventListener("click", () => profileAbout("current"));
+  document.getElementById("profile-rename-btn")?.addEventListener("click", () => {
+    const name = prompt("New profile name:");
+    if (name)
+      profileRename("current", name);
+  });
+  const pingGo = document.getElementById("ping-go");
+  if (pingGo) {
+    pingGo.addEventListener("click", () => {
+      showPage("ping-page");
+      Pingify();
+    });
+  }
+  const exportBtn = document.getElementById("export-report-btn");
+  if (exportBtn) {
+    exportBtn.addEventListener("click", () => {
+      downloadExportReport();
+    });
+  }
 }
 export {
   showPage,
+  showAuditDeviceChoice,
   renderProfileList,
   renderProfileInfo,
+  renderMACList,
   renderDeviceList,
+  renderAuditResult,
   profileRename,
   profileRemove,
   profileAdd,
   profileAbout,
+  performNetworkScan,
+  performMACScan,
+  performAudit,
   openSettings,
-  macify,
+  loadSavedDevices,
+  loadProfiles,
   loadProfile,
   initTerminal,
   initHotkeys,
   initConsoleHandlers,
+  initApp,
+  downloadExportReport,
+  createProfile,
   closeSettings,
-  Scanify,
   Pingify
 };

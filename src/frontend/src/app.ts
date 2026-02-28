@@ -2,6 +2,7 @@
 import { api, TypeLog } from "./api";
 import { Terminal } from "@xterm/xterm";
 import { FitAddon } from "@xterm/addon-fit";
+import "@xterm/xterm/css/xterm.css";
 
 export type PageID =
   | "dashboard"
@@ -65,6 +66,13 @@ export interface MACResult {
   vendor: string;
   vendorIcon?: string;
   status: "online" | "offline" | "warning" | "unknown";
+}
+
+export interface PingResponse {
+  ip: string;
+  alive: boolean;
+  output: string;
+  error?: string;
 }
 
 type RawDevice = Partial<Device> & {
@@ -143,6 +151,11 @@ function normalizeMACEntry(raw: any): MACResult {
     vendorIcon: pickVendorIcon(vendor),
     status,
   };
+}
+
+function formatPingResult(res: PingResponse): string {
+  const aliveHuman = res.alive ? "True" : "False";
+  return `ip = ${res.ip}, alive = ${aliveHuman}`;
 }
 
 // -----------------------------
@@ -396,12 +409,13 @@ export function renderAuditResult(result: AuditResult) {
 // -----------------------------
 
 // NETWORK SCAN
-export async function performNetworkScan() {
+export async function performNetworkScan(options: { silent?: boolean } = {}) {
+  const silent = options.silent ?? false;
   try {
     const scanOutput = document.getElementById("scan-output");
     const deviceList = document.getElementById("scan-device-list");
 
-    if (scanOutput) {
+    if (scanOutput && !silent) {
       scanOutput.textContent = "Scanning…";
     }
     if (deviceList) {
@@ -414,7 +428,9 @@ export async function performNetworkScan() {
 
     if (raw.error) {
       await TypeLog("error", "Scan failed", { error: raw.error });
-      showPage("scan-error");
+      if (!silent) {
+        showPage("scan-error");
+      }
       return;
     }
 
@@ -424,13 +440,15 @@ export async function performNetworkScan() {
 
     if (devices.length > 0) {
       await TypeLog("info", `Scan completed. Found ${devices.length} devices`);
-      if (scanOutput) {
+      if (scanOutput && !silent) {
         scanOutput.textContent = raw.network || "Scan completed";
       }
       renderDeviceList("scan-device-list", devices, false);
     } else {
       await TypeLog("warning", "No devices found");
-      showPage("scan-error");
+      if (!silent) {
+        showPage("scan-error");
+      }
     }
   } catch (err) {
     await TypeLog("error", "Scan exception", { error: err });
@@ -445,8 +463,12 @@ export async function Pingify() {
   if (!ip || !out) return;
 
   out.textContent = `Pinging ${ip}...`;
-  const res = await api("ping", { ip });
-  out.textContent = res.error ? `Error: ${res.error}` : JSON.stringify(res, null, 2);
+  const res = await api<PingResponse>("ping", { ip });
+  if (res.error) {
+    out.textContent = `Error: ${res.error}`;
+  } else {
+    out.textContent = formatPingResult(res);
+  }
 }
 
 // MAC SCAN
@@ -676,6 +698,9 @@ export function initApp() {
       performNetworkScan();
     });
   }
+
+  // Kick off an initial background scan so data is ready
+  void performNetworkScan({ silent: true });
 
   // MAC card (dashboard)
   const macCard = document.querySelector('[data-page="mac-page"]');

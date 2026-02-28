@@ -10057,11 +10057,12 @@ function renderAuditResult(result) {
     vulnList.appendChild(item);
   });
 }
-async function performNetworkScan() {
+async function performNetworkScan(options = {}) {
+  const silent = options.silent ?? false;
   try {
     const scanOutput = document.getElementById("scan-output");
     const deviceList = document.getElementById("scan-device-list");
-    if (scanOutput) {
+    if (scanOutput && !silent) {
       scanOutput.textContent = "Scanning…";
     }
     if (deviceList) {
@@ -10071,19 +10072,23 @@ async function performNetworkScan() {
     const raw = await api("scan");
     if (raw.error) {
       await TypeLog("error", "Scan failed", { error: raw.error });
-      showPage("scan-error");
+      if (!silent) {
+        showPage("scan-error");
+      }
       return;
     }
     const devices = (raw.devices || []).map((d) => normalizeDevice(d));
     if (devices.length > 0) {
       await TypeLog("info", `Scan completed. Found ${devices.length} devices`);
-      if (scanOutput) {
+      if (scanOutput && !silent) {
         scanOutput.textContent = raw.network || "Scan completed";
       }
       renderDeviceList("scan-device-list", devices, false);
     } else {
       await TypeLog("warning", "No devices found");
-      showPage("scan-error");
+      if (!silent) {
+        showPage("scan-error");
+      }
     }
   } catch (err) {
     await TypeLog("error", "Scan exception", { error: err });
@@ -10289,6 +10294,7 @@ function initApp() {
       performNetworkScan();
     });
   }
+  performNetworkScan({ silent: true });
   const macCard = document.querySelector('[data-page="mac-page"]');
   if (macCard) {
     macCard.addEventListener("click", () => {

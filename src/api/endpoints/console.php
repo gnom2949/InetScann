@@ -3,7 +3,6 @@
 return function ($request, $write)
 {
     $cmdRaw = $_GET['cmd'] ?? 'bash';
-    $container = "apache_server";
 
     // валидация белого списка
     $allowed = [
@@ -21,15 +20,21 @@ return function ($request, $write)
         return;
     }
 
-    //  запуск процесса
+    // базовая защита от инъекций, блокировка опасных символов
+    if (preg_match('/[;&|`$><]/', $cmdRaw)) {
+        $write->console->error("Blocked dangerous characters in: $cmdRaw");
+        Response::error("Command contains forbidden characters", 400);
+        return;
+    }
+
+    // запуск процесса
     $descSpec = [
-        0 => ["pipe", "r"],   // stdin
+        0 => ["pipe", "r"],  // stdin
         1 => ["pipe", "w"],  // stdout
-        2 => ["pipe", "w"]  // stderr
+        2 => ["pipe", "w"],  // stderr
     ];
 
-    $cmd = "docker exec -i -e TERM=xterm $container $cmdRaw 2>&1";
-    $proc = proc_open($cmd, $descSpec, $pipes);
+    $proc = proc_open($cmdRaw, $descSpec, $pipes);
 
     if (!is_resource($proc)) {
         $write->console->error("Failed to start process");
@@ -37,34 +42,36 @@ return function ($request, $write)
         return;
     }
 
-    // переход в режим стриминга
-    $write->console->info("Streaming started for: $mainCmd");
-    stream_set_blocking($pipes[1], 0);
-
-    while (true) {
-        $output = fread($pipes[1], 1024);
-
-        if ($output !== false && strlen($output) > 0) {
-            Response::stream(['output' => $output]);
-        }
-
-        $status = proc_get_status($proc);
-        if (!$status['running']) break;
-
-        if (connection_aborted()) {
-            $write->console->warning("User disconnected");
-            break;
-        }
-
-        usleep(20000); // двасать тысац
+    if (isset($pipes[0]) && is_resource($pipes[0])) {
+        fclose($pipes[0]);
     }
 
-    foreach ($pipes as $pipe) {
-        if (is_resource($pipe)) fclose($pipe);
-    }
-    proc_close($proc);
+    $stdout = '';
+    $stderr = '';
 
-    $write->console->info("Stream closed");
+    if (isset($pipes[1]) && is_resource($pipes[1])) {
+        $stdout = stream_get_contents($pipes[1]) ?: '';
+        fclose($pipes[1]);
+    }
+
+    if (isset($pipes[2]) && is_resource($pipes[2])) {
+        $stderr = stream_get_contents($pipes[2]) ?: '';
+        fclose($pipes[2]);
+    }
+
+    $exitCode = proc_close($proc);
+
+    $write->console->info("Console command finished: $mainCmd (code: $exitCode)");
+
+    $output = $stdout;
+    if ($stderr) {
+        $output .= ($output !== '' ? "\n" : "") . $stderr;
+    }
+
+    Response::ok([
+        'output'    => $output !== '' ? $output : "No output",
+        'exit_code' => $exitCode,
+    ]);
 };
 
 // console.php |MARK| END

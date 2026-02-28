@@ -112,8 +112,16 @@
         </div>
 
         <div class="scan-status-box">
-          <div class="scan-status-title">Scanning on...</div>
-          <div class="scan-status-output" id="scan-output"></div>
+          <div class="scan-status-title">Scanning</div>
+          <div
+            class="scan-loader"
+            id="scan-loader"
+            data-animation-manifest="/manifest.json"
+          >
+            <span class="scan-loader-dot"></span>
+            <span class="scan-loader-dot"></span>
+            <span class="scan-loader-dot"></span>
+          </div>
         </div>
 
         <div class="device-list-title">Found Devices</div>
